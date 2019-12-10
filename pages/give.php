@@ -1,0 +1,80 @@
+<?php include_once("../layouts/partials/header.php"); ?>
+<main class="content">
+    <div class="container">
+        <section id="giveIntro" class="centered-text-block">
+            <h1>
+                <small class="emphasized">Buy A Card, Give A Meal</small>
+                The whole story begins with you
+            </h1>
+
+            <p class="lead">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+        </section>
+
+        <section id="giveGallery" class="masonry-gallery">
+
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 1.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 3.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 5.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 7.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 9.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 6.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 4.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 8.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 2.jpg" alt="" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-content">
+                    <img src="/images/charity/Photo 10.jpg" alt="" />
+                </div>
+            </div>
+
+        </section>
+
+        <section id="giveContent" class="centered-text-block">
+            <h2>Providing food for the hungry, <br />and a voice for the ones in need.</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+            <img src="/images/charity/feature-photo.jpg" alt="Small boy smiling at camera because he's been provided with a meal" />
+
+        </section>
+    </div>
+    
+    <?php include_once("../layouts/mailing-list.php"); ?>
+</main>
+
+<?php include_once("../layouts/partials/footer.php"); ?>

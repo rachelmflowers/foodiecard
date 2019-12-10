@@ -1,0 +1,135 @@
+#steps {
+    position: relative;
+    padding-top: $section-pad;
+    text-align: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 30%;
+        left: calc(50% - 2px);
+        z-index: -1;
+        width: 4px;
+        height: 60%;
+        background: $gray-200;
+    }
+
+    .step {
+        margin-bottom: 5rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        &-image,
+        &-content {
+            width: 40%;
+        }
+
+        &-image {
+            img[src=""] {
+                display: block;
+                border: 1px solid $gray-200;
+                width: 100%; // PLACEHOLDER
+                height: 20rem; // PLACEHOLDER
+            }
+        }
+
+        &-number {
+            padding: 1rem;
+            text-align: center;
+            background: $white;
+
+            p { 
+                color: $primary;
+                font-size: 1.625rem;
+                font-weight: $headings-font-weight-light; 
+            }
+
+            span {
+                width: 5rem;
+                height: 5rem;
+                display: block;
+                color: $primary;
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                text-align: center;
+                line-height: 5rem;
+                border: 1px solid $primary;
+                border-radius: 50%;
+            }
+
+            &.active {
+                span {
+                    color: $white;
+                    background: $primary;
+                }
+            }
+        }
+
+        &-content {
+
+            h2 { 
+                margin-bottom: 3rem;
+                font-weight: $headings-font-weight-light; 
+            }
+
+            p {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+    }
+}
+
+#faqs {
+    text-align: center;
+
+    .accordion {
+        margin-top: 5rem;
+        text-align: left;
+        columns: 2;
+        column-gap: 5rem;
+
+        .faq {
+            break-inside: avoid;
+        }
+    }
+
+    .faq {
+        margin-bottom: 2rem;
+
+        &-header {
+
+            .btn {
+                padding-left: 0;
+                padding-right: 0;
+                font-weight: $font-weight-bold;
+                text-transform: none;
+
+                &-link {
+                    color: $gray-600;
+                }
+
+                &[aria-expanded="true"] {
+                    > .icon { 
+                        transform: rotate(180deg); 
+                        transition: transform 0.2s linear;
+                    }
+                }
+            }
+
+            .icon {
+                margin-right: 1rem;
+                stroke: $white;
+                background: $primary;
+                border-radius: 50%; 
+                transition: transform 0.2s linear;
+            }
+        }
+
+        &-body {
+            padding-left: 2.7rem;
+        }
+    }
+}

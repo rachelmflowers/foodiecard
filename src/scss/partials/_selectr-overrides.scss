@@ -1,0 +1,29 @@
+.selectr {
+
+    &-container {
+        font: $font-family-base;
+        font-weight: $font-weight-base;
+    }
+
+    &-input {
+        padding: 0.25rem 0.5rem;
+        margin: 0.5rem 1rem;
+    }
+    
+    &-selected {
+        border-color: $input-border-color;
+    }
+
+    &-tag {
+        background: $gray-600;
+    }
+
+    &-option {
+        padding: 0.25rem 1rem;
+        font-size: $font-size-sm;
+
+        &.selected { background: $gray-200; }
+
+        &.active { background: $primary; }
+    }
+}

@@ -1,0 +1,27 @@
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+// @import "../../node_modules/bootstrap/scss/mixins";
+
+@import "bootstrap-overrides";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "partials/selectr-overrides";
+
+@import "partials/global";
+@import "partials/typography";
+@import "partials/icons";
+@import "partials/buttons";
+@import "partials/forms";
+
+@import "partials/header";
+@import "partials/footer";
+
+@import "pages/login-register";
+@import "pages/home";
+@import "pages/how-it-works";
+@import "pages/give";
+@import "pages/our-restaurants";
+@import "pages/purchase";
+@import "pages/checkout";

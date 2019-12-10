@@ -1,0 +1,102 @@
+#purchasePage {
+
+    .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad;
+        max-width: $max-content-width;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        > hr {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+            width: 100%;
+        }
+    }
+}
+
+.product {
+
+    &-info { width: calc(50% - 3rem); }
+
+    &-image {
+        margin-bottom: 4rem;
+
+        img {
+            position: relative;
+            left: -9%;
+            height: auto;
+            max-width: 135%;
+            display: block;
+        }
+    }
+
+    &-details {
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.2;
+            list-style-type: none;
+            background: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 172 172' width='25' height='25'%3E%3Cpath d='M145.433 37.933L64.5 118.866 33.734 88.1 23.6 98.234l40.9 40.9 91.067-91.067z' fill='#{$primary}' stroke='#{$primary}' stroke-width='10'/%3E%3C/svg%3E"), "#", "%23") no-repeat 0 1px;
+        }
+    }
+}
+
+.purchase {
+
+    &-options { 
+        width: calc(50% - 3rem); 
+
+        h1 { font-size: 2.25rem; }
+
+        p {
+            font-size: 2.25rem;
+
+            strong {
+                margin-top: -0.25rem;
+                float: right;
+                font-size: 2.75rem;
+            }
+
+            + hr { 
+                margin-bottom: 6rem;
+                clear: both;
+            }
+        }
+
+        .btn-light {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            border: 2px solid $gray-200;
+
+            .icon { float: right; }
+
+            &:hover,
+            &:focus { 
+                background: $primary;
+                border-color: $primary;
+            }
+        }
+    
+    }
+
+    &-disclosures {
+
+        p{
+            margin-bottom: 3rem;
+        }
+
+        strong {
+            margin-bottom: 1rem;
+            display: block;
+            color: $primary;
+        }
+    }
+}

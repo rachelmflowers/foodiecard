@@ -1,0 +1,17 @@
+    <aside id="mailingList">
+        <div class="container">
+            <img src="/images/fork-icon.png" alt="" />
+            <span>
+                <strong class="emphasized">BECOME A FOODIE CARD INSIDER!</strong>
+                Join our email for exclusive deals and promotions. 
+            </span>
+            <form class="form-inline">   
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Your email address" aria-label="enter email address">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" aria-label="search">GO</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </aside>

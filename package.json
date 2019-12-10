@@ -1,0 +1,15 @@
+{
+  "name": "foodiecard",
+  "version": "1.0.0",
+  "description": "foodiecard website",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "feather-icons": "^4.24.1",
+    "imagesloaded": "^4.1.4",
+    "mobius1-selectr": "^2.4.13"
+  }
+}

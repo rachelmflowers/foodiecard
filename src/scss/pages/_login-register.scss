@@ -1,0 +1,61 @@
+#loginForm_container {
+    padding-top: $section-pad;
+    padding-bottom: $section-pad;
+    margin: 0 auto;
+    max-width: 525px;
+
+    .h2 { color: $primary; }
+
+    a + span {
+        margin: 0 0.75rem;
+    }
+}
+
+#loginForm {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .form-control {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+
+    button { 
+        padding-left: 2rem;
+        padding-right: 2rem;
+        align-self: flex-end;
+    }
+}
+
+
+#registerForm_container {
+    padding-top: $section-pad;
+    padding-bottom: $section-pad;
+    margin: 0 auto;
+    max-width: 525px;
+
+    .h2 { color: $primary; }
+
+    small { 
+        margin-bottom: 2rem; 
+        display: block;
+    }
+}
+
+#registerForm {
+    margin-bottom: 2rem;
+
+    .form-control {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+
+    label svg { stroke: $primary; }
+
+    button { margin-top: 2rem; }
+}
