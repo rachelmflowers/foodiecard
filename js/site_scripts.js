@@ -38,14 +38,17 @@ $(function () {
         testimonials = document.querySelector('.testimonial-slider');
 
     if (typeof(featArticles) != 'undefined' && featArticles != null) {
-        new Flickity( featArticles, {});
+        new Flickity( featArticles, {
+            wrapAround: true
+        });
     }
 
     if (typeof(testimonials) != 'undefined' && testimonials != null) {
         new Flickity( testimonials, {
             cellAlign: 'left',
             fade: true,
-            autoPlay: 5000
+            autoPlay: 3000,
+            wrapAround: true
         });
     }
 });
