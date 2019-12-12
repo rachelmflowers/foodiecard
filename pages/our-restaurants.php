@@ -8,7 +8,7 @@
 
                     <div class="form-group">
                         <label for="cusineType" class="sr-only">What type of quisine do you like?</label>
-                        <select id="cusineType" name="cusineType" class="form-control js-selectr-multiple">
+                        <select id="cusineType" name="cusineType" class="form-control">
                             <option value="all" selected>All types of cusine</option>
                             <option value="american">American</option>
                             <option value="indian">Chinese</option>
@@ -148,7 +148,7 @@
                     Get in touch with us and let's make that happen.
                 </p>
 
-                <a href="" class="btn btn-outline-light">Contact Us</a>
+                <a href="/pages/become-partner.php" class="btn btn-outline-light">Contact Us</a>
             </div>
         </section>
         

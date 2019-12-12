@@ -31,3 +31,45 @@ h6, .h6 { margin-bottom: 1rem; }
         text-decoration: underline;
     }
 }
+
+blockquote {
+
+    > p {
+        font-size: 1.25em;
+        font-weight: $headings-font-weight-light;
+
+        &::before,
+        &::after {
+            display: inline-block;
+            font: $font-weight-bold 1.5em 'times-new-roman', times, serif;
+            line-height: 0.75em;
+        }
+
+        &::before {
+            content: '“';
+            margin-left: -0.75em;
+            width: 0.75em;
+            vertical-align: sub;
+        }
+
+        &::after {
+            content: '”';
+            margin-left: 0.25rem;
+            vertical-align: bottom;
+        }
+    }
+
+    footer {
+        margin-top: 1rem;
+    }
+
+    cite { 
+        display: block;
+        font-style: normal;
+
+        + a {
+            margin-top: 2rem;
+            display: block;
+        }
+    }
+}

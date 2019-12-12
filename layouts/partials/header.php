@@ -11,8 +11,15 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+        <!-- Flickity scroller -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
+
         <!-- Multiple Select Box Selctr -->
         <link href="/node_modules/mobius1-selectr/dist/selectr.min.css" rel="stylesheet" />
+
+        <!-- Flickity scroller -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/styles.css" >
