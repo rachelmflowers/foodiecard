@@ -48,10 +48,10 @@
                                         <p class="h6">Our Restaurants</p>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="/pages/restaurant.php">Non-Featured Restaurant</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item" href="/pages/restaurant-featured.php">Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         

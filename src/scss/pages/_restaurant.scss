@@ -1,0 +1,191 @@
+#restaurantPage {
+    > .container {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+    }
+}
+.restaurant {
+    &-main {
+        padding-top: 1.5rem;
+        padding-right: 8rem;
+        width: 80%;
+    }
+
+    &-side {
+        position: relative;
+        padding: 2rem;
+        width: 20%;
+        background: $gray-100;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: calc(-50vw + 100%);
+            bottom: 0;
+            z-index: -1;
+            width: 50vw;
+            background: inherit;
+        }
+
+        .fixed {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .buy-now,
+        .become-partner {
+            text-align: center;
+
+            h4 {
+                margin-bottom: 0;
+            }
+
+            .icon {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        hr {
+            margin: 4rem 0;
+        }
+
+        .buy-now {
+            color: $primary;
+        }
+    }
+
+    &-header {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid $border-color;
+
+        h1 { margin-bottom: 0.75rem; }
+    }
+
+    &-cost {
+        margin-right: 2rem;
+
+        .icon {
+            stroke: $gray-400;
+
+            &.active { stroke: $black; }
+        }
+    }
+
+    &-type { 
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &-tags {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+
+        .badge {
+            padding: 0.5rem 1rem;
+            color: $body-color;
+            border: 1px solid $border-color;
+            background: transparent;
+        }
+    }
+
+    &-description {
+        margin-bottom: 5rem;
+    }
+
+    &-contact {
+        margin-bottom:  $section-pad;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        > div {
+            padding: 1rem;
+            width: calc(33.33% - 2rem);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+            border: 1px solid $border-color;
+
+            .icon {
+                width: 1.75rem;
+                height: 1.75rem;
+
+                &-container {
+                    margin-top: -2.5rem;
+                    margin-bottom: 0.5rem;
+                    width: 3rem;
+                    height: 3rem;
+                    color: $white;
+                    text-align: center;
+                    line-height: 2.75rem;
+                    background: $primary;
+                    border-radius: 50%;
+                }
+            }
+
+            a { 
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+
+    &-location {
+        position: relative;
+        margin-bottom: $section-pad;
+        min-height: 17rem;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .google-map {
+            position: static;
+            flex: 1 0 auto;
+        }
+
+        address {
+            padding: 1rem;
+            display: block;
+            color: $white;
+            text-align: center;
+            background: $primary;
+        }
+    }
+
+    &-related {
+        text-align: center;
+
+        h2 {
+            padding-bottom: 1rem;
+            width: 100%;
+            text-align: left;
+            border-bottom: 1px solid $black;
+        }
+
+        > a { 
+            display: block;
+            margin: 2rem auto;
+        }
+
+        .restaurants-container {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .restaurant { 
+            width: calc(33.33% - 1rem);
+            text-align: left;
+
+            > a { text-decoration: none; }
+
+            .card-image { height: 12rem; }
+        }
+        
+    }
+}
