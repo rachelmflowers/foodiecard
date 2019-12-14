@@ -52,100 +52,102 @@ include_once("layouts/partials/header.php");
         <h2 class="h1">Featured Restaurants</h2>
 
         <div class="restaurants-container">
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 1.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">Smoked Barn</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        2932 Hempstead<br />
-                        Tpke., Levittown,<br />
-                        New York.
-                    </address>
-                </div>
-                </a>
-            </article>
+            <div class="grid">
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 1.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">Smoked Barn</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            2932 Hempstead<br />
+                            Tpke., Levittown,<br />
+                            New York.
+                        </address>
+                    </div>
+                    </a>
+                </article>
 
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">Dirty Burger</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        12 Manetto Hill Rd,<br />
-                        Plainview,<br />
-                        New York
-                    </address>
-                </div>
-                </a>
-            </article>
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">Dirty Burger</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            12 Manetto Hill Rd,<br />
+                            Plainview,<br />
+                            New York
+                        </address>
+                    </div>
+                    </a>
+                </article>
 
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 3.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">B.K. Sweeney's</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        636 Franklin Ave,<br />
-                        Garden City,<br />
-                        New York
-                    </address>
-                </div>
-                </a>
-            </article>
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 3.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">B.K. Sweeney's</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            636 Franklin Ave,<br />
+                            Garden City,<br />
+                            New York
+                        </address>
+                    </div>
+                    </a>
+                </article>
 
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 4.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">Pietro Cucina Italiana</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        404 N Country Rd,<br />
-                        Saint James,<br />
-                        New York
-                    </address>
-                </div>
-                </a>
-            </article>
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 4.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">Pietro Cucina Italiana</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            404 N Country Rd,<br />
+                            Saint James,<br />
+                            New York
+                        </address>
+                    </div>
+                    </a>
+                </article>
 
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 5.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">Pantry</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        Rockville Centre,<br />
-                        New York
-                    </address>
-                </div>
-                </a>
-            </article>
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 5.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">Pantry</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            Rockville Centre,<br />
+                            New York
+                        </address>
+                    </div>
+                    </a>
+                </article>
 
-            <article class="restaurant card">
-                <a href="" title="check out {restaurant name here}">
-                <div class="card-image">
-                    <img class="card-img-top" src="/images/Photo 6.jpg" alt="Card image cap">
-                </div>
-                <header class="card-title">Sish Kebab</header>
-                <div class="card-body">
-                    <address class="card-text">
-                        1380 Old Northern<br />
-                        Blvd,  Roslyn,<br />
-                        New York
-                    </address>
-                </div>
-                </a>
-            </article>
+                <article class="restaurant card">
+                    <a href="" title="check out {restaurant name here}">
+                    <div class="card-image">
+                        <img class="card-img-top" src="/images/Photo 6.jpg" alt="Card image cap">
+                    </div>
+                    <header class="card-title">Sish Kebab</header>
+                    <div class="card-body">
+                        <address class="card-text">
+                            1380 Old Northern<br />
+                            Blvd,  Roslyn,<br />
+                            New York
+                        </address>
+                    </div>
+                    </a>
+                </article>
+            </div>
         </div>
 
         <a href="">View All Participating Restaurants</a>
@@ -198,6 +200,8 @@ include_once("layouts/partials/header.php");
             </ol>
         </div>
 
+        <a href="/pages/purchase" class="btn btn-primary btn-wide">Buy A Foodie Card</a>
+
     </section>
 
     <section id="giveAMeal">
@@ -208,7 +212,8 @@ include_once("layouts/partials/header.php");
                 <img src="/images/Island-Harvest_logo.png" alt="" />
             </div>
             <h2 class="give-title">Buy A Card, Give A Meal.</h2>
-            <p class="lead">We've partnered with Island Harvest so that our fellow New Yorkers never go hungry. For every Foodie Card purchased, we'll feed someone less fortunate for an entire day.</p>
+            <p class="lead">We've partnered with Island Harvest so that our fellow New Yorkers never go hungry.</p>
+            <p class="lead"><strong>For every Foodie Card purchased, we'll feed someone less fortunate for an entire day.</strong></p>
             <a href="" class="btn btn-primary btn-lg">Learn More</a>
         </div>
     </section>

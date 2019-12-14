@@ -1,11 +1,23 @@
 #footer-nav {
-    columns: 4;
-    column-gap: 4rem;
+    text-align: center;
+
+    @include media-breakpoint-up(md) { 
+        text-align: left;
+        columns: 4;
+        column-gap: 4rem;
+    }
 
     a { 
         padding: 0.3rem 0;
         color: $gray-600;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
         display: block;
+
+        @include media-breakpoint-up(md) { 
+            font-weight: $font-weight-base;
+            text-transform: none;
+        }
 
         &:hover { color: $primary; }
 
@@ -13,31 +25,84 @@
             break-after: always;
         }
     }
+
+    + .social { 
+        display: none;
+
+        @include media-breakpoint-up(md) { 
+            display: block;
+        }
+    }
 }
 
 #site-footer {
-    padding-top: 4rem;
+    padding-top: $section-pad-sm;
 
     .container {
-        max-width: 75vw;
+
+        @include media-breakpoint-up(md) { 
+            max-width: 75vw;
+        }
     }
 
-    .logo-container { float: right; }
+    .logo-container { 
+
+        &:not(.mobile-logo) {
+            display: none;
+            float: right;
+
+            @include media-breakpoint-up(md) { 
+                display: block;
+            }
+        }
+
+        &.mobile-logo {
+            text-align: center;
+
+            @include media-breakpoint-up(md) { display: none; }
+        }
+    
+    }
 
     .logo {
-        width: 100px;
+        width: 60%;
+        margin: 0 auto 1rem;
+
+        @include media-breakpoint-up(md) { 
+            width: 100px;
+            margin: auto;
+        }
         
         #tagline { display: none; }
     }
 
     .social {
-        margin-top: -2rem; 
-        float: right;
+        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(md) { 
+            margin-top: -2rem; 
+            margin-bottom: 0;
+            float: right;
+        }
 
         .icon {
             margin-left: 0.25rem;
-            width: 2rem;
-            height: 2rem;
+            width: 3rem;
+            height: 3rem;
+
+            @include media-breakpoint-up(md) { 
+                width: 2rem;
+                height: 2rem;
+            }
         }
+    }
+
+    .copyright {
+        text-align: center;
+
+        @include media-breakpoint-up(md) { 
+            text-align: left;
+        }
+
     }
 }

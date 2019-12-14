@@ -4,18 +4,88 @@
     .navbar {
         padding: 0;
 
+        &.bg-primary {
+            @include media-breakpoint-down(sm) {
+                padding: 0.5rem 0;
+                background: $white !important;
+            }
+        }
+
+        &-toggler-icon {
+            background: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
         &-collapse {
             margin-top: -2px;
             background: $gray-100;
             border-bottom: 2px solid $primary;
+
+            @include media-breakpoint-down(sm) {
+                padding: 0.5rem;
+                flex-flow: row wrap;
+                justify-content: space-between;
+
+                > * { opacity: 0; }
+
+                &.show { 
+                    display: flex;
+
+                    > * {
+                        opacity: 1;
+                        transition: opacity 0.3s linear;
+                    }
+                }
+
+                > .btn { 
+                    order: 1;
+                    width: calc(50% - 1rem);
+
+                    &.btn-primary { order: 2; }
+                }
+
+                .navbar-nav { 
+                    width: 100%;
+                    order: 4;
+                }
+
+                .form-inline {
+                    margin: 1rem 0;
+                    width: 100%;
+                    order: 3;
+                }
+            }
         }
 
         &-brand {
-            svg { 
-                width: 150px;
 
-                g,
-                path { fill: $white; }
+            svg { 
+                width: 180px;
+
+                #foodie { fill: $primary; }
+
+                #card { fill: $body-color; }
+
+                @include media-breakpoint-up(sm) {
+                    width: 150px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    g,
+                    path { fill: $white; }
+                
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin-right: -56px;
+                flex: 1 0 auto;
+                text-align: center;
+                
+                svg {
+                    margin-bottom: -0.5rem;
+
+                    #tagline { display: none; }
+                }
             }
         }
 
@@ -23,45 +93,17 @@
             align-self: stretch;
         }
     }
-
-    .form-inline {
-        margin-top: 0.55rem;
-        margin-bottom: 0.45rem;
-        flex: 1 0 auto;
-        justify-content: flex-end;
-
-        .icon {
-            width: 18px;
-            height: 18px;
-            stroke: $primary;
-        }
-    }
-
-    .nav {
-
-        &-item {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-
-            &:hover {
-                background: $white;
-            }
-        }
-
-        &-link {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-    }
-
+    
     .dropdown {
 
         &-menu {
             padding: 1rem;
-            width: 120%;
             border: 0;
             border-radius: 0;
+
+            @include media-breakpoint-up(lg) {
+                width: 120%;
+            }
 
             .h6 { color: $primary; }
 
@@ -86,31 +128,96 @@
         
     }
 
-    .btn {
-        font-size: 0.9rem;
-    }
+    @include media-breakpoint-up(lg) {
 
-    .btn-link {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        color: $gray-700;
-        font-weight: bold;
-    }
+        .form-inline {
+            margin-top: 0.55rem;
+            margin-bottom: 0.45rem;
+            flex: 1 0 auto;
+            justify-content: flex-end;
 
-    .btn-primary {
-        align-self: stretch;
-        display: inline-flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 0;
+            .icon {
+                width: 18px;
+                height: 18px;
+                stroke: $primary;
+            }
+        }
 
-        img {
-            margin-left: 0.5rem;
-            width: 1.5rem;
-            height: auto;
-            vertical-align: middle;
+        .nav {
+
+            &-item {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+
+                &:hover {
+                    background: $white;
+                }
+            }
+
+            &-link {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+        .dropdown {
+
+            &-menu {
+                padding: 1rem;
+                width: 120%;
+                border: 0;
+                border-radius: 0;
+
+                .h6 { color: $primary; }
+
+                ul {
+                    margin-bottom: 1rem;
+
+                    + a {
+                        color: $primary;
+                        text-decoration: underline;
+                    }
+                }
+
+                li {
+                    border-bottom: 1px solid $gray-200;
+                }
+            }
+
+            &-item {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+        }
+
+        .btn {
+            font-size: 0.9rem;
+        }
+
+        .btn-link {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            color: $gray-700;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            align-self: stretch;
+            display: inline-flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 0;
+
+            img {
+                margin-left: 0.5rem;
+                width: 1.5rem;
+                height: auto;
+                vertical-align: middle;
+            }
         }
     }
 }

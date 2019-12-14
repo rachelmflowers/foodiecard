@@ -5,6 +5,7 @@
                 <strong class="emphasized">BECOME A FOODIE CARD INSIDER!</strong>
                 Join our email for exclusive deals and promotions. 
             </span>
+            
             <form class="form-inline">   
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Your email address" aria-label="enter email address">

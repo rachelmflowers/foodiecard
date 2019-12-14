@@ -1,8 +1,14 @@
 @import url("https://use.typekit.net/lmp2tsz.css");
 
 /* CUSTOM NON-BOOTSTRAP VARIABLES */
-$section-pad: 6rem;
-$max-content-width: 60vw;
+$section-pad:         3rem;
+$section-pad-sm:      2rem;
+$max-content-width:   60vw;
+
+@media (min-width: 992px) {
+     $section-pad:    6rem;
+     $section-pad-sm: 4rem;
+}
 
 /* END CUSTOM VARIABLES */
 
