@@ -16,7 +16,8 @@ $primary:  #3bb77f;
 
 $theme-colors: (
   "primary": #3bb77f,
-  "secondary": $gray-300
+  "secondary": $gray-300,
+  "warning": #e76800
 );
 
 $container-max-widths: (
@@ -64,6 +65,5 @@ $custom-select-background:     $custom-select-indicator no-repeat right 0.25rem 
 
 $breadcrumb-bg:                transparent;
 $breadcrumb-padding-x:         0;
-$breadcrumb-margin-bottom:     5rem;
 
 $badge-border-radius:          0;
