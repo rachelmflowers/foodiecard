@@ -211,10 +211,11 @@
             display: inline-flex;
             flex-flow: row nowrap;
             align-items: center;
+            flex: 1 0 auto;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 0;
-
+            
             img {
                 margin-left: 0.5rem;
                 width: 1.5rem;

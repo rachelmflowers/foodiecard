@@ -2,6 +2,10 @@
     position: relative;
     padding-top: $section-pad;
 
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
+    }
+
     h1 { 
         margin-bottom: 2rem;
         text-align: center;
@@ -15,7 +19,7 @@
         content: '';
         position: absolute;
         top: 7rem;
-        left: 8.5vw;
+        left: calc(12.5vw - 7.5px);
         z-index: -1;
         width: 0.25rem;
         height: 100%;
@@ -35,12 +39,22 @@
         justify-content: space-between;
         align-items: center;
 
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $section-pad-sm-desk;
+        }
+
         &-number {
             padding: 1rem;
+            margin: 0 auto;
             width: calc(25vw - 15px);
             text-align: center;
             background: $white;
             order: 1;
+
+            @include media-breakpoint-up(md) {
+                order: unset;
+                width: 10vw;
+            }
 
             p { 
                 display: none;
@@ -64,6 +78,13 @@
                 line-height: $section-pad;
                 border: 1px solid $primary;
                 border-radius: 50%;
+
+                @include media-breakpoint-up(lg) {
+                    margin: 0 auto;
+                    width: $section-pad-desk;
+                    height: $section-pad-desk;
+                    line-height: $section-pad-desk;
+                }
             }
 
             &.active {
@@ -71,16 +92,6 @@
                     color: $white;
                     background: $primary;
                 }
-            }
-        }
-
-        &-image,
-        &-content {
-            width: calc(75vw - 15px);
-
-            @include media-breakpoint-up(lg) {
-                width: 40%;
-                order: inherit;
             }
         }
 
@@ -129,6 +140,16 @@
             }
         }
 
+        &-image,
+        &-content {
+            width: calc(75vw - 15px);
+
+            @include media-breakpoint-up(lg) {
+                width: 40%;
+                order: inherit;
+            }
+        }
+
     }
 }
 
@@ -139,15 +160,20 @@
         margin: $section-pad-sm -15px 0;
         text-align: left;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             margin-right: auto;
             margin-left: auto;
             columns: 2;
-            column-gap: 5rem;
+            column-gap: 2rem;
 
             .faq {
                 break-inside: avoid;
             }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin: $section-pad-sm-desk -15px 0;
+            column-gap: 5rem;
         }
     }
 
@@ -178,10 +204,7 @@
                     }
                 }
 
-                @include media-breakpoint-down(lg) {
-                    padding: 1rem 0 1rem 3rem;
-                    white-space: normal;
-                    text-align: left;
+                @include media-breakpoint-down(md) {
 
                     &[aria-expanded="true"] { 
                         color: $white;
@@ -191,6 +214,12 @@
                             transform: rotate(0deg);
                         }
                     }
+                }
+
+                @include media-breakpoint-down(lg) {
+                    padding: 1rem 0 1rem 3rem;
+                    white-space: normal;
+                    text-align: left;
                 }
             }
 
@@ -205,6 +234,7 @@
                     margin-left: 0;
                     background: $primary;
                     border-radius: 50%; 
+                    stroke: $white;
                 }
             }
         }
