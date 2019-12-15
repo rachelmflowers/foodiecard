@@ -10,7 +10,7 @@
         justify-content: flex-end;
 
         @include media-breakpoint-up(lg) {
-            padding: $section-pad-sm $section-pad-lg 1rem;
+            padding: $section-pad-sm-desk $section-pad-lg-desk 1rem;
         }
     }
 
@@ -27,7 +27,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
     height: 100%;
     color: $gray-400;
@@ -37,6 +37,8 @@
 }
 
 .restaurant-search {
+    position: relative;
+    z-index: 1;
     padding: 1rem;
     width: 100%;
     text-align: center;
@@ -92,6 +94,7 @@
     text-align: center;
 
     @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
         max-width: 75vw;
     }
 }
@@ -132,6 +135,8 @@
     padding-bottom: $section-pad-lg;
     
     @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-lg-desk;
+        padding-bottom: $section-pad-lg-desk;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;

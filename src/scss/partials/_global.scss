@@ -42,6 +42,11 @@ html {
     padding-bottom: $section-pad;
     background: $gray-100;
 
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
+        padding-bottom: $section-pad-desk;
+    }
+
     &::before,
     &::after {
         content: "";
@@ -64,6 +69,11 @@ html {
     padding-bottom: $section-pad;
     color: $white;
     background: $primary;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
+        padding-bottom: $section-pad-desk;
+    }
 
     h2, .h2,
     h3, .h3,
@@ -92,6 +102,10 @@ html {
     position: relative;
     padding: $section-pad-lg 0;
     color: $white;
+
+    @include media-breakpoint-up(lg) {
+        padding: $section-pad-lg-desk 0;
+    }
 
     h2, .h2,
     h3, .h3,
@@ -136,6 +150,8 @@ html {
     text-align: center;
 
     @include media-breakpoint-up(lg) {
+        max-width: $max-content-width-desk;
+
         p.lead { margin-bottom: 3rem; }
     }
 }

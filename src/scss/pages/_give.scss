@@ -1,6 +1,10 @@
 #giveIntro {
     padding-top: $section-pad;
 
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
+    }
+
     h1 {
         small { margin-bottom: 3rem; }
     }
@@ -14,6 +18,11 @@
     grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
     grid-auto-rows: 10px;
     grid-gap: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-pad-desk;
+        padding-bottom: $section-pad-desk;
+    }
 }
 
 .gallery {
