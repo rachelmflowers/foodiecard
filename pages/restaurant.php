@@ -86,53 +86,54 @@
                 <h2>Other Restaurants Nearby</h2>
 
                 <div class="restaurants-container">
-                
-                    <div class="restaurant card">
-                        <a href="" title="check out {restaurant name here}">
-                        <div class="card-image">
-                            <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                    <div class="grid">
+                        <div class="restaurant card">
+                            <a href="" title="check out {restaurant name here}">
+                            <div class="card-image">
+                                <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                            </div>
+                            <header class="card-title">Dirty Burger</header>
+                            <div class="card-body">
+                                <address class="card-text">
+                                    12 Manetto Hill Rd,<br />
+                                    Plainview,<br />
+                                    New York
+                                </address>
+                            </div>
+                            </a>
                         </div>
-                        <header class="card-title">Dirty Burger</header>
-                        <div class="card-body">
-                            <address class="card-text">
-                                12 Manetto Hill Rd,<br />
-                                Plainview,<br />
-                                New York
-                            </address>
+                    
+                        <div class="restaurant card">
+                            <a href="" title="check out {restaurant name here}">
+                            <div class="card-image">
+                                <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                            </div>
+                            <header class="card-title">Dirty Burger</header>
+                            <div class="card-body">
+                                <address class="card-text">
+                                    12 Manetto Hill Rd,<br />
+                                    Plainview,<br />
+                                    New York
+                                </address>
+                            </div>
+                            </a>
                         </div>
-                        </a>
-                    </div>
-                
-                    <div class="restaurant card">
-                        <a href="" title="check out {restaurant name here}">
-                        <div class="card-image">
-                            <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                    
+                        <div class="restaurant card">
+                            <a href="" title="check out {restaurant name here}">
+                            <div class="card-image">
+                                <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
+                            </div>
+                            <header class="card-title">Dirty Burger</header>
+                            <div class="card-body">
+                                <address class="card-text">
+                                    12 Manetto Hill Rd,<br />
+                                    Plainview,<br />
+                                    New York
+                                </address>
+                            </div>
+                            </a>
                         </div>
-                        <header class="card-title">Dirty Burger</header>
-                        <div class="card-body">
-                            <address class="card-text">
-                                12 Manetto Hill Rd,<br />
-                                Plainview,<br />
-                                New York
-                            </address>
-                        </div>
-                        </a>
-                    </div>
-                
-                    <div class="restaurant card">
-                        <a href="" title="check out {restaurant name here}">
-                        <div class="card-image">
-                            <img class="card-img-top" src="/images/Photo 2.jpg" alt="Card image cap">
-                        </div>
-                        <header class="card-title">Dirty Burger</header>
-                        <div class="card-body">
-                            <address class="card-text">
-                                12 Manetto Hill Rd,<br />
-                                Plainview,<br />
-                                New York
-                            </address>
-                        </div>
-                        </a>
                     </div>
                 </div>
 

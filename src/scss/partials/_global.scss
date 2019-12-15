@@ -129,5 +129,7 @@ body {
     max-width: $max-content-width;
     text-align: center;
 
-    p.lead { margin-bottom: 3rem; }
+    @include media-breakpoint-up(lg) {
+        p.lead { margin-bottom: 3rem; }
+    }
 }

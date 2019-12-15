@@ -103,25 +103,32 @@
 .restaurant {
     &-main {
         padding-top: 1.5rem;
-        padding-right: 8rem;
-        width: 80%;
+
+        @include media-breakpoint-up(lg) {
+            padding-right: $section-pad-lg;
+            width: 80%;
+        }
     }
 
     &-side {
         position: relative;
         padding: 2rem;
-        width: 20%;
-        background: $gray-100;
+        width: 100%;
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: calc(-50vw + 100%);
-            bottom: 0;
-            z-index: -1;
-            width: 50vw;
-            background: inherit;
+        @include media-breakpoint-up(lg) {
+            width: 20%;
+            background: $gray-100;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: calc(-50vw + 100%);
+                bottom: 0;
+                z-index: -1;
+                width: 50vw;
+                background: inherit;
+            }
         }
 
         .fixed {
@@ -134,18 +141,22 @@
             text-align: center;
 
             h4 {
-                margin-bottom: 0;
                 font-size: 1.25rem;
             }
 
             .icon {
-                width: 3rem;
-                height: 3rem;
+                display: none;
+
+                @include media-breakpoint-up(lg) {
+                    width: 3rem;
+                    height: 3rem;
+                    display: block;
+                }
             }
         }
 
         hr {
-            margin: 4rem 0;
+            margin: $section-pad-sm 0;
         }
 
         .buy-now {
@@ -206,7 +217,7 @@
     }
 
     &-header {
-        margin-top: 5rem;
+        margin-top: $section-pad-sm;
         margin-bottom: 1.5rem;
         border-bottom: 1px solid $border-color;
 
@@ -224,8 +235,7 @@
     }
 
     &-type { 
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding: 0.5rem 2rem;
     }
 
     &-tags {
@@ -241,7 +251,7 @@
     }
 
     &-description {
-        margin-bottom: 5rem;
+        margin-bottom: $section-pad-sm;
     }
 
     &-contact {
@@ -252,34 +262,53 @@
 
         > div {
             padding: 1rem;
-            width: calc(33.33% - 2rem);
+            width: 100%;
             display: flex;
             flex-flow: row wrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-content: center;
-            border: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+
+            @include media-breakpoint-up(lg) {
+                width: calc(33.33% - 2rem);
+                justify-content: center;
+                border: 1px solid $border-color;
+            }
+
+            &:first-of-type {
+                border-top: 1px solid $border-color;
+            }
 
             .icon {
                 width: 1.75rem;
                 height: 1.75rem;
 
                 &-container {
-                    margin-top: -2.5rem;
-                    margin-bottom: 0.5rem;
-                    width: 3rem;
-                    height: 3rem;
-                    color: $white;
-                    text-align: center;
-                    line-height: 2.75rem;
-                    background: $primary;
-                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: 1rem;
+
+                    @include media-breakpoint-up(lg) {
+                        margin-top: -2.5rem;
+                        margin-right: 0;
+                        margin-bottom: 0.5rem;
+                        width: 3rem;
+                        height: 3rem;
+                        color: $white;
+                        text-align: center;
+                        line-height: 2.75rem;
+                        background: $primary;
+                        border-radius: 50%;
+                    }
                 }
             }
 
             a { 
-                width: 100%;
                 display: block;
-                text-align: center;
+
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
+                    text-align: center;
+                }
             }
         }
     }
@@ -307,6 +336,7 @@
 
     &-related {
         text-align: center;
+        width: calc(100vw - 30px);
 
         h2 {
             padding-bottom: 1rem;
@@ -322,14 +352,28 @@
 
         .restaurants-container {
             margin-bottom: 2rem;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
+            overflow-x: scroll;
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                grid-gap: 1rem;
+    
+                .card { min-width: 200px; }
+    
+                @include media-breakpoint-up(lg) {
+                    grid-gap: 2rem;
+                }
+            }
         }
 
         .restaurant { 
-            width: calc(33.33% - 1rem);
             text-align: left;
+
+            @include media-breakpoint-up(lg) {
+                width: calc(33.33% - 1rem);
+            }
 
             > a { text-decoration: none; }
 

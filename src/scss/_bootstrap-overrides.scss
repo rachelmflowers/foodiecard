@@ -1,15 +1,16 @@
 @import url("https://use.typekit.net/lmp2tsz.css");
 
 /* CUSTOM NON-BOOTSTRAP VARIABLES */
-$section-pad:         3rem;
-$section-pad-sm:      2rem;
-$section-pad-lg:      4rem;
-$max-content-width:   60vw;
+$section-pad:              3rem;
+$section-pad-sm:           2rem;
+$section-pad-lg:           4rem;
+$max-content-width:        80vw;
 
 @media (min-width: 992px) {
-     $section-pad:    6rem;
-     $section-pad-sm: 4rem;
-     $section-pad-lg: 8rem;
+     $section-pad:         6rem;
+     $section-pad-sm:      4rem;
+     $section-pad-lg:      8rem;
+     $max-content-width:   60vw;
 }
 
 /* END CUSTOM VARIABLES */
@@ -63,7 +64,11 @@ $dropdown-link-active-color:  $primary;
 $card-spacer-x:               1rem;
 
 
-$form-group-margin-bottom:    2rem;
+$form-group-margin-bottom:    1rem;
+
+@media (min-width: 992px) {
+  $form-group-margin-bottom:    2rem;
+}
 
 $custom-select-bg-size:        20px 20px;
 $custom-select-indicator:      str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 172 172' width='15' height='15'%3E%3Cpath d='M50.167 71.667L86 107.5l35.833-35.833z' fill='#{$custom-select-indicator-color}'/%3E%3C/svg%3E"), "#", "%23");
