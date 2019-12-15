@@ -1,7 +1,7 @@
 <?php include_once("../layouts/partials/header.php"); ?>
 <main class="content featured" id="restaurantPage">
     <div class="container">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/pages/our-restaurants.php">Our Restaurants</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Restaurant Name</li>

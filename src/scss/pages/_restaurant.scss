@@ -4,6 +4,16 @@
         flex-flow: row wrap;
         align-content: stretch;
     }
+
+    .breadcrumb-nav {
+        width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            + .restaurant-main + .restaurant-side {
+                margin-top: -4rem;
+            }
+        }
+    }
 }
 
 .featured-image-hero {
@@ -16,11 +26,12 @@
         left: -2rem;
         width: calc(100% + 2rem);
         height: 22rem;
+        overflow: visible;
     }
 }
 
 .image {
-    widtH: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -29,9 +40,11 @@
         white-space: nowrap;
 
         @include media-breakpoint-up(lg) {
+            width: 100%;
+            height: 100%;
             display: grid;
-            grid-template-columns: repeat(1fr, 6);
-            grid-template-columns: repeat(1fr, 2);
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             grid-gap: 5px;
             align-items: stretch;
             justify-items: stretch;
@@ -47,6 +60,8 @@
 
         @include media-breakpoint-up(lg) {
             margin: 0;
+            width: 100%;
+            height: 100%;
 
             &:nth-of-type(1),
             &:nth-of-type(2),
@@ -86,7 +101,7 @@
         padding-top: 1rem;
 
         @include media-breakpoint-up(lg) {
-            padding-right: $section-pad-lg;
+            padding-right: $section-pad-lg-desk;
             width: 80%;
         }
 
@@ -154,12 +169,17 @@
                     width: 3rem;
                     height: 3rem;
                     display: block;
+                    margin: -1rem auto 0;
                 }
             }
         }
 
         hr {
             margin: $section-pad-sm 0;
+
+            @include media-breakpoint-up(lg) {
+                margin: $section-pad-sm-desk 0;
+            }
         }
 
         .buy-now {
@@ -240,7 +260,7 @@
         h1 { margin-bottom: 0.75rem; }
 
         @include media-breakpoint-up(lg) {
-            margin-top: $section-pad-sm;
+            margin-top: $section-pad-sm-desk;
         }
     }
 
@@ -303,6 +323,10 @@
 
     &-description {
         margin-bottom: $section-pad-sm;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $section-pad-sm-desk;
+        }
     }
 
     &-contact {
@@ -310,6 +334,10 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $section-pad-desk;
+        }
 
         > div {
             padding: 1rem;
@@ -371,6 +399,10 @@
         display: flex;
         flex-flow: column nowrap;
 
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $section-pad-desk;
+        }
+
         .google-map {
             position: static;
             flex: 1 0 auto;
@@ -387,7 +419,7 @@
 
     &-related {
         text-align: center;
-        width: calc(100vw - 30px);
+        max-width: calc(100vw - 30px);
 
         h2 {
             padding-bottom: 1rem;
@@ -422,10 +454,6 @@
         .restaurant { 
             text-align: left;
 
-            @include media-breakpoint-up(lg) {
-                width: calc(33.33% - 1rem);
-            }
-
             > a { text-decoration: none; }
 
             .card-image { height: 12rem; }
@@ -439,15 +467,18 @@
         @include media-breakpoint-up(lg) {
             margin-bottom: 3rem;
             width: 100%;
-            height: 20rem;
             display: block;
+
+            .image-gallery {
+                height: 20rem;
+            }
         }
     }
 
     &-video {
 
         @include media-breakpoint-up(lg) {
-            margin-bottom: $section-pad;
+            margin-bottom: $section-pad-desk;
         }
 
         p { 
