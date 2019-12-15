@@ -6,12 +6,10 @@ $section-pad-sm:           2rem;
 $section-pad-lg:           4rem;
 $max-content-width:        80vw;
 
-@media (min-width: 992px) {
-     $section-pad:         6rem;
-     $section-pad-sm:      4rem;
-     $section-pad-lg:      8rem;
-     $max-content-width:   60vw;
-}
+$section-pad-desk:         6rem;
+$section-pad-sm-desk:      4rem;
+$section-pad-lg-desk:      8rem;
+$max-content-width-desk:   60vw;
 
 /* END CUSTOM VARIABLES */
 
@@ -45,7 +43,7 @@ $headings-font-weight:        700;
 $headings-font-weight-light:  300;
 $headings-color:              $gray-900;
 
-$display2-size:               5rem;
+$display2-size:               4rem;
 $display2-weight:             700;
 $display-line-height:         1;
 

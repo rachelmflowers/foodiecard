@@ -5,8 +5,15 @@
     .navbar {
         padding: 0;
 
+        > .container {
+
+            @include media-breakpoint-down(xl) {
+                max-width: 100% !important;
+            }
+        }
+
         &.bg-primary {
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
                 padding: 0.5rem 0;
                 background: $white !important;
             }
@@ -21,7 +28,7 @@
             background: $gray-100;
             border-bottom: 2px solid $primary;
 
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
                 padding: 0.5rem;
                 flex-flow: row wrap;
                 justify-content: space-between;
@@ -37,13 +44,6 @@
                     }
                 }
 
-                > .btn { 
-                    order: 1;
-                    width: calc(50% - 1rem);
-
-                    &.btn-primary { order: 2; }
-                }
-
                 .navbar-nav { 
                     width: 100%;
                     order: 4;
@@ -51,6 +51,27 @@
 
                 .form-inline {
                     margin: 1rem 0;
+                    width: 50%;
+
+                    .input-group { width: 100%; }
+                }
+
+                .btn-primary { margin-right: 1rem; }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                > .btn { 
+                    order: 1;
+                    width: calc(50% - 1rem);
+
+                    &.btn-primary { 
+                        order: 2;
+                        margin: 0;
+                    }
+                }
+
+                .form-inline {
                     width: 100%;
                     order: 3;
                 }
@@ -66,18 +87,16 @@
 
                 #card { fill: $body-color; }
 
-                @include media-breakpoint-up(sm) {
-                    width: 150px;
-                }
-
                 @include media-breakpoint-up(lg) {
+                    width: 150px;
+
                     g,
                     path { fill: $white; }
                 
                 }
             }
 
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
                 margin-right: -56px;
                 flex: 1 0 auto;
                 text-align: center;
@@ -100,6 +119,14 @@
         &-link {
             font-weight: bold;
             text-transform: uppercase;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 0.75rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: 1rem;
+            }
         }
     }
     
@@ -136,11 +163,22 @@
         }
     }
 
+    .btn-link {
+        color: $gray-700;
+        font-weight: bold;
+
+        @include media-breakpoint-up(xl) {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
 
         .form-inline {
             margin-top: 0.55rem;
             margin-bottom: 0.45rem;
+            max-width: 25%;
             flex: 1 0 auto;
             justify-content: flex-end;
 
@@ -166,13 +204,6 @@
 
         .btn {
             font-size: 0.9rem;
-        }
-
-        .btn-link {
-            margin-left: 1rem;
-            margin-right: 1rem;
-            color: $gray-700;
-            font-weight: bold;
         }
 
         .btn-primary {
