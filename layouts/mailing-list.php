@@ -1,4 +1,4 @@
-    <aside id="mailingList">
+    <div id="mailingList">
         <div class="container">
             <img src="/images/fork-icon.png" alt="" />
             <span>
@@ -15,4 +15,4 @@
                 </div>
             </form>
         </div>
-    </aside>
+    </div>

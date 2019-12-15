@@ -1,21 +1,37 @@
 <?php include_once("../layouts/partials/header.php"); ?>
-<main class="content" id="restaurantPage">
+<main class="content featured" id="restaurantPage">
     <div class="container">
-        <section class="restaurant-main">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/pages/our-restaurants.php">Our Restaurants</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Restaurant Name</li>
-                </ol>
-            </nav>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/pages/our-restaurants.php">Our Restaurants</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Restaurant Name</li>
+            </ol>
+        </nav>
 
-            <div class="featured-image-hero image-gallery">
-                <img src="/images/restaurants/gallery/Photo 1.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 3.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 2.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 6.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 4.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 5.jpg" alt="" />
+        <section class="restaurant-main">
+
+            <div class="featured-image-hero">
+
+                <div class="image-gallery">
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 1.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 3.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 2.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 6.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 4.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 5.jpg" alt="" class="image" />
+                    </div>
+                </div>
             </div>
 
             <nav class="restaurant-page-nav" aria-label="page-nav">
@@ -27,9 +43,6 @@
             <header class="restaurant-header">
                 <h1>Restaurant Name Here</h1>
                 <address>404 N Country Rd, Saint James, NY 11787</address>
-            </header>
-
-            <div id="overview" class="restaurant-info">
                 <span class="restaurant-cost">   
                     <svg class="icon active">
                         <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#dollar-sign"/>
@@ -48,7 +61,25 @@
                     Tags: <span class="badge badge-secondary badge-pill">Tag name 1</span> <span class="badge badge-secondary badge-pill">Tag name 2</span> <span class="badge badge-secondary badge-pill">Tag name 3</span>
                 </div>
 
+            </header>
+
+            <div class="restaurant-reservation">
+                <h4>Make a reservation</h4>
+                <form id="reservation-form">
+                    <div class="input-group">
+                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" aria-label="How many people?" placeholder="# people" />
+                        <input type="date" name="reservationDate" id="reservationDate" class="form-control" aria-label="What day?" />
+
+                        <input type="time" name="reservationTime" id="reservationTime" class="form-control" aria-label="What time?" />
+                    </div>
+
+                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
+                </form>
+            </div>
+
+            <div id="overview" class="restaurant-info">
                 <div class="restaurant-description">
+                    <h2>Details</h2>
                     <p>New York City restaurateurs Pietro and Kelly Molendini took over the classic St. James farmhouse turned restaurant. The former co-owners of Vite Vinosteria in Astoria, Queens, who had moved from the city to Centerport, spent the summer renovating the dining room to a modern, clean look with neutral tones and contemporary artwork from Pietro Molendini's native Rome. They also expanded panded the bar from about four to 11 seats.</p>
                 </div>
 
@@ -97,14 +128,30 @@
             
             </div>
 
-            <h2>Gallery</h2>
-            <div id="gallery" class="restaurant-gallery image-gallery">
-                <img src="/images/restaurants/gallery/Photo 1.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 3.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 2.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 6.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 4.jpg" alt="" />
-                <img src="/images/restaurants/gallery/Photo 5.jpg" alt="" />
+            <div id="gallery" class="restaurant-gallery">
+
+                <h2>Gallery</h2>
+
+                <div class="image-gallery">
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 1.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 3.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 2.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 6.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 4.jpg" alt="" class="image" />
+                    </div>
+                    <div class="image-container">
+                        <img src="/images/restaurants/gallery/Photo 5.jpg" alt="" class="image" />
+                    </div>
+                </div>
             </div>
 
             <div class="restaurant-video">
