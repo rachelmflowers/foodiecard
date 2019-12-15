@@ -93,6 +93,14 @@
             align-self: stretch;
         }
     }
+
+    .nav {
+        
+        &-link {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
     
     .dropdown {
 
@@ -125,7 +133,6 @@
             padding-left: 0;
             padding-right: 0;
         }
-        
     }
 
     @include media-breakpoint-up(lg) {
@@ -154,42 +161,6 @@
                     background: $white;
                 }
             }
-
-            &-link {
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-        }
-
-        .dropdown {
-
-            &-menu {
-                padding: 1rem;
-                width: 120%;
-                border: 0;
-                border-radius: 0;
-
-                .h6 { color: $primary; }
-
-                ul {
-                    margin-bottom: 1rem;
-
-                    + a {
-                        color: $primary;
-                        text-decoration: underline;
-                    }
-                }
-
-                li {
-                    border-bottom: 1px solid $gray-200;
-                }
-            }
-
-            &-item {
-                padding-left: 0;
-                padding-right: 0;
-            }
-            
         }
 
         .btn {

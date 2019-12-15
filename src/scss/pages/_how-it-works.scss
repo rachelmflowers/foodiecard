@@ -1,60 +1,67 @@
 #steps {
     position: relative;
     padding-top: $section-pad;
-    text-align: center;
+
+    h1 { 
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    @include media-breakpoint-up(lg) {
+        text-align: center;
+    }
 
     &::after {
         content: '';
         position: absolute;
-        top: 30%;
-        left: calc(50% - 2px);
+        top: 7rem;
+        left: 8.5vw;
         z-index: -1;
-        width: 4px;
-        height: 60%;
+        width: 0.25rem;
+        height: 100%;
         background: $gray-200;
+
+        @include media-breakpoint-up(lg) {
+            top: 30%;
+            left: calc(50% - 2px);
+            height: 60%;
+        }
     }
 
     .step {
-        margin-bottom: 5rem;
+        margin-bottom: $section-pad-sm;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
 
-        &-image,
-        &-content {
-            width: 40%;
-        }
-
-        &-image {
-            img[src=""] {
-                display: block;
-                border: 1px solid $gray-200;
-                width: 100%; // PLACEHOLDER
-                height: 20rem; // PLACEHOLDER
-            }
-        }
-
         &-number {
             padding: 1rem;
+            width: calc(25vw - 15px);
             text-align: center;
             background: $white;
+            order: 1;
 
             p { 
-                color: $primary;
-                font-size: 1.625rem;
-                font-weight: $headings-font-weight-light; 
+                display: none;
+
+                @include media-breakpoint-up(lg) {
+                    display: block;
+                    color: $primary;
+                    font-size: 1.625rem;
+                    font-weight: $headings-font-weight-light; 
+                }
             }
 
             span {
-                width: 5rem;
-                height: 5rem;
+                width: $section-pad;
+                height: $section-pad;
                 display: block;
                 color: $primary;
                 font-size: 2rem;
                 font-weight: $font-weight-bold;
                 text-align: center;
-                line-height: 5rem;
+                line-height: $section-pad;
                 border: 1px solid $primary;
                 border-radius: 50%;
             }
@@ -67,15 +74,58 @@
             }
         }
 
+        &-image,
         &-content {
+            width: calc(75vw - 15px);
+
+            @include media-breakpoint-up(lg) {
+                width: 40%;
+                order: inherit;
+            }
+        }
+
+        &-image {
+            order: 2;
+
+            img[src=""] {
+                display: block;
+                border: 1px solid $border-color;
+                width: 100%; // PLACEHOLDER
+                height: 10rem; // PLACEHOLDER
+                
+                @include media-breakpoint-up(lg) {
+                    height: 20rem; // PLACEHOLDER
+                }
+            }
+        }
+
+        &-content {
+            padding: 1.5rem;
+            margin-left: calc(25vw - 15px);
+            order: 3;
+            border: 1px solid $border-color;
+            border-top: 0;
 
             h2 { 
-                margin-bottom: 3rem;
                 font-weight: $headings-font-weight-light; 
             }
 
-            p {
-                margin-bottom: 2.5rem;
+            .btn {
+                display: none;
+            }
+                
+            @include media-breakpoint-up(lg) {
+                padding: 0;
+                margin-left: 0;
+                border: 0;
+
+                p {
+                    margin-bottom: 2.5rem;
+                }
+
+                .btn {
+                    display: block;
+                }
             }
         }
 
@@ -86,30 +136,40 @@
     text-align: center;
 
     .accordion {
-        margin-top: 5rem;
+        margin: $section-pad-sm -15px 0;
         text-align: left;
-        columns: 2;
-        column-gap: 5rem;
 
-        .faq {
-            break-inside: avoid;
+        @include media-breakpoint-up(lg) {
+            margin-right: auto;
+            margin-left: auto;
+            columns: 2;
+            column-gap: 5rem;
+
+            .faq {
+                break-inside: avoid;
+            }
         }
     }
 
     .faq {
-        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 2rem;
+        }
 
         &-header {
+            border-top: 1px solid $border-color;
+
+            @include media-breakpoint-up(lg) {
+                border: 0;
+            }
 
             .btn {
                 padding-left: 0;
                 padding-right: 0;
                 font-weight: $font-weight-bold;
                 text-transform: none;
-
-                &-link {
-                    color: $gray-600;
-                }
+                border-radius: 0;
 
                 &[aria-expanded="true"] {
                     > .icon { 
@@ -117,19 +177,44 @@
                         transition: transform 0.2s linear;
                     }
                 }
+
+                @include media-breakpoint-down(lg) {
+                    padding: 1rem 0 1rem 3rem;
+                    white-space: normal;
+                    text-align: left;
+
+                    &[aria-expanded="true"] { 
+                        color: $white;
+                        background: $primary;
+
+                        > .icon {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
             }
 
             .icon {
-                margin-right: 1rem;
-                stroke: $white;
-                background: $primary;
-                border-radius: 50%; 
+                margin-left: -2.5rem;
+                margin-right: 0.75rem;
+                transform: rotate(-90deg); 
                 transition: transform 0.2s linear;
+
+                @include media-breakpoint-up(lg) {
+                    transform: rotate(0deg); 
+                    margin-left: 0;
+                    background: $primary;
+                    border-radius: 50%; 
+                }
             }
         }
 
         &-body {
-            padding-left: 2.7rem;
+            padding: 1rem 1rem 1rem 3rem;
+
+            @include media-breakpoint-up(lg) {
+                padding: 0 0 0 2.7rem;
+            }
         }
     }
 }

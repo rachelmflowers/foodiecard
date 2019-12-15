@@ -3,11 +3,13 @@
 /* CUSTOM NON-BOOTSTRAP VARIABLES */
 $section-pad:         3rem;
 $section-pad-sm:      2rem;
+$section-pad-lg:      4rem;
 $max-content-width:   60vw;
 
 @media (min-width: 992px) {
      $section-pad:    6rem;
      $section-pad-sm: 4rem;
+     $section-pad-lg: 8rem;
 }
 
 /* END CUSTOM VARIABLES */

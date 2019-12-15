@@ -32,8 +32,8 @@ body {
 
 .bg-full-gray {
     position: relative;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: $section-pad;
+    padding-bottom: $section-pad;
     background: $gray-100;
 
     &::before,
@@ -54,8 +54,8 @@ body {
 
 .bg-full-primary {
     position: relative;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: $section-pad;
+    padding-bottom: $section-pad;
     color: $white;
     background: $primary;
 
@@ -84,7 +84,7 @@ body {
 
 .bg-full-image {
     position: relative;
-    padding: 8rem 0;
+    padding: $section-pad-lg 0;
     color: $white;
 
     h2, .h2,
