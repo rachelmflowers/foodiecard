@@ -1,10 +1,20 @@
 <?php include_once("../layouts/partials/header.php"); ?>
 <main class="content" id="purchasePage">
     <div class="container">
-        <div class="product-info">
-            <div class="product-image">
-                <img src="/images/foodiecard-photo.png" alt="" />
-            </div>
+        <div class="product-image">
+            <img src="/images/foodiecard-photo.png" alt="" />
+        </div>
+
+        <div class="purchase-price">
+            <h1>Foodie Card Annual Membership</h1>
+            <p>
+                <strong class="text-danger">$29.99</strong>
+                Price: 
+            </p>
+            <hr />
+        </div>
+
+        <div class="purchase-container">
 
             <ul class="product-details">
                 <li>For every card sold, a day of meals is donated</li>
@@ -12,36 +22,30 @@
                 <li>Free shipping</li>
                 <li>Tons of amazing restaurants</li>
             </ul>
-        </div>
 
-        <div class="purchase-options">
-            <h1>Foodie Card Annual Membership</h1>
-            <p>
-                <strong class="text-danger">$29.99</strong>
-                Price: 
-            </p>
-            <hr />
-            <a href="/pages/checkout/single-purchase.php" class="btn btn-light btn-block">
-                Buy for yourself
+            <div class="purchase-options">
+                <a href="/pages/checkout/single-purchase.php" class="btn btn-light btn-block">
+                    Buy for yourself
 
-                <svg class="icon">
-                    <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-right"/>
-                </svg>
-            </a>
-            <a href="/pages/checkout/gift-purchase.php" class="btn btn-light btn-block">
-                Buy for somebody else
+                    <svg class="icon">
+                        <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-right"/>
+                    </svg>
+                </a>
+                <a href="/pages/checkout/gift-purchase.php" class="btn btn-light btn-block">
+                    Buy for somebody else
 
-                <svg class="icon">
-                    <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#gift"/>
-                </svg>
-            </a>
-            <a href="/pages/checkout/multiple-purchase.php" class="btn btn-light btn-block">
-                Buy multiple foodie cards
+                    <svg class="icon">
+                        <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#gift"/>
+                    </svg>
+                </a>
+                <a href="/pages/checkout/multiple-purchase.php" class="btn btn-light btn-block">
+                    Buy multiple foodie cards
 
-                <svg class="icon">
-                    <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-right"/>
-                </svg>
-            </a>
+                    <svg class="icon">
+                        <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-right"/>
+                    </svg>
+                </a>
+            </div>
         </div>
 
         <hr />

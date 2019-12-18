@@ -23,12 +23,12 @@
                     </div>
 
                     <nav id="footer-nav">
-                        <a href="">Home</a>
-                        <a href="">How it Works</a>
-                        <a href="">Our Restaurants</a>
-                        <a href="">Buy A Card, Give A Meal</a>
-                        <a href="">Buy Now</a>
-                        <a href="">Become a Restaurant Partner</a>
+                        <a href="/">Home</a>
+                        <a href="/pages/how-it-works.php">How it Works</a>
+                        <a href="/pages/our-restaurants.php">Our Restaurants</a>
+                        <a href="/pages/give.php">Buy A Card, Give A Meal</a>
+                        <a href="/pages/purchase.php">Buy Now</a>
+                        <a href="/pages/become-partner.php">Become a Restaurant Partner</a>
                         <a href="">Contact Us</a>
                         <a href="">FAQ</a>
                         <a href="">Terms and Conditions</a>

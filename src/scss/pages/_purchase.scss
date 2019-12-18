@@ -1,27 +1,52 @@
 #purchasePage {
 
-    .container {
+    > .container {
         padding-top: $section-pad;
         padding-bottom: $section-pad;
-        max-width: $max-content-width;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+        
+        @include media-breakpoint-up(sm) {
+            max-width: 90vw;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: $max-content-width;
+        }
 
         > hr {
-            margin-top: 3rem;
-            margin-bottom: 4rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
             width: 100%;
+
+            @include media-breakpoint-up(xl) {
+                margin-top: 3rem;
+                margin-bottom: 4rem;
+            }
         }
     }
 }
 
 .product {
 
-    &-info { width: calc(50% - 3rem); }
-
     &-image {
-        margin-bottom: 4rem;
+        margin-bottom: 1rem;
+        display: none;
+        
+        @include media-breakpoint-up(sm) {
+            width: calc(40% - 1rem); 
+            display: block;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 2rem); 
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 4rem;
+            width: calc(50% - 3rem); 
+        }
 
         img {
             position: relative;
@@ -35,6 +60,18 @@
     &-details {
         padding: 0;
         margin: 0;
+        
+        @include media-breakpoint-up(sm) {
+            width: calc(50% - 1rem); 
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 2rem); 
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: calc(50% - 3rem); 
+        }
 
         li {
             padding-left: 2.5rem;
@@ -50,24 +87,60 @@
 
 .purchase {
 
-    &-options { 
-        width: calc(50% - 3rem); 
+    &-container {
+        width: 100%;    
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
 
-        h1 { font-size: 2.25rem; }
+    &-price {
 
         p {
-            font-size: 2.25rem;
+            font-size: 1.5rem;
 
             strong {
-                margin-top: -0.25rem;
                 float: right;
-                font-size: 2.75rem;
             }
+        }
 
-            + hr { 
-                margin-bottom: 6rem;
-                clear: both;
+        @include media-breakpoint-up(sm) {
+            width: calc(60% - 1rem); 
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 2rem); 
+
+            h1 { font-size: 2.25rem; }
+
+            p {
+                font-size: 2.25rem;
+
+                strong {
+                    margin-top: -0.25rem;
+                    font-size: 2.75rem;
+                }
             }
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: calc(50% - 3rem); 
+        }
+    }
+
+    &-options { 
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            width: calc(50% - 1rem); 
+        }
+
+        @include media-breakpoint-up(md) {
+            width: calc(50% - 2rem); 
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: calc(50% - 3rem); 
         }
 
         .btn-light {
@@ -89,7 +162,7 @@
 
     &-disclosures {
 
-        p{
+        p {
             margin-bottom: 3rem;
         }
 

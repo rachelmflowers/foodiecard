@@ -76,6 +76,15 @@
                     <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
                 </form>
             </div>
+            <div class="buy-now">
+                <h4>Interested in saving 10%?</h4>
+
+                <svg class="icon active">
+                    <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-down"/>
+                </svg>  
+
+                <a href="/pages/purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
+            </div>
 
             <div id="overview" class="restaurant-info">
                 <div class="restaurant-description">
@@ -122,7 +131,7 @@
                         <svg class="icon">
                             <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#map-pin"/>
                         </svg>
-                        404 N Country Rd, Saint James, NY 11787
+                        404 N Country Rd, <span>Saint James, NY 11787</span>
                     </address>
                 </div>
             

@@ -19,13 +19,13 @@
         content: '';
         position: absolute;
         top: 7rem;
-        left: calc(12.5vw - 7.5px);
+        left: calc(12.5vw - 15px - 0.125rem);
         z-index: -1;
         width: 0.25rem;
         height: 100%;
         background: $gray-200;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             top: 30%;
             left: calc(50% - 2px);
             height: 60%;
@@ -44,14 +44,16 @@
         }
 
         &-number {
-            padding: 1rem;
-            margin: 0 auto;
-            width: calc(25vw - 15px);
+            padding: 4px;
+            margin-right: 15px;
+            width: calc(25vw - 30px);
             text-align: center;
             background: $white;
             order: 1;
 
             @include media-breakpoint-up(md) {
+                padding: 1rem;
+                margin: 0 auto;
                 order: unset;
                 width: 10vw;
             }
@@ -59,7 +61,7 @@
             p { 
                 display: none;
 
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
                     display: block;
                     color: $primary;
                     font-size: 1.625rem;
@@ -68,6 +70,7 @@
             }
 
             span {
+                margin: 0 auto;
                 width: $section-pad;
                 height: $section-pad;
                 display: block;
@@ -79,8 +82,13 @@
                 border: 1px solid $primary;
                 border-radius: 50%;
 
+                @include media-breakpoint-up(md) {
+                    width: $section-pad-lg;
+                    height: $section-pad-lg;
+                    line-height: $section-pad-lg;
+                }
+
                 @include media-breakpoint-up(lg) {
-                    margin: 0 auto;
                     width: $section-pad-desk;
                     height: $section-pad-desk;
                     line-height: $section-pad-desk;
@@ -104,7 +112,7 @@
                 width: 100%; // PLACEHOLDER
                 height: 10rem; // PLACEHOLDER
                 
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
                     height: 20rem; // PLACEHOLDER
                 }
             }
@@ -125,7 +133,7 @@
                 display: none;
             }
                 
-            @include media-breakpoint-up(lg) {
+            @include media-breakpoint-up(md) {
                 padding: 0;
                 margin-left: 0;
                 border: 0;
@@ -144,7 +152,7 @@
         &-content {
             width: calc(75vw - 15px);
 
-            @include media-breakpoint-up(lg) {
+            @include media-breakpoint-up(md) {
                 width: 40%;
                 order: inherit;
             }

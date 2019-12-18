@@ -42,7 +42,7 @@
 
             <small class="text-muted">By clicking "Create Account" you agree to Foodie Card's <a href="">terms</a> and <a href="">Privacy policy.</a></small>
 
-            <p>or <a href="">Login as customer</a></p>
+            <p>or <a href="/pages/login.php">Login as customer</a></p>
 
             
         </div>

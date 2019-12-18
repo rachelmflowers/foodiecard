@@ -9,7 +9,7 @@
         flex-flow: row nowrap;
         justify-content: flex-end;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(xl) {
             padding: $section-pad-sm-desk $section-pad-lg-desk 1rem;
         }
     }
@@ -47,7 +47,7 @@
     border-radius: $border-radius;
     box-shadow: 0 1px 10px rgba($gray-600, 0.5);
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
         width: 300px;
     }
 
@@ -94,8 +94,11 @@
     text-align: center;
 
     @include media-breakpoint-up(lg) {
-        padding-top: $section-pad-desk;
         max-width: 75vw;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-top: $section-pad-desk;
     }
 }
 
@@ -107,23 +110,21 @@
     border-radius: $border-radius;
 
     .form-group { 
+        margin-right: 1rem;
 
-        @include media-breakpoint-down(lg) {
-            width: 100%;
+        .form-control { width: 100%; }
+
+        &:first-of-type {
+            flex: 1 0 auto;
         }
 
-        @include media-breakpoint-up(lg) {
-            margin-right: 1rem;
-
-            &:first-of-type {
-                flex: 1 0 auto;
-
-                .form-control { width: 100%; }
-            }
+        @include media-breakpoint-down(xs) {
+            margin-right: 0;
+            width: 100%;
         }
     }
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(sm) {
         text-align: center;
 
         .btn { margin: 0 auto; }
@@ -134,13 +135,21 @@
     padding-top: $section-pad-lg;
     padding-bottom: $section-pad-lg;
     
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(sm) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 2rem;
+    }
+    
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4rem;
+    }
+    
+    @include media-breakpoint-up(xl) {
         padding-top: $section-pad-lg-desk;
         padding-bottom: $section-pad-lg-desk;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        grid-gap: 4rem;
     }
 
     .restaurant {

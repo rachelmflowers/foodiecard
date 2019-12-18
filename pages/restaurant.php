@@ -76,7 +76,7 @@
                         <svg class="icon">
                             <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#map-pin"/>
                         </svg>
-                        404 N Country Rd, Saint James, NY 11787
+                        404 N Country Rd,<span>Saint James, NY 11787</span> 
                     </address>
                 </div>
             
@@ -162,7 +162,7 @@
                         <use xlink:href="/node_modules/feather-icons/dist/feather-sprite.svg#chevron-down"/>
                     </svg>  
 
-                    <a href="/pages/purchase.php" class="btn btn-dark btn-block">Become a partner</a>
+                    <a href="/pages/become-partner.php" class="btn btn-dark btn-block">Become a partner</a>
                 </div>
             </div>
         

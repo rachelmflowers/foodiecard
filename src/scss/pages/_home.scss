@@ -351,6 +351,8 @@
                 display: block;
                 background: rgba($white, 0.25);
             }
+
+            .input-group { width: 100%; }
         }
 
         @include media-breakpoint-up(md) {

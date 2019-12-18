@@ -42,7 +42,7 @@ html {
     padding-bottom: $section-pad;
     background: $gray-100;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         padding-top: $section-pad-desk;
         padding-bottom: $section-pad-desk;
     }
@@ -70,7 +70,7 @@ html {
     color: $white;
     background: $primary;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         padding-top: $section-pad-desk;
         padding-bottom: $section-pad-desk;
     }
@@ -103,7 +103,7 @@ html {
     padding: $section-pad-lg 0;
     color: $white;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         padding: $section-pad-lg-desk 0;
     }
 
@@ -149,7 +149,7 @@ html {
     max-width: $max-content-width;
     text-align: center;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         max-width: $max-content-width-desk;
 
         p.lead { margin-bottom: 3rem; }
