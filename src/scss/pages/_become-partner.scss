@@ -39,7 +39,7 @@
     }
 
     .image-bg { 
-        object-position: bottom; 
+        object-position: center -150px; 
     }
 }
 
@@ -49,6 +49,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    color: $body-color;
     background: $white;
     border-top: 7px solid $gray-200;
     border-radius: $border-radius;
@@ -79,13 +80,19 @@
 
     .form-group { width: 100%; }
 
+    .form-check {
+        margin-bottom: 1rem;
+
+        &-input { top: 0.35rem; }
+    }
+
     #contactPerson_field,
-    #phone_field {
+    #phone_field,
+    #restWebsite_field,
+    #restPhone_field,
+    #restFacebook_field,
+    #restInsta_field {
         width: calc(50% - 0.5rem);
-            
-        @include media-breakpoint-up(lg) {
-            width: calc(50% - 1rem);
-        }
     }
 }
 

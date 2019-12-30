@@ -67,6 +67,18 @@
         text-align: left;
         border: 1px solid $border-color;
 
+        &:hover,
+        &:focus {
+            color: inherit;
+            border-color: $primary;
+            box-shadow: 0 0 5px rgba($primary, 0.5);
+        }
+
+        > a {
+            color: unset;
+            text-decoration: none;
+        }
+
         &s-container {
             margin-right: -1.5rem;
             margin-bottom: 2rem;
@@ -92,6 +104,11 @@
 
         &-source {
             font-size: 1.25rem;
+        }
+
+        &-link {
+            color: $primary;
+            text-decoration: underline;
         }
     }
 }

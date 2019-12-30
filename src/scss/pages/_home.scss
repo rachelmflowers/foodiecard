@@ -75,18 +75,16 @@
 #featuredRestaurants {
     margin-top: $section-pad;
     text-align: center;
-    max-width: calc(100vw - 30px);
 
     @include media-breakpoint-up(lg) {
         margin-top: $section-pad-desk;
-
     }
 
     .restaurants-container {
-        margin-top: $section-pad;
+        margin: $section-pad auto;
         margin-bottom: $section-pad-sm;
+        max-width: calc(100% - 80px);
         text-align: left;
-        overflow-x: scroll;
 
         @include media-breakpoint-up(lg) {
             margin-top: $section-pad-desk;
@@ -94,17 +92,18 @@
         }
 
         .grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: auto;
-            grid-gap: 1rem;
 
-            .card { min-width: 200px; }
-
-            @include media-breakpoint-up(lg) {
-                grid-gap: 2rem;
+            .card { 
+                margin-right: 1.5rem;
+                width: 200px;
+                min-height: 100%;
             }
         }
+    }
+
+    .flickity-button {
+        &.previous { left: -30px; }
+        &.next { right: -30px; }
     }
 
     @at-root .card {
@@ -338,6 +337,7 @@
 
     .form-inline { 
         display: inline-flex;
+        vertical-align: middle;
 
         @include media-breakpoint-down(sm) {
             width: 100%;

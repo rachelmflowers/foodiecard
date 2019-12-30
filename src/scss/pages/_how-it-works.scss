@@ -38,9 +38,26 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
+        transition: all 0.3s ease-out;
 
         @include media-breakpoint-up(lg) {
             margin-bottom: $section-pad-sm-desk;
+        }
+
+        &.active {
+            .step-number span {
+                color: $white;
+                background: $primary;
+                transition: all 0.3s ease-in;
+            }
+        }
+
+        &.scroll-past + .step {
+            .step-number span {
+                color: $white;
+                background: $primary;
+                transition: all 0.3s ease-in;
+            }
         }
 
         &-number {
@@ -92,13 +109,6 @@
                     width: $section-pad-desk;
                     height: $section-pad-desk;
                     line-height: $section-pad-desk;
-                }
-            }
-
-            &.active {
-                span {
-                    color: $white;
-                    background: $primary;
                 }
             }
         }

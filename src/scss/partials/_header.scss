@@ -117,6 +117,8 @@
     .nav {
         
         &-link {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
             font-weight: bold;
             text-transform: uppercase;
 
@@ -125,6 +127,11 @@
             }
 
             @include media-breakpoint-up(xl) {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            @media screen and (min-width: 1366px) {
                 font-size: 1rem;
             }
         }
@@ -203,7 +210,11 @@
         }
 
         .btn {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
+
+            @include media-breakpoint-up(xl) {
+                font-size: 0.9rem;
+            }
         }
 
         .btn-primary {

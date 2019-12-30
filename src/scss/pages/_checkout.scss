@@ -12,7 +12,6 @@
 
         .nav {
             margin-bottom: 5rem;
-            justify-content: center;
     
             &-link.active {
                 color: $body-color;
@@ -127,12 +126,8 @@
 
         &[name=paymentInfo] {
 
-            .form-group:first-of-type {
-
-            }
-
             #cardNumber {
-                background: url("/images/card-icons.png") no-repeat center right 1rem $gray-100;
+                background: url("images/card-icons.png") no-repeat center right 1rem $gray-100;
                 background-size: 150px;
             }
 
@@ -152,10 +147,8 @@
 .purchase {
 
     &-info {
-        text-align: center;
 
         > div {
-            text-align: left;
 
             &:not(:last-of-type) {
                 padding-bottom: 1rem;
@@ -267,7 +260,6 @@
 
         .nav {
             margin-bottom: 5rem;
-            justify-content: center;
     
             &-link.active {
                 color: $body-color;
@@ -355,6 +347,8 @@
     .party-icon {
         margin: 0 auto 2rem;
         display: block;
+        width: 100px;
+        height: 100px;
     }
 
     h1 { 

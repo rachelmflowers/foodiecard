@@ -1,4 +1,5 @@
 node_modules
 FoodieCard.code-workspace
 .vscode/*
+dist/*
 error_log
