@@ -17,18 +17,14 @@ $max-content-width-desk:   60vw;
 $enable-caret: false;
 $enable-responsive-font-sizes: true;
 
-
+$gray-100: #f2f2f3;
 $gray-800: #3c3c3c;
-$primary:  #3bb77f;
+$primary:  #3BB77F;
 
 $theme-colors: (
   "primary": #3bb77f,
   "secondary": $gray-300,
   "warning": #e76800
-);
-
-$container-max-widths: (
-  "xl": 1560px
 );
 
 $body-color:                  $gray-700;
@@ -38,10 +34,14 @@ $link-hover-color:            $black;
 $text-muted:                  $gray-500;
 
 $font-family-sans-serif:      poppins, helvetica, arial, sans-serif;
+$font-family-base:            $font-family-sans-serif;
 
+$font-size-xs:                0.75rem;
+
+$headings-font-family:        $font-family-sans-serif;
 $headings-font-weight:        700;
 $headings-font-weight-light:  300;
-$headings-color:              $gray-900;
+$headings-color:              $black;
 
 $display2-size:               4rem;
 $display2-weight:             700;
@@ -52,9 +52,9 @@ $btn-font-weight:             $font-weight-bold;
 
 $navbar-padding-y:            0;
 $navbar-nav-link-padding-x:   1rem;
-$navbar-dark-color:           gray("700");
-$navbar-dark-hover-color:     gray("700");
-$navbar-dark-active-color:    gray("700");
+$navbar-dark-color:           $black;
+$navbar-dark-hover-color:     $black;
+$navbar-dark-active-color:    $black;
 
 $dropdown-link-active-bg:     transparent;
 $dropdown-link-active-color:  $primary;

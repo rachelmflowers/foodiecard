@@ -79,16 +79,19 @@
         }
 
         &-brand {
+            padding-bottom: 0;
+            text-align: right;
+            flex: 1 0 auto;
 
             svg { 
-                width: 180px;
+                width: 200px;
 
                 #foodie { fill: $primary; }
 
                 #card { fill: $body-color; }
 
                 @include media-breakpoint-up(lg) {
-                    width: 150px;
+                    width: 175px;
 
                     g,
                     path { fill: $white; }
@@ -103,8 +106,6 @@
                 
                 svg {
                     margin-bottom: -0.5rem;
-
-                    #tagline { display: none; }
                 }
             }
         }
@@ -119,25 +120,34 @@
         &-link {
             padding-left: 0.75rem;
             padding-right: 0.75rem;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
             font-weight: bold;
             text-transform: uppercase;
 
             @include media-breakpoint-up(lg) {
-                font-size: 0.75rem;
+                font-size: $font-size-xs;
             }
 
             @include media-breakpoint-up(xl) {
                 padding-left: 1rem;
                 padding-right: 1rem;
-            }
-
-            @media screen and (min-width: 1366px) {
-                font-size: 1rem;
+                font-size: $font-size-sm;
             }
         }
     }
     
     .dropdown {
+
+        &-toggle {
+            &[aria-expanded="true"] {
+                margin-bottom: -2px;
+                height: calc(100% + 2px);
+                background: $white;
+            }
+        }
 
         &-menu {
             padding: 1rem;
@@ -145,7 +155,7 @@
             border-radius: 0;
 
             @include media-breakpoint-up(lg) {
-                width: 120%;
+                width: 150%;
             }
 
             .h6 { color: $primary; }
@@ -167,14 +177,22 @@
         &-item {
             padding-left: 0;
             padding-right: 0;
+            font-size: $font-size-sm;
+            white-space: normal;
+
+            &:hover {
+                background: transparent;
+                color: $primary;
+            }
         }
     }
 
     .btn-link {
-        color: $gray-700;
+        color: $black;
         font-weight: bold;
+        text-transform: none;
 
-        @include media-breakpoint-up(xl) {
+        @include media-breakpoint-up(lg) {
             margin-left: 1rem;
             margin-right: 1rem;
         }
@@ -183,8 +201,8 @@
     @include media-breakpoint-up(lg) {
 
         .form-inline {
-            margin-top: 0.55rem;
-            margin-bottom: 0.45rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0.65rem;
             max-width: 25%;
             flex: 1 0 auto;
             justify-content: flex-end;
@@ -210,11 +228,7 @@
         }
 
         .btn {
-            font-size: 0.75rem;
-
-            @include media-breakpoint-up(xl) {
-                font-size: 0.9rem;
-            }
+            font-size: $font-size-sm;
         }
 
         .btn-primary {

@@ -34,8 +34,9 @@ html {
     }     
 
     @include media-breakpoint-up(xl) {
-        padding-right: 2rem;
-        padding-left: 2rem;
+        max-width: 1200px;
+        padding-right: 0;
+        padding-left: 0;
     }       
 }
 
