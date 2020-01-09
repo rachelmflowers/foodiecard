@@ -11,4 +11,8 @@
         padding-left: 5rem;
         padding-right: 5rem;
     }
+
+    &-primary {
+        border-color: darken($primary, 7);
+    }
 }

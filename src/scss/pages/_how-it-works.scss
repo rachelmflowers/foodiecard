@@ -209,11 +209,13 @@
             }
 
             .btn {
-                padding-left: 0;
+                padding-left: 3rem;
                 padding-right: 0;
+                color: $gray-700;
                 font-weight: $font-weight-bold;
                 text-transform: none;
                 border-radius: 0;
+                text-align: left;
 
                 &[aria-expanded="true"] {
                     > .icon { 
@@ -249,7 +251,6 @@
 
                 @include media-breakpoint-up(lg) {
                     transform: rotate(0deg); 
-                    margin-left: 0;
                     background: $primary;
                     border-radius: 50%; 
                     stroke: $white;

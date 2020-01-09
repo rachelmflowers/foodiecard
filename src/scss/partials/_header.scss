@@ -54,6 +54,13 @@
                     width: 50%;
 
                     .input-group { width: 100%; }
+
+                    .form-control {
+                        &::placeholder {
+                            font-size: $font-size-sm;
+                            font-style: italic;
+                        }
+                    }
                 }
 
                 .btn-primary { margin-right: 1rem; }
@@ -152,7 +159,8 @@
         &-menu {
             padding: 1rem;
             border: 0;
-            border-radius: 0;
+            border-bottom: 5px solid $primary;
+            border-radius: 0 0 4px 4px;
 
             @include media-breakpoint-up(lg) {
                 width: 150%;
@@ -240,6 +248,7 @@
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 0;
+            border-color: transparent;
             
             img {
                 margin-left: 0.5rem;

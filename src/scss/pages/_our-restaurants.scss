@@ -42,9 +42,10 @@
     padding: 1rem;
     width: 100%;
     text-align: center;
-    background: $white;
-    border-top: 0.75rem solid $primary;
-    border-radius: $border-radius;
+    background: $gray-100;
+    border-top: 0.65rem solid $primary;
+    border-bottom: 0.65rem solid $primary;
+    border-radius: $border-radius-lg;
     box-shadow: 0 1px 10px rgba($gray-600, 0.5);
 
     @include media-breakpoint-up(md) {
@@ -57,7 +58,14 @@
         margin-bottom: 1rem;
     }
 
-    .selectr-container { text-align: left; }
+    .selectr {
+        &-container { text-align: left; }
+
+        &-selected::before {
+            border-width: 6px 6px 0;
+            border-color: $secondary transparent transparent;
+        }
+    }
 
     .form-group { margin-bottom: 1rem; }
 
@@ -74,6 +82,7 @@
             align-items: center;
             border: 1px solid $input-border-color;
             border-radius: $input-border-radius;
+            background: $white;
         }
 
         input { 
@@ -106,16 +115,20 @@
     padding: 1rem;
     display: flex;
     flex-flow: row wrap;
-    background: $gray-200;
+    background: $gray-100;
     border-radius: $border-radius;
 
     .form-group { 
-        margin-right: 1rem;
 
         .form-control { width: 100%; }
 
         &:first-of-type {
             flex: 1 0 auto;
+            margin-right: 1rem;
+        }
+
+        &:last-of-type {
+            width: 30%;
         }
 
         @include media-breakpoint-down(xs) {

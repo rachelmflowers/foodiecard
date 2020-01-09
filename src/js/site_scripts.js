@@ -6,7 +6,8 @@ function ScrollPoint(elem) {
             threshold: 0.25
         };
         
-    if (typeof(scrollElescrollElem) != 'undefined' &&scrollElem != null) {
+    if (typeof(scrollElem) != 'undefined' && scrollElem != null) {
+        console.log('there is a scroll elem');
         if (scrollElem.hasAttribute("data-scrollMargin")) {
             var scrollMargin = scrollElem.getAttribute('data-scrollMargin');
 
@@ -108,4 +109,13 @@ $(function () {
     // How it works Scroll observer
     new ScrollPoint('#step-1');
     new ScrollPoint('#step-2');
+
+    // GOOGLE MAPS
+    var googleMap;
+    function initMap() {
+        googleMap = new google.maps.Map(document.getElementById('rest-name-google-map'), {
+            center: {lat: 40.875078, lng: -73.170679},
+            zoom: 11
+        });
+    }
 });

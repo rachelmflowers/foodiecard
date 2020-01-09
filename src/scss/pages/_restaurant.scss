@@ -344,8 +344,9 @@
     }
 
     &-type { 
-        padding: 0.5rem 2rem;
+        padding: $badge-padding-y 2rem;
         display: inline;
+        text-transform: uppercase;
     }
 
     &-tags {
@@ -354,13 +355,14 @@
 
         @include media-breakpoint-up(lg) {
             margin-top: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .badge {
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 1rem;
             margin-bottom: 0.5rem;
             color: $body-color;
+            font-size: 90%;
             border: 1px solid $border-color;
             background: transparent;
         }
@@ -442,19 +444,24 @@
                 width: 1.75rem;
                 height: 1.75rem;
 
+                @include media-breakpoint-up(sm) {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                }
+
                 &-container {
                     display: inline-block;
                     margin-right: 1rem;
 
                     @include media-breakpoint-up(sm) {
-                        margin-top: -2.5rem;
+                        margin-top: -3rem;
                         margin-right: 0;
-                        margin-bottom: 0.5rem;
-                        width: 3rem;
-                        height: 3rem;
+                        margin-bottom: 0.75rem;
+                        width: 4rem;
+                        height: 4rem;
                         color: $white;
                         text-align: center;
-                        line-height: 2.75rem;
+                        line-height: 4rem;
                         background: $primary;
                         border-radius: 50%;
                     }
@@ -465,8 +472,11 @@
                 display: block;
 
                 @include media-breakpoint-up(sm) {
+                    margin-bottom: 0.75rem;
                     width: 100%;
                     text-align: center;
+                    color: $body-color;
+                    text-decoration: none !important;
                 }
             }
         }
@@ -494,6 +504,13 @@
             color: $white;
             background: $primary;
 
+            a { 
+                color: $white;
+                text-decoration: none !important;
+
+                &:hover { text-decoration: underline !important; }
+            }
+
             span { 
                 padding-left: 26px;
                 display: block;
@@ -512,8 +529,13 @@
     }
 
     &-related {
+        padding-bottom: $section-pad;
         text-align: center;
         max-width: calc(100vw - 30px);
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: $section-pad-desk;
+        } 
 
         h2 {
             padding-bottom: 1rem;

@@ -154,6 +154,10 @@
         margin-bottom: $section-pad-desk;
     }
 
+    .emphasized {
+        letter-spacing: 2px;
+    }
+
     .steps-container {
         margin: $section-pad-sm auto;
 
@@ -298,6 +302,7 @@
 #mailingList {
     padding: 0.5rem 0;
     color: $white;
+    font-size: $font-size-sm;
     text-align: center;
     background: $gray-800;
 
@@ -335,6 +340,13 @@
 
         @include media-breakpoint-up(md) {
             margin-left: 3rem;
+        }
+
+        .form-control {
+            &::placeholder {
+                font-size: $font-size-sm;
+                font-style: italic;
+            }
         }
 
     }

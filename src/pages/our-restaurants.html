@@ -4,20 +4,22 @@
         <div class="container">
             <form class="restaurant-search">
                 <fieldset>
-                    <legend class="h4">Restaurant Search</legend>
+                    <legend class="h5">Restaurant Search</legend>
 
-                    <div class="form-group">
+                    <div class="form-group select">
                         <label for="cusineType" class="sr-only">What type of quisine do you like?</label>
-                        <select id="cusineType" name="cusineType" class="form-control">
-                            <option value="all" selected>All types of cusine</option>
-                            <option value="american">American</option>
-                            <option value="indian">Chinese</option>
-                            <option value="indian">Indian</option>
-                            <option value="italian">Italian</option>
-                            <option value="mexican">Mexican</option>
-                            <option value="thai">Thai</option>
-                            <option value="">etc. etc.</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select id="cusineType" name="cusineType" class="form-control">
+                                <option value="all" selected>All types of cusine</option>
+                                <option value="american">American</option>
+                                <option value="indian">Chinese</option>
+                                <option value="indian">Indian</option>
+                                <option value="italian">Italian</option>
+                                <option value="mexican">Mexican</option>
+                                <option value="thai">Thai</option>
+                                <option value="">etc. etc.</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -39,7 +41,7 @@
                     </div>
 
                     <div class="form-group searchDistance-container">
-                        <label for="searchDistance">Distance from my location</label>
+                        <label for="searchDistance">Search around my position</label>
                         <div class="input">
                             <svg class="icon">
                                 <use xlink:href="/fonts/feather-sprite.svg#compass"/>
@@ -50,7 +52,7 @@
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn btn-primary btn-block btn-lg">Search</button>
+                <button type="submit" class="btn btn-warning btn-block btn-lg">Search</button>
             </form>
         </div>
         <div class="google-map">
@@ -64,22 +66,21 @@
 
             <form id="restaurantNameSearch" class="form-inline">
                 <div class="form-group">
-                    <label for="nameSearch" class="sr-only">Filter restaurants by name</label>
-                    <input type="search" id="nameSearch" name="nameSearch" placeholder="Enter restaurant name" class="form-control" />
+                    <label for="nameSearch" class="sr-only">Search restaurants</label>
+                    <input type="search" id="nameSearch" name="nameSearch" placeholder="Search by restaurant name, address, city or zip code" class="form-control" />
                 </div>
 
                 <div class="form-group">
                     <label for="sortBy" class="sr-only">Sort results by</label>
-
-                    <select id="sortBy" name="sortBy" class="custom-select">
-                            <option value="name-asc" label="Sort by name A-Z">Name A-Z</option>
-                            <option value="name-desc" label="Sort by name Z-A">Name Z-A</option>
-                            <option value="">other option</option>
-                            <option value="">other option</option>
-                    </select>
+                    <div class="select-wrapper">
+                        <select id="sortBy" name="sortBy" class="form-control">
+                                <option value="name-asc" label="Sort by name A-Z">Name A-Z</option>
+                                <option value="name-desc" label="Sort by name Z-A">Name Z-A</option>
+                                <option value="">other option</option>
+                                <option value="">other option</option>
+                        </select>
+                    </div>
                 </div>
-
-                <button type="submit" class="btn btn-dark btn-lg">Filter Restaurants</button>
             </form>
 
             <div id="restaurantsContainer">

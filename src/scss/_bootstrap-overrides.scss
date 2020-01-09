@@ -36,7 +36,7 @@ $text-muted:                  $gray-500;
 $font-family-sans-serif:      poppins, helvetica, arial, sans-serif;
 $font-family-base:            $font-family-sans-serif;
 
-$font-size-xs:                0.75rem;
+$font-size-xs:                0.75rem;  
 
 $headings-font-family:        $font-family-sans-serif;
 $headings-font-weight:        700;
@@ -48,7 +48,10 @@ $display2-weight:             700;
 $display-line-height:         1;
 
 $btn-font-weight:             $font-weight-bold;
+$btn-padding-x-lg:            2rem;
+$btn-border-width:            2px;
 
+$border-color:                $gray-500;
 
 $navbar-padding-y:            0;
 $navbar-nav-link-padding-x:   1rem;
@@ -63,6 +66,8 @@ $card-spacer-x:               1rem;
 
 
 $form-group-margin-bottom:    1rem;
+$input-focus-border-color:    $primary;
+$input-focus-box-shadow:      0 0 4px rgba($primary, 0.5);
 
 @media (min-width: 992px) {
   $form-group-margin-bottom:    2rem;
@@ -76,5 +81,10 @@ $custom-select-background:     $custom-select-indicator no-repeat right 0.25rem 
 
 $breadcrumb-bg:                transparent;
 $breadcrumb-padding-x:         0;
+$breadcrumb-divider:           quote("›");
 
 $badge-border-radius:          0;
+$badge-font-size:              65%;
+$badge-font-weight:            $font-weight-base;
+$badge-padding-y:              0.25rem;
+$badge-padding-x:              1rem;

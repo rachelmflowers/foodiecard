@@ -75,8 +75,8 @@ html {
     background: $primary;
 
     @include media-breakpoint-up(xl) {
-        padding-top: $section-pad-desk;
-        padding-bottom: $section-pad-desk;
+        padding-top: $section-pad-lg;
+        padding-bottom: $section-pad-lg;
     }
 
     h2, .h2,
@@ -157,5 +157,39 @@ html {
         max-width: $max-content-width-desk;
 
         p.lead { margin-bottom: 3rem; }
+    }
+}
+
+.breadcrumb-item {
+    font-size: $font-size-xs;
+    
+    a {
+        color: $black;
+    }
+}
+
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 0;
+        height: 0;
+        transform: rotate(0) translate3d(0,-50%,0);
+        border-width: 6px 6px 0;
+        border-style: solid;
+        border-color: $secondary transparent transparent;
+    }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+
+        &::ms-select { display: none; }
     }
 }
