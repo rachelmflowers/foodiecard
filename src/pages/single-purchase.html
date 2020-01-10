@@ -1,7 +1,8 @@
-@@include("../layouts/partials/header.html")
+
+@@include("../layouts/partials/head-nonav.html")
 <main class="content" id="checkout">
     <div class="container">
-        <h1>Checkout</h1>
+        <h1 class="sr-only">Checkout</h1>
 
         <ul class="nav">
             <li class="nav-item">
@@ -27,10 +28,6 @@
                     </svg>
 
                     Add another Foodie Card
-                </button>
-
-                <button class="btn btn-lg btn-primary">
-                    Next step <!-- I'm confused what this button is for -->
                 </button>
             </fieldset>
 
@@ -83,7 +80,7 @@
                 <div class="input-group">
                     <input type="text" name="couponCode" id="couponCode" placeholder="Enter coupon code" class="form-control" aria-label="Enter coupon code" />
                     <div class="input-group-append">
-                        <button class="btn btn-lg btn-primary" type="button">Apply</button>
+                        <button class="btn btn-dark" type="button">Apply</button>
                     </div>
                 </div>
             </fieldset>
@@ -100,7 +97,7 @@
                     <dd class="total">$29.99</dd>
                 </dl>
 
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Review Order</button>
+                <button type="submit" class="btn btn-warning btn-lg btn-block">Review Order</button>
             </div>
         </form>
 
@@ -137,8 +134,5 @@
             
         </div>
    </div>
-
-   @@include("../layouts/mailing-list.html")
 </main>
-
-@@include("../layouts/partials/footer.html")
+@@include("../layouts/partials/foot-nonav.html")

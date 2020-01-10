@@ -1,7 +1,7 @@
-@@include("../layouts/partials/header.html")
+@@include("../layouts/partials/head-nonav.html")
 <main class="content" id="checkoutReview">
     <div class="container">
-        <h1>Checkout Review</h1>
+        <h1 class="sr-only">Checkout Review</h1>
 
         <ul class="nav">
             <li class="nav-item">
@@ -77,7 +77,12 @@
                 <dd class="total">$32.58</dd>
             </dl>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Place Order</button>
+            <button type="submit" class="btn btn-warning btn-block">
+                    <svg class="icon">
+                        <use xlink:href="fonts/feather-sprite.svg#lock"/>
+                    </svg>
+                    Place Secure Order
+            </button>
 
             <small>By placing the order, you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</small>
         </div>
@@ -115,8 +120,5 @@
             
         </div>
    </div>
-
-   @@include("../layouts/mailing-list.html")
 </main>
-
-@@include("../layouts/partials/footer.html")
+@@include("../layouts/partials/foot-nonav.html")

@@ -118,6 +118,11 @@
     background: $gray-100;
     border-radius: $border-radius;
 
+    @include media-breakpoint-up(md) {
+        margin: 0 auto;
+        max-width: 60vw;
+    }
+
     .form-group { 
 
         .form-control { width: 100%; }
@@ -128,7 +133,7 @@
         }
 
         &:last-of-type {
-            width: 30%;
+            width: 35%;
         }
 
         @include media-breakpoint-down(xs) {

@@ -15,4 +15,8 @@
     &-primary {
         border-color: darken($primary, 7);
     }
+
+    .input-group & {
+        border-width: 1px;
+    }
 }

@@ -21,11 +21,24 @@
     padding-top: $section-pad;
     padding-bottom: $section-pad;
     margin: 0 auto;
-    width: 60vw;
+    width: 70vw;
     text-align: center;
 
+    .eyebrow {
+        padding-left: 10rem;
+        color: $gray-500;
+        font-weight: $headings-font-weight-light;
+        text-align: left;
+
+        img {
+            width: 20px;
+            height: 20px;
+            vertical-align: top;
+        }
+    }
+
     .article {
-        padding: 1rem 7rem;
+        padding: 1rem 10rem;
         width: 100%;
         text-align: left;
 
@@ -34,12 +47,19 @@
             font-weight: $headings-font-weight-light;
         }
     }
+    
 
     .flickity-prev-next-button {
         border: 1px solid $border-color;
         border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
+
+        &:hover,
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 4px rgba($primary, 0.75);
+        }
 
         .flickity-button-icon {
             top: 30%;
