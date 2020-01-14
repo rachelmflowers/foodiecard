@@ -237,6 +237,10 @@
     .form-inline {
 
         .form-control {
+            background: $white;
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+
             &::placeholder {
                 font-size: $font-size-sm;
                 font-style: italic;
