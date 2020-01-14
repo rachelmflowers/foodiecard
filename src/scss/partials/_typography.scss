@@ -32,6 +32,12 @@ h4, .h4  {
 .content {
     a:not(.btn) {
         text-decoration: underline;
+
+        &:focus { 
+            color: $black;
+            font-weight: $font-weight-bold;
+            outline: none;
+        }
     }
 }
 

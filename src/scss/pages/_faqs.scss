@@ -1,0 +1,40 @@
+.faqsPage {
+    > .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad;
+        max-width: 1000px;
+
+        @include media-breakpoint-up(md) {
+            padding-top: $section-pad-desk;
+            padding-bottom: $section-pad-desk;
+        }
+
+        h1:not(.h5) {
+            text-align: center;
+        }
+    }
+}
+
+.faq-quesitons-answers {
+    text-align: left;
+
+    .img-responsive {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    h1.h5 {
+        padding-left: 2rem;
+        background: url('../images/fork-icon.png') no-repeat left center;
+        background-size: 1.5rem 1.5rem;
+    }
+
+    .faq-items {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}

@@ -1,10 +1,22 @@
 .btn {
-    text-transform: uppercase;
+
+    &:not(.btn-link) {
+        text-transform: uppercase;
+    }
 
     img[src*="arrows"] {
         margin-top: -3px;
         margin-left: 0.5rem;
         width: 1.5rem;
+    }
+
+    &-link {
+        text-decoration: underline;
+
+        &:focus {
+            border: 1px solid $input-focus-border-color;
+            box-shadow: $input-focus-box-shadow;
+        }
     }
 
     &-wide {
@@ -14,6 +26,14 @@
 
     &-primary {
         border-color: darken($primary, 7);
+    }
+
+    &-unstyled {
+        padding: 0;
+        background: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .input-group & {

@@ -1,0 +1,32 @@
+               
+
+                    <div class="form-group">
+                        <label for="shippingName" class="sr-only">Enter First and last name</label>
+                        <input type="text" name="shippingName" id="shippingName" class="form-control form-control-lg" placeholder="First and Last Name" autocomplete="name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shippingAddress" class="sr-only">Enter street address</label>
+                        <input type="text" name="shippingAddress" id="shippingAddress" class="form-control form-control-lg" placeholder="Street Address" autocomplete="street-address" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shippingAddress2" class="sr-only">Optional apartment or suite number</label>
+                        <input type="text" name="shippingAddress2" id="shippingAddress2" class="form-control form-control-lg" placeholder="Apt/Suite" autocomplete="address-line1" />
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                        <input type="text" name="shippingCity" id="shippingCity" placeholder="City" class="form-control" aria-label="Enter City" autocomplete="address-level2" required />
+
+                        <select name="shippingState" id="shippingState" class="custom-select" autocomplete="address-level1" required>
+                            <option disabled selected>State</option>
+                            <option value="NY">New York</option>
+                            <option value="MI">Michigan</option>
+                            <option value="CA">California</option>
+                        </select>
+                        <datalist id="states">
+                            <option></option>
+                        </datalist>
+
+                        <input type="text" name="shippingZip" id="shippingZip" placeholder="Zip Code" class="form-control" aria-label="Enter Zip Code" autocomplete="postal-code" required />
+                    </div>

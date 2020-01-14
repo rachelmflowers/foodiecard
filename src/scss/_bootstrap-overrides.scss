@@ -47,11 +47,13 @@ $display2-size:               4rem;
 $display2-weight:             700;
 $display-line-height:         1;
 
+
 $btn-font-weight:             $font-weight-bold;
 $btn-padding-x-lg:            2rem;
 $btn-border-width:            2px;
 
 $border-color:                $gray-500;
+$hr-border-color:             $gray-400;
 
 $navbar-padding-y:            0;
 $navbar-nav-link-padding-x:   1rem;
@@ -64,10 +66,35 @@ $dropdown-link-active-color:  $primary;
 
 $card-spacer-x:               1rem;
 
+$input-bg:                    $gray-100;
+$input-border-width:          1px;
+$input-border-radius:         0;
+$input-border-radius-lg:      0;
+$input-height-border:         $input-border-width * 2;
+
+$input-btn-font-size-lg:      1rem;
+$input-btn-padding-y-lg:      0.75rem;
+$input-btn-padding-x-lg:      2rem;
+
+$input-font-size-lg:          $input-btn-font-size-lg;
+$input-padding-y-lg:          $input-btn-padding-y-lg;
+$input-padding-x-lg:          $input-btn-padding-x-lg;
+$input-line-height-lg:        1;
+$input-height-lg:             calc(#{$input-line-height-lg * 1em} + #{$input-btn-padding-y-lg * 2} + #{$input-height-border});
 
 $form-group-margin-bottom:    1rem;
 $input-focus-border-color:    $primary;
 $input-focus-box-shadow:      0 0 4px rgba($primary, 0.5);
+
+$custom-control-indicator-focus-border-color:   $input-focus-border-color;
+$custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow;
+
+$custom-select-bg:            $input-bg;
+$custom-select-border-width:  $input-border-width;
+$custom-select-border-radius: $input-border-radius;
+
+$form-check-input-margin-y:   .23rem;
+
 
 @media (min-width: 992px) {
   $form-group-margin-bottom:    2rem;

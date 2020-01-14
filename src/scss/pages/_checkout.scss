@@ -1,9 +1,9 @@
-#checkout {
+.checkout {
     > .container {
         padding-top: $section-pad;
         padding-bottom: $section-pad;
         margin: 0 auto;
-        width: 600px;
+        width: 800px;
         max-width: 100%;
 
         h1 {
@@ -19,6 +19,36 @@
             }
         }
     }
+
+    #loginForm_container,
+    #registerForm_container {
+        padding-right: $section-pad-sm;
+        padding-left: $section-pad-sm;
+        text-align: center;
+    }
+
+    #registerForm_container,
+    #checkout {
+        position: relative;
+        z-index: -1;
+        margin: 0 auto;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+    
+        &.show {
+            z-index: 0;
+            height: auto;
+            opacity: 1;
+            pointer-events: unset;
+            transition: opacity 0.3s linear;
+        }
+    }
+}
+
+#checkout {
+    max-width: 600px;
 
     .purchase-details {
 
@@ -55,37 +85,29 @@
             font-weight: $font-weight-bold;
         }
 
-        .form-control,
-        .custom-select {
-            padding: 0.75rem 2rem;
-            height: calc(1.5em + 1.5rem + 2px);
-            background: $gray-100;
-            border-width: 2px;
-            border-radius: 0;
-
-            &::placeholder {
-                font-size: $font-size-base;
-                font-style: normal;
-            }
-        }
-
         .form-group { margin-bottom: 1rem; }
 
-        &[name=cardNames],
-        &[name=multipleCardNames] {
+        &[name*=cardNames],
+        &[name*=multipleCardNames] {
 
-            .btn-link {
+            .add-card {
                 margin-top: 1.5rem;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
                 text-align: left;
+
+                &:not(:only-of-type) {
+                    margin-bottom: 2rem;
+                }
+
+                + .input-group {
+                    display: none;
+                }
             }
 
-            .btn-primary {
-                width: 50%;
-            }
+            .input-group { margin-bottom: $form-group-margin-bottom; }
         }
 
-        &[name=multipleCardNames] {
+        &[name*=multipleCardNames] {
 
             .form-group {
                 position: relative;
@@ -118,30 +140,77 @@
         .input-group {
 
             select.custom-select {
-                margin-left: -2px;
+                margin-left: -1px;
                 margin-right: -1px;
                 color: $gray-600;
                 border-radius: 0;
             }
         }
 
+        &[name*=giftMessage] {
+            padding-bottom: 3.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid $border-color;
+            
+            .messageEmail {
+                margin-top: 2rem;
+                display: none;
+
+                &.show {
+                    display: block;
+                }
+            }
+
+            .messageSchedule {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-end;
+
+                > label {
+                    width: 100%;
+                }
+
+                .form-group {
+                    width: 40%;
+                }
+
+                > span {
+                    margin: 0 1rem 1rem;
+                    line-height: 2.4;
+                    display: block;
+                }
+
+                .form-check {
+                    line-height: 2.4;
+                }
+            }
+        }
+
         &[name=paymentInfo] {
 
             #cardNumber {
-                background: url("images/card-icons.png") no-repeat center right 1rem $gray-100;
+                background: url("../images/card-icons.png") no-repeat center right 1rem $gray-100;
                 background-size: 150px;
             }
 
             .input-group {
                 margin-bottom: 5rem;
 
-                .form-control { margin-left: -2px; }
-
                 .btn-primary {
                     padding-left: 2rem; padding-right: 2rem;
                 }
             }
         }
+    }
+
+    .add-gift {
+        margin-bottom: 2rem;
+
+        + .additional-recipient { display: none; }
+    }
+
+    .additional-recipient {
+
     }
 }
 
@@ -198,8 +267,12 @@
     }
 
     &-help {
-        margin-top: 8rem;
+        margin-top: $section-pad;
         text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: $section-pad-lg;
+        }
 
         .h4 {
             color: $gray-600;
@@ -210,7 +283,6 @@
         > a {
             display: inline-block;
             font-size: 1.25rem;
-            font-weight: $font-weight-bold;
             text-align: center;
             text-decoration: none !important;
 
@@ -239,13 +311,13 @@
     }
 }
 
-#checkoutReview {
+.checkoutReview {
 
     > .container {
         padding-top: $section-pad;
         padding-bottom: $section-pad;
         margin: 0 auto;
-        max-width: 90vw;
+        max-width: 80vw;
         display: flex;
         flex-flow: row wrap;
         align-content: stretch;
@@ -261,6 +333,7 @@
 
         .nav {
             margin-bottom: 5rem;
+            justify-content: center;
     
             &-link.active {
                 color: $body-color;
@@ -277,6 +350,9 @@
 
         &-info {
             position: relative;
+            text-align: center;
+
+            > div { text-align: left; }
 
             &:after {
                 content: '';
@@ -294,9 +370,11 @@
             margin-bottom: 0;
             display: flex;
             flex-flow: column nowrap;
+            text-align: center;
 
             dl {
                 flex: 1 0 auto;
+                text-align: left;
             }
 
             dt,
@@ -309,8 +387,21 @@
                 }
             }
 
-            .btn-primary {
-                margin-bottom: 2rem;
+            .btn-warning {
+                margin-bottom: 1rem;
+            }
+
+            small { font-size: $font-size-xs; }
+        }
+
+        &-logos {
+            margin-top: $section-pad-lg;
+            width: 100%;
+            text-align: center;
+
+            > img {
+                margin: 1rem;
+                transform: scale(0.9);
             }
         }
 
@@ -338,7 +429,7 @@
     img { margin-right: 3rem; }
 }
 
-#orderConfirmation {
+.orderConfirmation {
 
     > .container {
         padding-top: $section-pad;
@@ -373,6 +464,7 @@
     .card-image {
         margin-top: 4rem;
         width: 15rem;
+        height: auto;
         display: inline-block;
         vertical-align: middle;
 

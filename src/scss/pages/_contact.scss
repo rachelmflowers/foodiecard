@@ -1,0 +1,35 @@
+.contactPage {
+
+    > .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad;
+        margin: 0 auto;
+        max-width: 600px;
+        text-align: center;
+
+        h2 .emphasized { letter-spacing: 1px; }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: $section-pad-desk;
+            padding-bottom: $section-pad-desk;
+
+        }
+    }
+
+    .page-header {
+        height: 20rem;
+
+        h1 { color: $white; }
+    }
+
+}
+
+#contactForm {
+    max-width: 400px;
+    margin: $section-pad auto 2rem;
+
+    textarea {
+        min-height: 8rem;
+        text-align: left;
+    }
+}

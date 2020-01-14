@@ -1,14 +1,16 @@
 #loginForm_container {
     padding-top: $section-pad;
-    padding-bottom: $section-pad;
+    padding-bottom: $section-pad-desk;
     margin: 0 auto;
     max-width: 525px;
+    text-align: center;
 
     .h2 { color: $primary; }
 
-    a + span {
-        margin: 0 0.75rem;
-    }
+    .btn-warning { margin-bottom: 2rem; }
+
+    hr { margin: 2rem auto; }
+
 }
 
 #loginForm {
@@ -16,14 +18,8 @@
     display: flex;
     flex-flow: column nowrap;
 
-    .form-control {
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 0;
-    }
-
     button { 
+        margin-top: 2rem;
         padding-left: 2rem;
         padding-right: 2rem;
         align-self: flex-end;
@@ -38,9 +34,10 @@
 
 #registerForm_container {
     padding-top: $section-pad;
-    padding-bottom: $section-pad;
+    padding-bottom: $section-pad-desk;
     margin: 0 auto;
     max-width: 525px;
+    text-align: center;
 
     .h2 { color: $primary; }
 
@@ -48,17 +45,14 @@
         margin-bottom: 2rem; 
         display: block;
     }
+
+    .btn-warning { margin-bottom: 2rem; }
+
+    hr { margin: 2rem auto; }
 }
 
 #registerForm {
     margin-bottom: 2rem;
-
-    .form-control {
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 0;
-    }
 
     label svg { stroke: $primary; }
 

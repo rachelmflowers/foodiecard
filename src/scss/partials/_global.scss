@@ -30,7 +30,7 @@ html {
 .container {
 
     @include media-breakpoint-down(lg) {
-        max-width: none;
+        max-width: 100%;
     }     
 
     @include media-breakpoint-up(xl) {
@@ -165,6 +165,9 @@ html {
     
     a {
         color: $black;
+
+        &:hover,
+        &:focus { color: $primary; }
     }
 }
 

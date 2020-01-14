@@ -29,6 +29,9 @@
     <body>
         <div class="page">
             <header id="site_header" class="sticky-top">
+                <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
+                <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
+                <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -82,7 +85,7 @@
                                 </div>
                             </form>
                             
-                            <a href="login.html" class="btn btn-link">Sign In</a>
+                            <a id="login" href="login.html" class="btn btn-link">Sign In</a>
                             
                             <a href="purchase.html" class="btn btn-primary">
                                 Buy Now
@@ -92,7 +95,7 @@
                     </div>
                 </nav>
             </header>
-<main class="content">
+<main id="mainContent" class="content">
     <div class="container">
 
         <section id="steps" class="steps-container">
@@ -317,12 +320,17 @@
                     </div>
                 </div>
             </form>
+
+            <!-- SHOW THIS AFTER SUCCESSFUL FORM SUBMISSION -->
+            <span class="thank-you">
+                <strong class="emphasized text-primary">Thank you for subscribing!</strong>    
+            </span>
         </div>
     </div>
 </main>
 
 
-            <footer id="site-footer">
+            <footer id="site_footer">
 
                 <div class="container">
                     <div class="logo-container mobile-logo">
@@ -352,11 +360,11 @@
                         <a href="give.html">Buy A Card, Give A Meal</a>
                         <a href="purchase.html">Buy Now</a>
                         <a href="become-partner.html">Become a Restaurant Partner</a>
-                        <a href="">Contact Us</a>
-                        <a href="">FAQ</a>
+                        <a href="contact-us.html">Contact Us</a>
+                        <a href="faqs.html">FAQ</a>
                         <a href="press.html">Press</a>
-                        <a href="">Terms and Conditions</a>
-                        <a href="">Privacy Policy</a>
+                        <a href="terms.html">Terms and Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
                     </nav>
                     <div class="social">
                         <a href="">
@@ -382,9 +390,6 @@
                 </div>
             </footer>
         </div>
-        
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUhe1DXfG_aihzsL8SVCzmvXAboiDChlY&callback=initMap"
-        async defer></script>
 
         <!--build:js js/site.min.js -->
 

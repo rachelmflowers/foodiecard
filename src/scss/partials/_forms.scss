@@ -1,4 +1,37 @@
-.form-control {
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    
+    &:ms-select { display: none; }
 
- 
+    &:focus {
+        border: 1px solid $input-focus-border-color;
+        box-shadow: $input-focus-box-shadow;
+        background: $white;
+    }
+}
+
+.form-check {
+    margin-bottom: $form-group-margin-bottom;
+
+    .form-check-input {
+        margin-top: 0;
+        top: calc(50% - 9px);
+    }
+}
+
+.input-group-lg .input-group-append > .btn-icon {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .icon { 
+        width: 1rem;
+        height: 1rem;
+     }
+}
+
+.selectr-selected:focus {
+    border: 1px solid $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow;
+    outline: none;
 }

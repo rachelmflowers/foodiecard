@@ -4,7 +4,7 @@
     @include media-breakpoint-up(md) { 
         text-align: left;
         columns: 4;
-        column-gap: 4rem;
+        column-gap: 3rem;
     }
 
     a { 
@@ -19,7 +19,13 @@
             text-transform: none;
         }
 
-        &:hover { color: $primary; }
+        &:hover,
+        &:focus { color: $primary; }
+
+        &:focus { 
+            text-decoration: underline;
+            outline: none;
+        }
 
         &:nth-of-type(8) {
             break-after: always;
@@ -35,13 +41,13 @@
     }
 }
 
-#site-footer {
+#site_footer {
     padding-top: $section-pad-sm;
 
     .container {
 
         @include media-breakpoint-up(lg) { 
-            max-width: 75vw;
+            max-width: 85vw;
         }
     }
 

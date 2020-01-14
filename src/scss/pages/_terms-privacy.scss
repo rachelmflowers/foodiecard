@@ -1,0 +1,23 @@
+.termsPrivacyPage {
+    > .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad;
+
+        @include media-breakpoint-up(md) {
+            padding-top: $section-pad-desk;
+            padding-bottom: $section-pad-desk;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .term-privacy-content {
+        padding: $section-pad;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}

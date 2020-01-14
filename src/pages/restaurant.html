@@ -1,5 +1,5 @@
 @@include("../layouts/partials/header.html")
-<main class="content" id="restaurantPage">
+<main id="mainContent" class="content restaurantPage">
     <div class="container">
         <section class="restaurant-main">
             <nav aria-label="breadcrumb">
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="restaurant-location">
-                    <div id="rest-name-google-map" class="google-map"></div>
+                    <div id="map" data-controls='gmap' data-mapLatLng="40.875078, -73.170679" data-mapMarker></div>
                     <address>
                         <svg class="icon">
                             <use xlink:href="fonts/feather-sprite.svg#map-pin"/>

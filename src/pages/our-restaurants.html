@@ -1,5 +1,5 @@
 @@include("../layouts/partials/header.html")
-<main class="content">
+<main id="mainContent" class="content">
     <section id="mapContainer">
         <div class="container">
             <form class="restaurant-search">
@@ -7,9 +7,9 @@
                     <legend class="h5">Restaurant Search</legend>
 
                     <div class="form-group select">
-                        <label for="cusineType" class="sr-only">What type of quisine do you like?</label>
+                        <label for="cusineType" class="sr-only">What type of cuisine do you like?</label>
                         <div class="select-wrapper">
-                            <select id="cusineType" name="cusineType" class="form-control">
+                            <select id="cusineType" name="cusineType"   class="custom-select">
                                 <option value="all" selected>All types of cusine</option>
                                 <option value="american">American</option>
                                 <option value="indian">Chinese</option>
@@ -55,9 +55,8 @@
                 <button type="submit" class="btn btn-warning btn-block">Search</button>
             </form>
         </div>
-        <div class="google-map">
-            ADD GOOGLE MAP HERE
-        </div>
+        <!-- Currently the map ui controls are disabled, if we're going to be adding pins to this map then we should re-enable them and some styling tweaks will have to be made. -->
+        <div id="map" data-controls='gmap' data-mapLatLng="40.730610, -73.935242" data-mapZoom="10" data-disableMapUI></div>
     </section>
 
     <div class="container">

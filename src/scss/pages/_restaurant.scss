@@ -1,4 +1,4 @@
-#restaurantPage {
+.restaurantPage {
     > .container {
         display: flex;
         flex-flow: row wrap;
@@ -66,16 +66,9 @@
 }
 
 .featured-image-hero {
-    position: relative;
-    margin-bottom: 1.5rem;
-    width: calc(100vw - 30px);
-    overflow-x: scroll;
 
     @include media-breakpoint-up(md) {
-        left: -2rem;
-        width: calc(100% + 2rem);
         height: 18rem;
-        overflow: visible;
     }
 
     @include media-breakpoint-up(lg) {
@@ -83,8 +76,10 @@
     }
 
     @include media-breakpoint-up(xl) {
-        height: 22rem;
+        height: 23rem;
     }
+
+    + .container { height: 0; }
 }
 
 .image {
@@ -93,12 +88,18 @@
     object-fit: cover;
     object-position: center;
 
+    @include media-breakpoint-up(sm) {
+        .image-gallery-slider & {
+            width: auto;
+            object-fit: inherit;
+        }
+    }
+
     &-gallery {
         white-space: nowrap;
 
         @include media-breakpoint-up(md) {
             width: 100%;
-            height: 100%;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -106,6 +107,10 @@
             align-items: stretch;
             justify-items: stretch;
             white-space: unset;
+        }
+
+        &-slider {
+            height: 100%;
         }
     }
 
@@ -117,48 +122,86 @@
 
         @include media-breakpoint-up(md) {
             margin: 0;
-            width: 100%;
+            width: auto;
             height: 100%;
 
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4) {
-                grid-row-start: 1;
+            .image-gallery & {
+                width: 100%;
+
+                &:nth-of-type(1),
+                &:nth-of-type(2),
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                    grid-row-start: 1;
+                }
+
+                &:nth-of-type(5),
+                &:nth-of-type(6) {
+                    grid-row-start: 2;
+                }
+
+                
+                &:nth-of-type(2) { grid-column-start: 2; }
+                &:nth-of-type(4) { grid-column-start: 5; }
+
+                &:nth-of-type(1),
+                &:nth-of-type(3),
+                &:nth-of-type(5),
+                &:nth-of-type(6) {
+                    grid-row-end: span 1;
+                    grid-column-end: span 1;
+                }
+                
+                &:nth-of-type(2),
+                &:nth-of-type(4) {
+                    grid-column-end: span 2;
+                    grid-row-end: span 2;
+                }
             }
 
-            &:nth-of-type(5),
-            &:nth-of-type(6) {
-                grid-row-start: 2;
-            }
-
-            
-            &:nth-of-type(2) { grid-column-start: 2; }
-            &:nth-of-type(4) { grid-column-start: 5; }
-
-            &:nth-of-type(1),
-            &:nth-of-type(3),
-            &:nth-of-type(5),
-            &:nth-of-type(6) {
-                grid-row-end: span 1;
-                grid-column-end: span 1;
-            }
-            
-            &:nth-of-type(2),
-            &:nth-of-type(4) {
-                grid-column-end: span 2;
-                grid-row-end: span 2;
-            }
+            // #modalImageSlider & {
+            //     width: 100%;
+            // }
         }
     }
 }
 
+#imageSliderModal {
+    
+    .modal-content {
+        position: relative;
+    }
+
+    .close {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        z-index: 1000;
+        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        color: $white;
+        background: $primary;
+        border-radius: 50%;
+    }
+}
+
+#modalImageSlider {
+    height: 900px;
+    max-height: 80vh;
+}
+
 .restaurant {
+
+    &-featured-header {
+        width: 100%;
+    }
 
     &-main {
         padding-top: 1rem;
 
         @include media-breakpoint-up(lg) {
+            padding-top: 2rem;
             padding-right: $section-pad-lg;
             width: 70%;
         }
@@ -169,6 +212,7 @@
         }
 
         .featured & {
+            max-width: 100vw;
 
             @include media-breakpoint-down(xs) {
                 > *[class*="restaurant"] {
@@ -181,15 +225,15 @@
                 flex-flow: row wrap;
                 justify-content: space-between;
 
-                .featured-image-hero { order: 2; }
-
                 .restaurant-header { order: 1; }
+
+                .restaurant-info { order: 2; }
 
                 .restaurant-reservation { order: 3; }
 
                 .buy-now { order: 4; }
 
-                .restaurant-info { order: 5; }
+                .restaurant-details { order: 5; }
 
                 .restaurant-video { order: 6; }
             }
@@ -202,6 +246,7 @@
         width: 100%;
 
         @include media-breakpoint-up(lg) {
+            padding-right: 0;
             width: 30%;
             background: $gray-100;
 
@@ -218,7 +263,7 @@
 
             .fixed {
                 position: sticky;
-                top: 2rem;
+                top: 6rem;
                 background: $gray-100;
             }
         }
@@ -294,9 +339,9 @@
 
         @include media-breakpoint-up(md) {
             position: relative;
-            top: -3rem;
+            top: -2rem;
             z-index: 1;
-            padding: 0 1.5rem;
+            padding: 0.75rem 2rem 0;
             display: inline-block;
             background: $white;
             box-shadow: 0 1px 3px rgba($black, 0.25);
@@ -306,6 +351,10 @@
                 display: inline-block;
                 color: $body-color;
                 text-decoration: none !important;
+
+                &:nth-of-type(2) {
+                    margin: 0 1.5rem;
+                }
                 
                 &.active {
                     color: $primary;
@@ -371,6 +420,7 @@
     &-reservation {
         padding-bottom: 2rem;
         margin-bottom: 2rem;
+        text-align: center;
         border-bottom: 1px solid $border-color;
 
         .input-group { margin-bottom: 1rem; }
@@ -388,6 +438,13 @@
             }
         }
 
+        + .buy-now {
+            padding-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            border-bottom: 1px solid $border-color;
+        }
+
         @include media-breakpoint-up(sm) {
             width: 45%;
             float: left;
@@ -402,12 +459,31 @@
         
     }
 
+    &-details {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .restaurant-description { order: 1; }
+
+        .restaurant-contact { order: 3; }
+        
+        .restaurant-location { order: 2; }
+
+        @include media-breakpoint-up(sm) {
+            display: block;
+        }
+    }
+
     &-description {
         margin-bottom: $section-pad-sm;
         clear: both;
 
         @include media-breakpoint-up(sm) {
             margin-bottom: $section-pad-sm-desk;
+        }
+
+        @include media-breakpoint-up(md) {
+            h2 { display: none; }
         }
     }
 
@@ -422,7 +498,7 @@
         }
 
         > div {
-            padding: 1rem;
+            padding: 1rem 0;
             width: 100%;
             display: flex;
             flex-flow: row wrap;
@@ -431,6 +507,7 @@
             border-bottom: 1px solid $border-color;
 
             @include media-breakpoint-up(sm) {
+                padding: 1rem;
                 width: calc(33.33% - 2rem);
                 justify-content: center;
                 border: 1px solid $border-color;
@@ -441,19 +518,24 @@
             }
 
             .icon {
-                width: 1.75rem;
-                height: 1.75rem;
+                margin-right: 0.25rem;
+                width: 1.5rem;
+                height: 1.5rem;
 
                 @include media-breakpoint-up(sm) {
+                    margin-right: 0;
                     width: 2.25rem;
                     height: 2.25rem;
                 }
 
                 &-container {
-                    display: inline-block;
+                    width: 100%;
                     margin-right: 1rem;
 
+                    span { display: inline-block; }
+
                     @include media-breakpoint-up(sm) {
+                        display: inline-block;
                         margin-top: -3rem;
                         margin-right: 0;
                         margin-bottom: 0.75rem;
@@ -464,19 +546,28 @@
                         line-height: 4rem;
                         background: $primary;
                         border-radius: 50%;
+
+                        span { display: none; }
                     }
                 }
             }
 
             a { 
+                padding-left: 2rem;
+                margin-bottom: 0.75rem;
                 display: block;
 
                 @include media-breakpoint-up(sm) {
-                    margin-bottom: 0.75rem;
                     width: 100%;
                     text-align: center;
                     color: $body-color;
                     text-decoration: none !important;
+
+                    &:hover,
+                    &:focus { 
+                        color: $primary;
+                        text-decoration: underline !important;
+                    }
                 }
             }
         }
@@ -484,32 +575,32 @@
 
     &-location {
         position: relative;
-        margin-bottom: $section-pad;
-        min-height: 17rem;
+        margin-bottom: 0.75rem;
+        height: 15rem;
         display: flex;
         flex-flow: column nowrap;
 
-        @include media-breakpoint-up(xl) {
-            margin-bottom: $section-pad-desk;
-        }
-
-        .google-map {
+        [data-controls="gmap"] {
             position: static;
+            margin-bottom: 1rem;
+            height: calc(100% - 4rem);
             flex: 1 0 auto;
         }
 
-        address {
-            padding: 0.5rem;
-            display: block;
-            color: $white;
-            background: $primary;
-
-            a { 
-                color: $white;
-                text-decoration: none !important;
-
-                &:hover { text-decoration: underline !important; }
+        @include media-breakpoint-up(md) {
+            margin-bottom: $section-pad-lg;
+            
+            [data-controls="gmap"] {
+                margin-bottom: 0;
             }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $section-pad-desk;
+        }
+
+        address {
+            display: block;
 
             span { 
                 padding-left: 26px;
@@ -519,6 +610,15 @@
             @include media-breakpoint-up(sm) {
                 padding: 1rem;
                 text-align: center;
+                color: $white;
+                background: $primary;
+
+                a { 
+                    color: $white;
+                    text-decoration: none !important;
+    
+                    &:hover { text-decoration: underline !important; }
+                }
 
                 span { 
                     display: inline;
@@ -593,17 +693,12 @@
             margin-bottom: 3rem;
             width: 100%;
             display: block;
-
-            .image-gallery {
-                height: 15rem;
-            }
+            
+            .image-gallery { height: 15rem; }
         }
 
         @include media-breakpoint-up(xl) {
-
-            .image-gallery {
-                height: 20rem;
-            }
+            .image-gallery { height: 20rem; }
         }
     }
 
