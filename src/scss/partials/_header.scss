@@ -48,13 +48,55 @@
             }
         }
 
+        &-brand {
+            padding: 1rem 1rem 0.5rem;
+            margin: 0;
+            height: 100%;
+            text-align: right;
+            flex: 1 0 auto;
+            background: transparent;
+            transition: background 0.3s ease;
+
+            &:hover { 
+                background: darken($primary, 8);
+                transition: background 0.3s ease;
+            }
+
+            svg { 
+                width: 200px;
+
+                #foodie { fill: $primary; }
+
+                #card { fill: $body-color; }
+
+                @include media-breakpoint-up(lg) {
+                    width: 215px;
+
+                    g,
+                    path { fill: $white; }
+                
+                }
+            }
+            
+
+            @include media-breakpoint-down(md) {
+                margin-right: -56px;
+                flex: 1 0 auto;
+                text-align: center;
+                
+                svg {
+                    margin-bottom: -0.5rem;
+                }
+            }
+        }
+
         &-toggler-icon {
             background: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         &-collapse {
             margin-top: -2px;
-            min-width: 85%;
+            min-width: 83%;
             background: $gray-100;
             border-bottom: 2px solid $primary;
 
@@ -108,38 +150,6 @@
             }
         }
 
-        &-brand {
-            padding-bottom: 0;
-            text-align: right;
-            flex: 1 0 auto;
-
-            svg { 
-                width: 200px;
-
-                #foodie { fill: $primary; }
-
-                #card { fill: $body-color; }
-
-                @include media-breakpoint-up(lg) {
-                    width: 175px;
-
-                    g,
-                    path { fill: $white; }
-                
-                }
-            }
-
-            @include media-breakpoint-down(md) {
-                margin-right: -56px;
-                flex: 1 0 auto;
-                text-align: center;
-                
-                svg {
-                    margin-bottom: -0.5rem;
-                }
-            }
-        }
-
         &-nav {
             align-self: stretch;
         }
@@ -148,14 +158,14 @@
     .nav {
         
         &-link {
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
+            padding: 0.75rem 0.75rem 0.5rem;
             height: 100%;
             display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
+            flex-flow: row nowrap;
+            align-items: center;
             font-weight: bold;
             text-transform: uppercase;
+            text-decoration: none;
 
             @include media-breakpoint-up(lg) {
                 font-size: $font-size-xs;
@@ -164,13 +174,31 @@
             @include media-breakpoint-up(xl) {
                 padding-left: 1rem;
                 padding-right: 1rem;
-                font-size: $font-size-sm;
+                font-size: $font-size-base;
             }
             
             &:focus {
                 outline: none;
                 color: $primary;
             }
+
+            .icon {
+                margin: -1px 0 0 5px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+            }
+        }
+
+        &-item.dropdown:hover {
+
+            .nav-link {
+                margin-bottom: -2px;
+                height: calc(100% + 2px);
+                background: $white;
+            }
+                
+            > .dropdown-menu { display: block; }
         }
     }
     
@@ -227,6 +255,9 @@
         color: $black;
         font-weight: bold;
         text-transform: none;
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
 
         @include media-breakpoint-up(lg) {
             margin-left: 1rem;
@@ -235,6 +266,8 @@
     }
 
     .form-inline {
+
+        .input-group { width: 100%; }
 
         .form-control {
             background: $white;
@@ -245,6 +278,7 @@
                 font-size: $font-size-sm;
                 font-style: italic;
             }
+            
         }
     }
 
@@ -253,13 +287,13 @@
         .form-inline {
             margin-top: 0.75rem;
             margin-bottom: 0.65rem;
-            max-width: 25%;
-            flex: 1 0 auto;
+            width: 25%;
+            flex: 1 1 auto;
             justify-content: flex-end;
 
             .icon {
-                width: 18px;
-                height: 18px;
+                width: 22px;
+                height: 22px;
                 stroke: $primary;
             }
         }
@@ -283,7 +317,7 @@
         }
 
         .btn-primary {
-            min-width: 200px;
+            min-width: 160px;
             align-self: stretch;
             display: inline-flex;
             flex-flow: row nowrap;

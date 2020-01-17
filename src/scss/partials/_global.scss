@@ -196,3 +196,11 @@ html {
         &::ms-select { display: none; }
     }
 }
+
+.flickity-prev-next-button {
+    &:hover {
+        background: $gray-100;
+        
+        svg { fill: $primary; }
+    }
+}

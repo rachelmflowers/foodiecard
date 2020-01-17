@@ -152,7 +152,11 @@
             text-align: left;
             border: 2px solid $gray-200;
 
-            .icon { float: right; }
+            .icon { 
+                float: right;
+
+                &.gift { color: $primary; }
+            }
 
             &:hover,
             &:focus { 

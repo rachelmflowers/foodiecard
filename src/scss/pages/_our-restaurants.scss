@@ -121,7 +121,10 @@
 
     .form-group { 
 
-        .form-control { width: 100%; }
+        .form-control { 
+            width: 100%;
+            background: $white;
+        }
 
         &:first-of-type {
             flex: 1 0 auto;
@@ -169,5 +172,16 @@
     .restaurant {
         margin-bottom: 1rem;
         text-align: left;
+
+        h1.h5 {
+            small {
+                padding-left: 1.25rem;
+                margin-bottom: 4px;
+                color: $primary;
+                font-size: 0.65em;
+                background: url("../images/fork-icon.png") no-repeat left center;
+                background-size: 16px 16px;
+            }
+        }
     }
 }

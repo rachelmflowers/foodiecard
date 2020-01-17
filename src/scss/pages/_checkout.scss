@@ -147,11 +147,8 @@
             }
         }
 
-        &[name*=giftMessage] {
-            padding-bottom: 3.5rem;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid $border-color;
-            
+        &[name*=cardNames] {
+
             .messageEmail {
                 margin-top: 2rem;
                 display: none;
@@ -160,7 +157,7 @@
                     display: block;
                 }
             }
-
+            
             .messageSchedule {
                 display: flex;
                 flex-flow: row wrap;
@@ -288,6 +285,15 @@
 
             &:not(:last-of-type) {
                 margin-right: 3rem;
+            }
+
+            &.disabled {
+                color: $gray-500;
+                cursor: not-allowed;
+
+                .icon-container {
+                    background: $gray-500;
+                }
             }
 
             .icon {

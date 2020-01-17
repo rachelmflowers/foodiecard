@@ -28,38 +28,23 @@
                         <label for="nameOnCard" class="sr-only">Enter the name to appear on the Foodie card</label>
                         <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Name on Foodie Card" class="form-control" />
                     </div>
-                </fieldset>
-
-
-                <fieldset name="shippingInfo">
-                    <legend>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#gift"/>
-                        </svg>
-                        Where is the Foodie Card gift going?
-                    </legend>
-                    @@include("../layouts/partials/shipping-info.html")
-                </fieldset>
-
-                <fieldset name="giftMessage">
-                    <legend>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#gift"/>
-                        </svg>
-                        Want to add a gift message?
-                    </legend>
-
-                    <div class="form-group">
-                        <label for="gift-message" class="sr-only">Enter your message</label>
-                        <textarea name="gift-message" id="gift-message" placeholder="Add your message" class="form-control form-control-lg"></textarea>
-                    </div>
-
+                    
                     <div class="form-check">
                         <input type="checkbox" id="emailMessage" class="form-check-input emailMessage" />
-                        <label class="form-check-label" for="emailMessage">Send message as an email</label>
+                        <label class="form-check-label" for="emailMessage">Add a gift message?</label>
                     </div>
 
                     <div class="messageEmail">
+
+                        <div class="form-group">
+                            <label for="gift-message" class="sr-only">Enter your message</label>
+                            <textarea name="gift-message" id="gift-message" placeholder="Add your message" class="form-control form-control-lg"></textarea>
+                        </div>
+                        <!-- <div class="form-check">
+                            <input type="checkbox" id="emailMessage" class="form-check-input emailMessage" />
+                            <label class="form-check-label" for="emailMessage">Send message as an email</label>
+                        </div> -->
+
                         <div class="form-group">
                             <input type="text" class="form-control"
                                 name="messageEmail" id="messageEmail" 
@@ -82,10 +67,27 @@
 
                             <div class="form-check">
                                 <input type="checkbox" id="messageSendNow" class="form-check-input" />
-                                <label class="form-check-label" for="messageSendNow">Send Immediately</label>
+                                <label class="form-check-label" for="messageSendNow">
+                                    Send Immediately
+                        
+                                    <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="Gift recipient will be emailed gift message immediately upon your purchase">
+                                        <use xlink:href="fonts/feather-sprite.svg#info"/>
+                                    </svg>
+                                </label>
                             </div>
                         </div>
                     </div>
+                </fieldset>
+
+
+                <fieldset name="shippingInfo">
+                    <legend>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#gift"/>
+                        </svg>
+                        Where is the Foodie Card gift going?
+                    </legend>
+                    @@include("../layouts/partials/shipping-info.html")
                 </fieldset>
 
                 <button type="button" class="btn btn-primary add-gift">

@@ -64,4 +64,15 @@
             width: 100%;
         }
     }
+
+    .form-group { position: relative; }
+
+    .show-password {
+        position: absolute;
+        left: calc(100% + 5px);
+        top: calc(50% - 0.75rem);
+        color: $primary;
+
+        &:hover { cursor: pointer; }
+    }
 }

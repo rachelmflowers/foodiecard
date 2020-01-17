@@ -60,7 +60,12 @@
             }
 
             @include media-breakpoint-up(xl) {
+                padding: 3rem 0 0;
                 max-width: 40vw;
+
+                p {
+                    margin: 0 1rem 3rem;
+                }
             }
         }
 
@@ -76,20 +81,11 @@
     margin-top: $section-pad;
     text-align: center;
 
-    @include media-breakpoint-up(lg) {
-        margin-top: $section-pad-desk;
-    }
 
     .restaurants-container {
-        margin: $section-pad auto;
-        margin-bottom: $section-pad-sm;
+        margin: 0 auto $section-pad-sm;
         max-width: calc(100% - 80px);
         text-align: left;
-
-        @include media-breakpoint-up(lg) {
-            margin-top: $section-pad-desk;
-            margin-bottom: $section-pad-sm-desk;
-        }
 
         .grid {
 
@@ -217,10 +213,6 @@
             svg { width: 9.75rem; }
         }
 
-        &-title {
-            color: $primary;
-        }
-
         &-body {
 
             @include media-breakpoint-up(md) {
@@ -239,7 +231,10 @@
         padding: $section-pad-sm-desk 0;
         color: $white;
 
-        h2 { color: $white; }
+        h2 { 
+            color: $white;
+            font-size: 2.25rem;
+        }
     }
 
     &::after {
