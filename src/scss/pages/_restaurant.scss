@@ -554,11 +554,11 @@
 
             a { 
                 padding-left: 2rem;
-                margin-bottom: 0.75rem;
                 display: block;
 
                 @include media-breakpoint-up(sm) {
                     padding-left: 0;
+                    margin-bottom: 0.75rem;
                     width: 100%;
                     text-align: center;
                     color: $body-color;
@@ -630,12 +630,13 @@
     }
 
     &-related {
-        padding-bottom: $section-pad;
+        margin-top: $section-pad-sm;
         text-align: center;
         max-width: calc(100vw - 30px);
 
         @include media-breakpoint-up(lg) {
             padding-bottom: $section-pad-desk;
+            margin-top: 0;
         } 
 
         h2 {
@@ -652,6 +653,10 @@
 
         .restaurants-container {
             margin-bottom: 2rem;
+
+            @include media-breakpoint-down(sm) {
+                overflow-x: scroll;
+            }
 
             .grid {
                 display: grid;

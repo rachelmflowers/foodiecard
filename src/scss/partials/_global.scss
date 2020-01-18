@@ -104,8 +104,13 @@ html {
 
 .bg-full-image {
     position: relative;
-    padding: $section-pad-lg 0;
+    padding: $section-pad-sm 0;
     color: $white;
+
+    @include media-breakpoint-up(md) {
+        padding-top: $section-pad-lg;
+        padding-bottom: $section-pad-lg;
+    }
 
     @include media-breakpoint-up(xl) {
         padding: $section-pad-lg-desk 0;
@@ -150,8 +155,11 @@ html {
 
 .centered-text-block {
     margin: 0 auto;
-    max-width: $max-content-width;
     text-align: center;
+
+    @include media-breakpoint-up(md) {
+        max-width: $max-content-width;
+    }
 
     @include media-breakpoint-up(xl) {
         max-width: $max-content-width-desk;

@@ -93,13 +93,18 @@
 }
 
 #bpContent {
-    padding-top: $section-pad;
-    padding-bottom: $section-pad;
+    padding: $section-pad $section-pad-sm;
     margin: 0 auto;
     max-width: 90vw;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+
+    @include media-breakpoint-up(md) {
+        padding-right: 0;
+        padding-left: 0;
+        margin: 0 auto;
+    }
 
     .incentives,
     .trustedRestaurants {
@@ -126,7 +131,6 @@
 
             &::before {
                 position: absolute;
-                top: 5px;
                 left: -2rem;
                 width: 1.5rem;
                 height: 1.5rem;
@@ -134,9 +138,13 @@
                 font-size: 1rem;
                 font-weight: $font-weight-bold;
                 text-align: center;
-                line-height: 1.5;
+                line-height: 1.6;
                 background: $primary;
                 border-radius: 50%;
+
+                @include media-breakpoint-up(md) {
+                    top: 5px;
+                }
             }
 
             &:first-of-type::before { content: '1'; }
@@ -232,7 +240,7 @@
                 }
 
                 &-page-dots {
-                    bottom: 2.5rem;
+                    bottom: 1rem;
                     left: 3.5rem;
                     text-align: left;
 

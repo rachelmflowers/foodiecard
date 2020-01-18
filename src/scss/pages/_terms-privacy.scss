@@ -14,7 +14,11 @@
     }
 
     .term-privacy-content {
-        padding: $section-pad;
+        padding-top: 1rem;
+
+        @include media-breakpoint-up(md) {
+            padding: $section-pad;
+        }
 
         &:not(:last-of-type) {
             border-bottom: 1px solid $border-color;

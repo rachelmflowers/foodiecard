@@ -1,12 +1,15 @@
 #giveIntro {
     padding-top: $section-pad;
 
-    @include media-breakpoint-up(xl) {
-        padding-top: $section-pad-desk;
+    @include media-breakpoint-up(md) {
+
+        h1 {
+            small { margin-bottom: 3rem; }
+        }
     }
 
-    h1 {
-        small { margin-bottom: 3rem; }
+    @include media-breakpoint-up(xl) {
+        padding-top: $section-pad-desk;
     }
     
 }

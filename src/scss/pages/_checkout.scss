@@ -11,8 +11,12 @@
         }
 
         .nav {
-            margin-bottom: 5rem;
+            margin-bottom: 1rem;
             justify-content: center;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 5rem;
+            }
     
             &-link.active {
                 color: $body-color;
@@ -55,11 +59,15 @@
         &:after {
             content: '';
             position: absolute;
-            top: calc(50% - 0.4rem);
+            top: calc(50% - 0.75rem);
             left: 0;
             width: 100%;
             height: 1px;
             background: $gray-400;
+                
+            @include media-breakpoint-up(md) {
+                top: calc(50% - 0.4rem);
+            }
         }
 
         dd,
@@ -74,15 +82,24 @@
     fieldset {
 
         &:not(:last-of-type) {
-            padding-bottom: 3.5rem;
-            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             border-bottom: 1px solid $border-color;
+
+            @include media-breakpoint-up(md) {
+                padding-bottom: 3.5rem;
+                margin-bottom: 3rem;
+            }
         }
 
         legend { 
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-size: 1.25rem;
             font-weight: $font-weight-bold;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 2rem;
+            }
         }
 
         .form-group { margin-bottom: 1rem; }
@@ -166,11 +183,6 @@
                 > label {
                     width: 100%;
                 }
-
-                .form-group {
-                    width: 40%;
-                }
-
                 > span {
                     margin: 0 1rem 1rem;
                     line-height: 2.4;
@@ -179,6 +191,14 @@
 
                 .form-check {
                     line-height: 2.4;
+                }
+
+                @include media-breakpoint-up(md) {
+
+                    .form-group {
+                        width: 40%;
+                    }
+
                 }
             }
         }
@@ -191,7 +211,11 @@
             }
 
             .input-group {
-                margin-bottom: 5rem;
+                margin-bottom: 2rem;
+
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 5rem;
+                }
 
                 .btn-primary {
                     padding-left: 2rem; padding-right: 2rem;
@@ -202,12 +226,9 @@
 
     .add-gift {
         margin-bottom: 2rem;
+        line-height: 1.75;
 
         + .additional-recipient { display: none; }
-    }
-
-    .additional-recipient {
-
     }
 }
 
@@ -229,8 +250,12 @@
 
     &-details {
         position: relative;
-        padding: 3.5rem 4.5rem 2rem;
+        padding: 2rem;
         background: $gray-200;
+
+        @include media-breakpoint-up(md) {
+            padding: 3.5rem 4.5rem 2rem;
+        }
 
         dl { 
             display: flex;
@@ -320,14 +345,21 @@
 .checkoutReview {
 
     > .container {
-        padding-top: $section-pad;
-        padding-bottom: $section-pad;
+        padding-top: $section-pad-sm;
+        padding-bottom: $section-pad-sm;
         margin: 0 auto;
-        max-width: 80vw;
+        max-width: 90vw;
         display: flex;
         flex-flow: row wrap;
         align-content: stretch;
         justify-content: space-between;
+        
+        @include media-breakpoint-up(md) {
+            padding-top: $section-pad;
+            padding-bottom: $section-pad;
+            max-width: 80vw;
+        }
+
 
         h1,
         .nav { 
@@ -338,8 +370,12 @@
         h1 { margin-bottom: 2rem; }
 
         .nav {
-            margin-bottom: 5rem;
+            margin-bottom: 1rem;
             justify-content: center;
+        
+            @include media-breakpoint-up(md) {
+                margin-bottom: 5rem;
+            }
     
             &-link.active {
                 color: $body-color;
@@ -351,32 +387,44 @@
 
         &-info,
         &-details {
-            width: calc(50% - 4rem);
+            width: 100%;
+            
+            @include media-breakpoint-up(md) {
+                width: calc(50% - 4rem);
+            }
         }
 
         &-info {
             position: relative;
+            margin-bottom: 2rem;
             text-align: center;
 
             > div { text-align: left; }
 
-            &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: -4rem;
-                width: 1px;
-                height: 100%;
-                background: $border-color;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: -4rem;
+                    width: 1px;
+                    height: 100%;
+                    background: $border-color;
+                }
             }
         }
 
         &-details {
-            padding-bottom: 3.5rem;
             margin-bottom: 0;
             display: flex;
             flex-flow: column nowrap;
             text-align: center;
+            
+            @include media-breakpoint-up(md) {
+                padding-bottom: 3.5rem;
+            }
 
             dl {
                 flex: 1 0 auto;
@@ -405,15 +453,41 @@
             width: 100%;
             text-align: center;
 
-            > img {
-                margin: 1rem;
-                transform: scale(0.9);
+            > * {
+                margin: 1rem 0.5rem;
+                max-width: 85px;
+                height: auto;
+            }
+
+            a { 
+                display: inline-block;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+
+                > * {
+                    margin: 1rem;
+                    max-width: none;
+                    transform: scale(0.9);
+                }
+
             }
         }
 
         &-help {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: -5vw;
+            margin-right: -5vw;
+
+            @include media-breakpoint-up(md) {
+                margin-left: auto;
+                margin-right: auto;
+
+            }
         }
     }
 }
@@ -440,13 +514,19 @@
     > .container {
         padding-top: $section-pad;
         padding-bottom: $section-pad;
+        
     }
 
     .party-icon {
         margin: 0 auto 2rem;
         display: block;
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
+
+        @include media-breakpoint-up(md) {
+            width: 100px;
+            height: 100px;
+        }
     }
 
     h1 { 
@@ -455,30 +535,45 @@
     }
 
     .or {
-        margin: 0 1rem;
+        margin: 0.5rem auto;
         width: 2rem;
         height: 2rem;
-        display: inline-block;
+        display: block;
         color: $white;
         font-size: $font-size-sm;
         text-transform: uppercase;
         line-height: 2rem;
         background: $primary;
         border-radius: 50%;
+
+        @include media-breakpoint-up(md) {
+            margin: 0 1rem;
+            display: inline-block;
+        }
     }
 
     .card-image {
-        margin-top: 4rem;
-        width: 15rem;
+        margin-top: 1rem;
+        width: 12rem;
         height: auto;
         display: inline-block;
         vertical-align: middle;
 
         + address {
-            margin-top: 4rem;
+            margin-top: 2rem;
             display: inline-block;
             text-align: left;
             vertical-align: middle;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 4rem;
+            width: 15rem;
+
+            + address {
+                margin-top: 4rem;
+            }
+
         }
     }
 }
