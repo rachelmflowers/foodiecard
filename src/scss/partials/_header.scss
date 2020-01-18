@@ -37,6 +37,7 @@
         > .container {
 
             @include media-breakpoint-down(xl) {
+                padding: 0;
                 max-width: 100% !important;
             }
         }
@@ -57,12 +58,16 @@
             transition: background 0.3s ease;
 
             @include media-breakpoint-up(md) {
-                padding: 1rem 1rem 0.5rem;
+                padding: 0.25rem 1rem 0;
 
                 &:hover { 
                     background: darken($primary, 8);
                     transition: background 0.3s ease;
                 }
+            }
+
+            @include media-breakpoint-up(xl) {
+                padding: 1rem 1rem 0.5rem;
             }
 
             svg { 
@@ -73,11 +78,14 @@
                 #card { fill: $body-color; }
 
                 @include media-breakpoint-up(lg) {
-                    width: 215px;
+                    width: 150px;
 
                     g,
                     path { fill: $white; }
-                
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: 215px;
                 }
             }
             
@@ -343,7 +351,7 @@
         }
 
         .btn-primary {
-            min-width: 160px;
+            min-width: 130px;
             align-self: stretch;
             display: inline-flex;
             flex-flow: row nowrap;
@@ -359,6 +367,13 @@
                 height: auto;
                 vertical-align: middle;
             }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+
+        .btn-primary {
+            min-width: 160px;
         }
     }
 }

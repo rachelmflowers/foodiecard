@@ -17,6 +17,10 @@
         padding-top: 1rem;
 
         @include media-breakpoint-up(md) {
+            padding: 2rem $section-pad-sm;
+        }
+
+        @include media-breakpoint-up(xl) {
             padding: $section-pad;
         }
 

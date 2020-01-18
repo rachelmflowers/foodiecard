@@ -265,6 +265,11 @@
                 position: sticky;
                 top: 6rem;
                 background: $gray-100;
+
+                @include media-breakpoint-down(lg) {
+                    position: fixed;
+                    padding-right: 2rem;
+                }
             }
         }
 

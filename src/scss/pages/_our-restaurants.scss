@@ -99,11 +99,12 @@
     text-align: center;
 
     @include media-breakpoint-up(lg) {
-        max-width: 75vw;
+        max-width: 85vw;
     }
 
     @include media-breakpoint-up(xl) {
         padding-top: $section-pad-desk;
+        max-width: 75vw;
     }
 }
 
@@ -113,9 +114,13 @@
     flex-flow: row wrap;
     background: $gray-100;
     border-radius: $border-radius;
-
+    
     @include media-breakpoint-up(md) {
         margin: 0 auto;
+        max-width: 80vw;
+    }
+
+    @include media-breakpoint-up(xl) {
         max-width: 60vw;
     }
 
@@ -130,6 +135,7 @@
         @include media-breakpoint-up(md) {
 
             &:first-of-type {
+                width: auto;
                 flex: 1 0 auto;
                 margin-right: 1rem;
             }
