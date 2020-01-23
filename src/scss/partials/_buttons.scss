@@ -28,6 +28,14 @@
         border-color: darken($primary, 7);
     }
 
+    &-warning {
+        border-color: darken($warning, 7);
+    }
+
+    &-dark {
+        border-color: darken($dark, 7);
+    }
+
     &-unstyled {
         padding: 0;
         background: 0;
@@ -38,5 +46,9 @@
 
     .input-group & {
         border-width: 1px;
+    }
+
+    .icon {
+        vertical-align: top;
     }
 }

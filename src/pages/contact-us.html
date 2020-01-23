@@ -1,18 +1,12 @@
 @@include("../layouts/partials/header.html")
 <main id="mainContent" class="content contactPage">
-    <div class="page-header bg-full-image">
-        <div class="container">
-            <h1 class="display-2">Contact Us</h1>
-        </div>
-
-        <img src="images/contact-us-banner.png" alt="" class="image-bg" />
-    </div>
 
     <div class="container">
-        <h2>
+
+        <h1>
             Get in Touch
             <small class="emphasized">ANY QUESTIONS?</small>
-        </h2>
+        </h1>
         
         <p>Are you looking to contact somebody at Foodie Card?
         Simply fill out the form below and we will get back to you as soon possible.</p>
@@ -36,8 +30,9 @@
             <div class="form-group">
                 <textarea name="message" class="form-control">Message</textarea>
             </div>
-
-            <button type="submit" class="btn btn-warning btn-lg btn-wide">Submit</button>
+            <!-- dont use the a tag for submit, just added for demo to show thank you page. USE commented out button -->
+            <a class="btn btn-warning btn-lg btn-wide" href="/dist/thank-you.html">Fake Submit</a>
+            <!-- <button type="submit" class="btn btn-warning btn-lg btn-wide">Submit</button> -->
         </form>
 
     </div>

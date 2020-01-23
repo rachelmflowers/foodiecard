@@ -14,6 +14,14 @@
     }
 }
 
+.application {
+    > .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+    }
+}
+
 #bpHero {
 
     .hero-text {
@@ -42,9 +50,6 @@
 #becomePartnerForm {
     padding: 1.5rem;
     min-width: 260px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
     color: $body-color;
     background: $white;
     border-top: 7px solid $gray-200;
@@ -53,19 +58,15 @@
             
     @include media-breakpoint-up(md) {
         position: absolute;
-        top: 5rem;
+        top: 6rem;
         right: 1rem;
         width: 40vw;
         top: -2rem;
         min-width: 300px;
     }
 
-    @include media-breakpoint-up(lg) {
-        top: -10.5rem;
-    }
             
     @include media-breakpoint-up(xl) {
-        top: -12rem;
         right: 2rem;
         width: 32vw;
     }
@@ -76,13 +77,21 @@
         text-align: center;
     }
 
-    .form-group { width: 100%; }
-
     .form-check {
         margin-bottom: 1rem;
 
         &-input { top: 0.35rem; }
     }
+
+}
+
+#becomePartnerForm,
+#becomePartnerApplication {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .form-group { width: 100%; }
 
     #contactPerson_field,
     #phone_field,
@@ -92,6 +101,15 @@
     #restInsta_field {
         width: calc(50% - 0.5rem);
     }
+    
+}
+
+#becomePartnerApplication {
+    text-align: left;
+
+    h2 { width: 100%; }
+
+    .terms { margin-top: $section-pad; }
 }
 
 #bpContent {

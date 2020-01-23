@@ -4,7 +4,10 @@
     @include media-breakpoint-up(md) {
 
         h1 {
-            small { margin-bottom: 3rem; }
+            small { 
+                margin-top: 1rem;
+                letter-spacing: 2px;
+            }
         }
     }
 
@@ -150,7 +153,7 @@
     }
 
     img {
-        margin: 0 -10vw;
+        margin: 0 -10vw 2rem;
         max-width: 80vw;
     }
 }

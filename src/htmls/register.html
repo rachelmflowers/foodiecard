@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -113,24 +133,22 @@
                 </div>
 
                 <div class="form-group">
-                    <a class="float-right show-password">
-                        <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="show password">
-                            <use xlink:href="fonts/feather-sprite.svg#eye"/>
-                        </svg>
-                    </a>
+                    <label for="cellPhone" class="sr-only">Enter cell phone number</label>
+                    <input type="tel" class="form-control form-control-lg" id="cellPhone"  placeholder="Cell Phone" autocomplete="mobile" />
+                </div>
+
+                <div class="form-group">
                     <label for="password" class="sr-only">Enter Password</label>
                     <input type="password" class="form-control form-control-lg" id="password"  placeholder="Password" autocomplete="new-password" required />
+                    <a class="float-right show-password">
+                        <small>show password</small>
+                    </a>
                 </div>
 
                 <!-- <div class="form-group">
                     <label for="passwordConfirm" class="sr-only">Confirm Password</label>
                     <input type="password" class="form-control form-control-lg" id="passwordConfirm"  placeholder="Password Confirmation" autocomplete="new-password" required />
                 </div> -->
-
-                <div class="form-group">
-                    <label for="cellPhone" class="sr-only">Enter cell phone number</label>
-                    <input type="tel" class="form-control form-control-lg" id="cellPhone"  placeholder="Cell Phone" autocomplete="mobile" />
-                </div>
 
 
                 <div class="form-check">

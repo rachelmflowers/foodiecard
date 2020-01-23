@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -285,53 +305,49 @@
         </section>
 
         <div class="restaurant-side">
-            <div class="fixed">
-                <div class="reservation">
-                    <h4>Make a reservation</h4>
-                    <form id="reservation-form">
-                        <div class="form-group">
-                            <label for="partyNumber" class="sr-only">How many people?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#user"/>
-                            </svg>
+            <div class="reservation fixed">
+                <h4>Make a reservation</h4>
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="partyNumber" class="sr-only">How many people?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#user"/>
+                        </svg>
 
-                            <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
-                            placeholder="people" />
-                        </div>
+                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
+                        placeholder="people" />
+                    </div>
 
-                        <div class="form-group">
-                            <label for="reservationDate" class="sr-only">What day?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#calendar"/>
-                            </svg>
+                    <div class="form-group">
+                        <label for="reservationDate" class="sr-only">What day?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#calendar"/>
+                        </svg>
 
-                            <input type="date" name="reservationDate" id="reservationDate" class="form-control" />
-                        </div>
+                        <input type="date" name="reservationDate" id="reservationDate" class="form-control" />
+                    </div>
 
-                        <div class="form-group">
-                            <label for="reservationTime" class="sr-only">What time?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#clock"/>
-                            </svg>
+                    <div class="form-group">
+                        <label for="reservationTime" class="sr-only">What time?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#clock"/>
+                        </svg>
 
-                            <input type="time" name="reservationTime" id="reservationTime" class="form-control" />
-                        </div>
+                        <input type="time" name="reservationTime" id="reservationTime" class="form-control" />
+                    </div>
 
-                        <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
-                    </form>
-                </div>
-                <hr />
-                <div class="buy-now">
-                    <h4>Interested in saving 10%?</h4>
-
-                    <svg class="icon active">
-                        <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
-                    </svg>  
-
-                    <a href="purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
-                </div>
+                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
+                </form>
             </div>
-        
+            <div class="buy-now">
+                <h4>Interested in saving 10%?</h4>
+
+                <svg class="icon active">
+                    <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
+                </svg>  
+
+                <a href="purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
+            </div>
         </div>
     </div>
 

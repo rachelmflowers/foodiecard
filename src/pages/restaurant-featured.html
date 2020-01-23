@@ -183,53 +183,49 @@
         </section>
 
         <div class="restaurant-side">
-            <div class="fixed">
-                <div class="reservation">
-                    <h4>Make a reservation</h4>
-                    <form id="reservation-form">
-                        <div class="form-group">
-                            <label for="partyNumber" class="sr-only">How many people?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#user"/>
-                            </svg>
+            <div class="reservation fixed">
+                <h4>Make a reservation</h4>
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="partyNumber" class="sr-only">How many people?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#user"/>
+                        </svg>
 
-                            <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
-                            placeholder="people" />
-                        </div>
+                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
+                        placeholder="people" />
+                    </div>
 
-                        <div class="form-group">
-                            <label for="reservationDate" class="sr-only">What day?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#calendar"/>
-                            </svg>
+                    <div class="form-group">
+                        <label for="reservationDate" class="sr-only">What day?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#calendar"/>
+                        </svg>
 
-                            <input type="date" name="reservationDate" id="reservationDate" class="form-control" />
-                        </div>
+                        <input type="date" name="reservationDate" id="reservationDate" class="form-control" />
+                    </div>
 
-                        <div class="form-group">
-                            <label for="reservationTime" class="sr-only">What time?</label>
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#clock"/>
-                            </svg>
+                    <div class="form-group">
+                        <label for="reservationTime" class="sr-only">What time?</label>
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#clock"/>
+                        </svg>
 
-                            <input type="time" name="reservationTime" id="reservationTime" class="form-control" />
-                        </div>
+                        <input type="time" name="reservationTime" id="reservationTime" class="form-control" />
+                    </div>
 
-                        <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
-                    </form>
-                </div>
-                <hr />
-                <div class="buy-now">
-                    <h4>Interested in saving 10%?</h4>
-
-                    <svg class="icon active">
-                        <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
-                    </svg>  
-
-                    <a href="purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
-                </div>
+                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
+                </form>
             </div>
-        
+            <div class="buy-now">
+                <h4>Interested in saving 10%?</h4>
+
+                <svg class="icon active">
+                    <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
+                </svg>  
+
+                <a href="purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
+            </div>
         </div>
     </div>
 

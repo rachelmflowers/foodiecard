@@ -12,7 +12,6 @@
         }
 
         @include media-breakpoint-up(xl) {
-            padding-top: 8rem;
             max-width: 65vw;
         }
 
@@ -146,23 +145,14 @@
             width: calc(50% - 3rem); 
         }
 
-        .btn-light {
+        .btn {
             padding: 1rem;
             margin-bottom: 1.5rem;
             text-align: left;
-            border: 2px solid $gray-200;
+            border-width: 2px;
 
             .icon { 
                 float: right;
-
-                &.gift { color: $primary; }
-            }
-
-            &:hover,
-            &:focus { 
-                color: $white;
-                background: $primary;
-                border-color: $primary;
             }
         }
     

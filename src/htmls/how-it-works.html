@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -168,137 +188,88 @@
         <section id="faqs" class="bg-full-gray">
             <h2 class="h1">Frequently Asked Questions</h2>
 
-            <div class="accordion" id="faqAccordion">
+            <div class="faqs-container">
                 <div class="faq">
                     <div class="faq-header" id="question1">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer1" aria-expanded="true" aria-controls="answer1">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer1" class="collapse show" aria-labelledby="question1" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question3">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer2" aria-expanded="false" aria-controls="answer2">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer2" class="collapse" aria-labelledby="question2" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question3">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer3" aria-expanded="false" aria-controls="answer3">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer3" class="collapse" aria-labelledby="question3" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question4">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer4" aria-expanded="false" aria-controls="answer4">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer4" class="collapse" aria-labelledby="question4" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question5">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer5" aria-expanded="false" aria-controls="answer5">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer5" class="collapse" aria-labelledby="question5" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question6">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer6" aria-expanded="false" aria-controls="answer6">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer6" class="collapse" aria-labelledby="question6" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 
                 <div class="faq">
                     <div class="faq-header" id="question7">
                         <h5>
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#answer7" aria-expanded="false" aria-controls="answer7">
-                                <svg class="icon">
-                                    <use xlink:href="fonts/feather-sprite.svg#chevron-down" />
-                                </svg>
-                                Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                            </button>
+                            Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
                         </h5>
                     </div>
 
-                    <div id="answer7" class="collapse" aria-labelledby="question7" data-parent="#faqAccordion">
-                        <div class="faq-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
-                        </div>
+                    <div class="faq-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
                     </div>
                 </div>
 

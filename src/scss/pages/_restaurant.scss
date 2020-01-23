@@ -299,9 +299,19 @@
             }
 
             @include media-breakpoint-up(lg) {
+                padding: 1rem;
+                margin-top: -5rem;
+                margin-left: -3rem;
+                margin-bottom: 4rem;
+                width: calc(100% + 4rem);
                 display: block;
+                background: $white;
+                border-top: 5px solid $primary;
+                border-bottom: 5px solid $primary;
+                border-radius: 4px;
+                box-shadow: 0 2px 5px rgba($black, 0.3);
 
-                + hr + .buy-now {
+                + .buy-now {
                     display: block;
                 }
     

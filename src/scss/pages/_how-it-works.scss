@@ -174,8 +174,8 @@
 #faqs {
     text-align: center;
 
-    .accordion {
-        margin: $section-pad-sm -15px 0;
+    .faqs-container {
+        margin-top: $section-pad-sm;
         text-align: left;
 
         @include media-breakpoint-up(md) {
@@ -190,7 +190,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            margin: $section-pad-sm-desk -15px 0;
+            margin-top: $section-pad-sm-desk;
             column-gap: 5rem;
         }
     }
@@ -202,6 +202,9 @@
         }
 
         &-header {
+            padding-left: 2rem;
+            background: url('../images/fork-icon.png') no-repeat left center;
+            background-size: 1.5rem 1.5rem;
             border-top: 1px solid $border-color;
 
             @include media-breakpoint-up(lg) {
@@ -259,10 +262,10 @@
         }
 
         &-body {
-            padding: 1rem 1rem 1rem 3rem;
+            padding: 1rem 1rem 1rem 2rem;
 
             @include media-breakpoint-up(lg) {
-                padding: 0 0 0 2.7rem;
+                padding: 0 0 0 2rem;
             }
         }
     }

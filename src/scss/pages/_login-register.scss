@@ -9,15 +9,17 @@
         padding: 2rem $section-pad;
     }
 
-    @include media-breakpoint-up(xl) {
-        padding: 0 $section-pad;
-    }
-
     .h2 { color: $primary; }
 
     .btn-warning { margin-bottom: 2rem; }
 
     hr { margin: 2rem auto; }
+
+    .show-password {
+        color: $primary;
+
+        &:hover { cursor: pointer; }
+    }
 
 }
 
@@ -60,17 +62,6 @@
             margin-top: 1rem;
             width: 100%;
         }
-    }
-
-    .form-group { position: relative; }
-
-    .show-password {
-        position: absolute;
-        left: calc(100% + 5px);
-        top: calc(50% - 0.75rem);
-        color: $primary;
-
-        &:hover { cursor: pointer; }
     }
 
     .form-check {

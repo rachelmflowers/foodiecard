@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -149,7 +169,7 @@
     </section>
 
     <section id="featuredRestaurants" class="container">
-        <h2 class="h1">Featured Restaurants</h2>
+        <h2 class="h1">Featured Restaurants Near You</h2>
 
         <div class="restaurants-container">
             <div id="featRestSlider"  class="grid">
@@ -275,8 +295,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.78 93.78"><path d="M31.74 62.08c0-3.21 2.6-5.81 5.81-5.81 3.21 0 5.81 2.6 5.81 5.81 0 3.21-2.6 5.81-5.81 5.81-3.21 0-5.81-2.6-5.81-5.81zM32.22 39.29c0-3.21 2.6-5.81 5.81-5.81s5.81 2.6 5.81 5.81-2.6 5.81-5.81 5.81-5.81-2.6-5.81-5.81z" fill="#3bb77f"/><path d="M.54 93.25c.5.49 1.24.66 1.9.42l76.08-27.13c2.64 1.62 6 1.99 9.07.72 5.1-2.11 7.54-7.99 5.42-13.09-4.99-12.04-12.18-22.81-21.4-32.02A98.24 98.24 0 0039.6.76C38.35.25 37.06 0 35.78 0c-3.93 0-7.67 2.33-9.27 6.19-1.07 2.59-.97 5.38.05 7.78L.1 91.36c-.23.66-.06 1.4.44 1.89zm66.47-26.48l-8.06 2.87a4.633 4.633 0 01-1.22-3.8c.16-1.24.8-2.34 1.79-3.09.99-.76 2.21-1.09 3.45-.92 1.24.16 2.33.8 3.09 1.79.69.9 1.02 2.01.95 3.15zM29.9 7.59c1.34-3.24 5.07-4.78 8.3-3.44 23.45 9.71 41.72 27.98 51.43 51.43a6.3 6.3 0 010 4.86 6.307 6.307 0 01-3.44 3.44 6.3 6.3 0 01-4.86 0 6.307 6.307 0 01-3.44-3.44 81.918 81.918 0 00-17.85-26.71 81.97 81.97 0 00-26.71-17.85 6.337 6.337 0 01-3.43-8.29zM13.62 63.13c.17 0 .33.01.5.04 1.24.16 2.34.8 3.09 1.79.76.99 1.09 2.22.92 3.45a4.686 4.686 0 01-5.24 4.02c-.79-.1-1.53-.41-2.16-.87l2.89-8.43zM9.53 75.11c.89.49 1.87.81 2.9.94 4.56.6 8.75-2.62 9.35-7.17.29-2.21-.3-4.39-1.65-6.16a8.257 8.257 0 00-5.28-3.15l3.64-10.65 4.19 3.21a1.833 1.833 0 002.23-2.91l-5.17-3.96 9.47-27.69c.79.69 1.71 1.27 2.73 1.69 19.41 8.04 34.53 23.16 42.57 42.57.28.68.63 1.3 1.03 1.88l-4.9 1.75a8.26 8.26 0 00-1.67-4.1 8.259 8.259 0 00-5.52-3.19 8.307 8.307 0 00-6.15 1.65 8.259 8.259 0 00-3.19 5.52c-.26 1.98.2 3.94 1.24 5.57l-22.77 8.12-.86-2.08c-.29-.71-.97-1.13-1.69-1.13-.23 0-.47.04-.7.14-.94.39-1.38 1.46-.99 2.39l.79 1.91-24.34 8.69 4.74-13.84z" fill="#344153"/><path d="M74 44.64c.01.01.02.03.03.04a1.833 1.833 0 003.05-2.03c-.35-.54-.94-.83-1.54-.83A1.83 1.83 0 0074 44.64zM76.78 49.19a85.89 85.89 0 014.77 9.73c.39.94 1.46 1.38 2.39.99.93-.39 1.38-1.46.99-2.39a90.757 90.757 0 00-4.97-10.15 1.837 1.837 0 00-2.5-.68 1.84 1.84 0 00-.68 2.5zM36.46 70.34c.36.05.73.07 1.1.07 4.16 0 7.71-3.11 8.25-7.25.6-4.56-2.62-8.75-7.17-9.35-.36-.05-.73-.07-1.1-.07-4.16 0-7.71 3.11-8.25 7.25-.6 4.55 2.62 8.75 7.17 9.35zm-3.54-8.87c.31-2.31 2.29-4.06 4.62-4.06a4.686 4.686 0 014.64 5.28 4.677 4.677 0 01-5.24 4.02 4.686 4.686 0 01-4.02-5.24zM36.94 47.55c.36.05.73.07 1.1.07 4.16 0 7.71-3.12 8.25-7.25.29-2.21-.3-4.39-1.65-6.16a8.259 8.259 0 00-5.52-3.19c-.36-.05-.73-.07-1.1-.07-4.16 0-7.71 3.11-8.25 7.24-.6 4.57 2.61 8.76 7.17 9.36zm-3.54-8.87a4.677 4.677 0 015.24-4.02c1.24.16 2.34.8 3.09 1.79.76.99 1.09 2.21.93 3.45-.31 2.31-2.29 4.06-4.62 4.06a4.667 4.667 0 01-4.64-5.28zM49.02 55.14l5.63.74c1 .13 1.92-.57 2.06-1.58.13-1-.57-1.92-1.58-2.05l-5.63-.74c-.08-.01-.16-.02-.24-.02-.91 0-1.69.67-1.81 1.59-.14 1.01.57 1.93 1.57 2.06zM51.87 41.63l.5 3.78c.13 1 1.05 1.71 2.05 1.58 1-.13 1.71-1.05 1.58-2.05l-.5-3.78a1.83 1.83 0 00-1.81-1.59c-.08 0-.16 0-.24.02-1 .11-1.71 1.03-1.58 2.04z" fill="#344153"/></svg>
                     </div>
                     <div class="step-body">
-                        <h4 class="step-title">Find a Restaurant</h4>
-                        <p class="step-text"><a href="/our-restaurants.html">View our<br /> participating restaurants</a></p>
+                        <h4 class="step-title">Find a<br /> Restaurant</h4>
+                        <p class="step-text">Search through our <a href="/our-restaurants.html">restaurants</a><br /> and find something you love.</p>
                     </div>
                 </li>
                 

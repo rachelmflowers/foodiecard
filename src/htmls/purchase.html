@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -126,14 +146,14 @@
             </ul>
 
             <div class="purchase-options">
-                <a href="single-purchase.html" class="btn btn-light btn-lg btn-block">
+                <a href="single-purchase.html" class="btn btn-warning btn-lg btn-block">
                     Buy for yourself
 
                     <svg class="icon">
                         <use xlink:href="fonts/feather-sprite.svg#chevron-right"/>
                     </svg>
                 </a>
-                <a href="gift-purchase.html" class="btn btn-light btn-lg btn-block">
+                <a href="gift-purchase.html" class="btn btn-dark btn-lg btn-block">
                     Buy for somebody else
 
                     <svg class="icon gift">
@@ -148,17 +168,17 @@
         <div class="purchase-disclosures">
             <p>
                 <strong>Product Details</strong>
-                Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+                Foodie Card costs $29.99 a year and provides members with 10% off their bill at tons of incredible restaurants. Also, Foodie Card members have access to special member-only events. 
+            </p>
+
+            <p>
+                <strong>What is the 'Buy A Card, Give A Meal' program?</strong>
+                For every Foodie Card purchased, we donate an entire day of meals to somebody in need. To date, we’ve donated close to 20,000 meals.
             </p>
 
             <p>
                 <strong>Any Restrictions?</strong>
-                Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.
-            </p>
-
-            <p>
-                <strong>What is the 'Buy A Card, Give a Meal' program?</strong>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                Foodie Card can only be applied to dine-in bills, drinks included. If a restaurant allows Foodie Card to be applied to take-out or delivery, that’s a special benefit that is unrelated to the guidelines of Foodie Card. Participating restaurants reserve the right to refuse Foodie Card on the following holidays: Christmas Eve, Easter, Father’s Day, Mother’s Day, New Year’s Eve, Thanksgiving Eve, and Valentines Day. There is a maximum discount of $100 per bill. Foodie Card cannot be combined with other coupons or specials.
             </p>
         </div>
    </div>

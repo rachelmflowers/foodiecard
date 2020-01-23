@@ -157,7 +157,6 @@
         .input-group {
 
             select.custom-select {
-                margin-left: -1px;
                 margin-right: -1px;
                 color: $gray-600;
                 border-radius: 0;
@@ -208,6 +207,11 @@
             #cardNumber {
                 background: url("../images/card-icons.png") no-repeat center right 1rem $gray-100;
                 background-size: 150px;
+                background-blend-mode: luminosity;
+
+                &.has-value {
+                    background-blend-mode: normal;
+                }
             }
 
             .input-group {
@@ -215,6 +219,11 @@
 
                 @include media-breakpoint-up(md) {
                     margin-bottom: 5rem;
+                }
+
+                .custom-select {
+                    width: 20%;
+                    flex: none;
                 }
 
                 .btn-primary {
@@ -506,7 +515,9 @@
         vertical-align: middle;
     }
 
-    img { margin-right: 3rem; }
+    img { 
+        margin-right: 3rem;
+    }
 }
 
 .orderConfirmation {

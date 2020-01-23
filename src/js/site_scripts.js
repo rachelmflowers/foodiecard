@@ -183,11 +183,17 @@ const gmap = async (elem) => {
             $(newGift).insertBefore(this);
         })
 
+        $('#cardNumber').on('blur', function() {
+            if (this.value) {
+                $(this).addClass('has-value');
+            } else {
+                $(this).removeClass('has-value');
+            }
+        })
+
         // Selectr custom select boxes
         var restaurantCity = document.getElementById("restaurantCity"),
-            restaurantZip = document.getElementById("restaurantZip"),
-            shippingState = document.getElementById("shippingState"),
-            cusineType = document.getElementById("cusineType");
+            restaurantZip = document.getElementById("restaurantZip");
 
         if (typeof (restaurantCity) != 'undefined' && restaurantCity != null) {
             new Selectr('#restaurantCity', {
@@ -197,19 +203,6 @@ const gmap = async (elem) => {
 
         if (typeof (restaurantZip) != 'undefined' && restaurantZip != null) {
             new Selectr('#restaurantZip', {
-                defaultSelected: true
-            });
-        }
-
-        // if (typeof (shippingState) != 'undefined' && shippingState != null) {
-        //     new Selectr('#shippingState', {
-        //         placeholder: "State"
-        //     });
-        // }
-
-        if (typeof (cusineType) != 'undefined' && cusineType != null) {
-            new Selectr('#cusineType', {
-                multiple: true,
                 defaultSelected: true
             });
         }

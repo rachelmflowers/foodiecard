@@ -60,7 +60,7 @@
             <!-- REMOVE showCheckout class once this is actuall hooked up (used to transition to checkout form for review -->
             <button class="btn btn-warning btn-lg btn-block showCheckout" type="submit">Continue</button>
         </form>
-        <a href="">Forgot Password?</a>
+        <a href="/dist/forgot-password.html">Forgot Password?</a>
 
         <hr />
 
@@ -85,12 +85,15 @@
             <div class="form-group">
                 <label for="password" class="sr-only">Enter Password</label>
                 <input type="password" class="form-control form-control-lg" id="password"  placeholder="Password" autocomplete="new-password" required />
+                <a class="float-right show-password">
+                    <small>show password</small>
+                </a>
             </div>
-
+            <!-- 
             <div class="form-group">
                 <label for="passwordConfirm" class="sr-only">Confirm Password</label>
                 <input type="password" class="form-control form-control-lg" id="passwordConfirm"  placeholder="Password Confirmation" autocomplete="new-password" required />
-            </div>
+            </div> -->
 
 
             <!-- REMOVE showCheckout class once this is actuall hooked up (used to transition to checkout form for review -->
@@ -141,7 +144,7 @@
                         <div class="input-group-append">
                             <button type="button" class="btn btn-danger btn-icon" aria-label="Remove additonal card">
                                     <svg class="icon">
-                                        <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                                        <use xlink:href="fonts/feather-sprite.svg#x"/>
                                     </svg>
                             </button>
                         </div>
@@ -187,13 +190,25 @@
                                 <fieldset name="paymentInfo">
                     <legend>Payment Information</legend>
 
-                    <div class="form-group">
-                        <label for="cardNumber" class="sr-only">Enter street address</label>
+                    <div class="form-group" id="cc-number_field">
+                        <label for="cardNumber" class="sr-only">Enter credit card number</label>
                         <input type="number" name="cardNumber" id="cardNumber" class="form-control form-control-lg" placeholder="Card Number" autocomplete="cc-number" required />
                     </div>
 
                     <div class="input-group input-group-lg">
-                        <input type="text" name="expDate" id="expDate" placeholder="MM/YY" class="form-control" aria-label="Card Expiration Date format mm/yy" autocomplete="cc-exp" required />
+                        <select name="expDateMo" id="expDateMo" class="custom-select" aria-label="Card Expiration Date month" autocomplete="cc-exp-month" required>
+                            <option disabled selected>Exp MM</option>
+                            <option value="01" label="Jan">01</option>
+                            <option value="02" label="Feb">02</option>
+                            <option value="03" label="Mar">03</option>
+                        </select>
+
+                        <select name="expDateYr" id="expDateYr" class="custom-select" aria-label="Card Expiration Date Year" autocomplete="cc-exp-year" required>
+                            <option disabled selected>Exp YY</option>
+                            <option value="20" label="2020">20</option>
+                            <option value="21" label="2021">21</option>
+                            <option value="22" label="2022">22</option>
+                        </select>
 
                         <input type="text" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
 

@@ -23,21 +23,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="restaurantCity" class="sr-only">Select the city you want to search in</label>
-                        <select id="restaurantCity" name="restaurantCity"  class="custom-select">
-                            <option value="all" selected>All cities</option>
-                            <option value="city1">city name 1</option>
-                            <option value="city2">city name 2</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="restaurantZip" class="sr-only">Select the zip code you want to search in</label>
-                        <select id="restaurantZip" name="restaurantZip" class="custom-select">
-                            <option value="all" selected>All Zip codes</option>
-                            <option value="city1">zip code 1</option>
-                            <option value="city2">zip code 2</option>
-                        </select>
+                        <label for="location" class="sr-only">Enter the location, city, or zip code you would like to search around.</label>
+                        <input type="text" id="location" name="location" class="form-control" placeholder="Location, city, zip" />
                     </div>
 
                     <div class="form-group searchDistance-container">
@@ -66,7 +53,7 @@
             <form id="restaurantNameSearch" class="form-inline">
                 <div class="form-group">
                     <label for="nameSearch" class="sr-only">Search restaurants</label>
-                    <input type="search" id="nameSearch" name="nameSearch" placeholder="Search by restaurant name, address, city or zip code" class="form-control" />
+                    <input type="search" id="nameSearch" name="nameSearch" placeholder="Search by restaurant name, address, city or zip" class="form-control" />
                 </div>
 
                 <div class="form-group">
@@ -80,6 +67,8 @@
                         </select>
                     </div>
                 </div>
+                <button type="button" class="btn btn-secondary">Newest</button>
+                <button type="button" class="btn btn-secondary">Featured</button>
             </form>
 
             <div id="restaurantsContainer">

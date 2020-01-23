@@ -32,6 +32,14 @@
                 <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
                 <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
                 <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+
+                <div class="deal-bar alert alert-primary alert-dismissible">
+    This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
                 <nav id="primary" class="navbar navbar-dark bg-primary navbar-expand-lg">
                     <div class="container">
                         <a href="index.html" class="navbar-brand">
@@ -41,8 +49,10 @@
                             </svg>
                         </a>
                         
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                         
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -63,14 +73,24 @@
                                         <a href="our-restaurants.html" class="h6">Our Restaurants</a>
                                         <ul class="restaurant-list list-unstyled">
                                             <li>
-                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
+                                                <a class="dropdown-item new" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                    <svg class="icon" data-toggle="tooltip" title="NEW!">
+                                                        <use xlink:href="fonts/feather-sprite.svg#zap"/>
+                                                    </svg>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="restaurant-featured.html">Featured Restaurant</a>
+                                                <a class="dropdown-item" href="restaurant-featured.html">
+                                                    Featured Restaurant
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="restaurant.html">Non-Featured Restaurant</a>
                                             </li>
                                         </ul>
                                         
-                                        <a class="dropdown-item" href="our-restaurants.html">View all reastaurants >></a>
+                                        <a class="dropdown-item" href="our-restaurants.html">View all restaurants >></a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -134,56 +154,19 @@
                     <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant Address" />
                 </div>
 
-                <div class="form-group" id="restWebsite_field">
-                    <label for="restWebsite" class="sr-only">Restaurant's Website Address</label>
-                    <input type="url" name="restWebsite" id="restWebsite" class="form-control" placeholder="Restaurant Website">
-                </div>
-
-                <div class="form-group" id="restFacebook_field">
-                    <label for="restFacebook" class="sr-only">Restaurant's Facebook Address</label>
-                    <input type="url" name="restFacebook" id="restFacebook" class="form-control" placeholder="Restaurant Facebook">
-                </div>
-
-                <div class="form-group" id="restInsta_field">
-                    <label for="restInsta" class="sr-only">Restaurant's Instagram Address</label>
-                    <input type="url" name="restInsta" id="restInsta" class="form-control" placeholder="Restaurant Instagram">
-                </div>
-
-                <div class="form-group" id="restPhone_field">
-                    <label for="restPhone" class="sr-only">Restaurant's Phone Number</label>
-                    <input type="tel" name="restPhone" id="restPhone" class="form-control" placeholder="Restaurant Phone #">
-                </div>
-
-                <div class="form-group" id="GM_field">
-                    <label for="GM" class="sr-only">General Manager's Name</label>
-                    <input type="text" name="GM" id="GM" class="form-control" placeholder="GM Name">
-                </div>
-
                 <div class="form-group" id="contactPerson_field">
                     <label for="contactPerson" class="sr-only">Contact Person's Name</label>
                     <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Contact Person">
                 </div>
 
                 <div class="form-group" id="phone_field">
-                    <label for="phone" class="sr-only">Contact's mobile phone number</label>
-                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Mobile Phone">
+                    <label for="phone" class="sr-only">Contact's phone number</label>
+                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Contact's Phone">
                 </div>
 
                 <div class="form-group" id="email_field">
                     <label for="email" class="sr-only">Contact's email address</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Contact Email">
-                </div>
-
-                <div class="form-check" id="agree_field">
-                    <input type="checkbox" name="agree" id="agree"  class="form-check-input" />
-                    <label class="form-check-label" for="agree">
-                        I agree to the terms and conditions
-                        <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="terms here? or should this be a link?">
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#info"/>
-                            </svg>
-                        </button>
-                    </label>
                 </div>
 
                 <button type="submit" class="btn btn-warning btn-block">

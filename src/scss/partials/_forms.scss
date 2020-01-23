@@ -11,6 +11,38 @@
     }
 }
 
+.form-control {
+    line-height: calc(38px - 0.75rem);
+
+    &-lg {
+        line-height: 42px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        line-height: calc(36px - 0.75rem);
+    
+        &-lg {
+            line-height: 40px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        line-height: calc(34px - 0.75rem);
+    
+        &-lg {
+            line-height: 38px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        line-height: calc(32px - 0.75rem);
+    
+        &-lg {
+            line-height: 36px;
+        }
+    }
+}
+
 textarea {
     &.form-control{ min-height: 5rem; }
 }
