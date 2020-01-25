@@ -197,6 +197,21 @@
         width: 100%;
     }
 
+    &-page-header {
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        color: $white;
+        background: url('../images/our-restaurants.png') no-repeat;
+        background-size: cover;
+
+        h1 {
+            margin: 0;
+            color: inherit;
+        }
+    }
+
     &-main {
         padding-top: 1rem;
 
