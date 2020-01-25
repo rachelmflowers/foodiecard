@@ -6,27 +6,44 @@
         @@include("../layouts/partials/checkout-login.html")
 
         <div id="checkout">
-            <ul class="nav">
+            <!-- <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Shipping & Payment</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="review.html">Review</a>
                 </li>
-            </ul>
+            </ul> -->
 
             <form id="purchaseForm" class="needsValidation" novalidate>
+                
+                <fieldset name="customerDetails">
+                    <legend>Your details, please!</legend>
+
+                    <div id="cardName_field" class="form-group">
+                        <label for="nameOnCard1" class="sr-only">First and Last name</label>
+                        <input type="text" name="nameOnCard1" id="nameOnCard1" placeholder="First and last name" class="form-control form-control-lg" autocomplete="name" required/>
+                    </div>
+
+                    @@include("../layouts/partials/customer-details.html")
+                </fieldset>
+
                 <fieldset name="cardNames">
                     <legend>
                         <svg class="icon">
                             <use xlink:href="fonts/feather-sprite.svg#gift"/>
                         </svg>
-                        Let's add the recipient's details
+                        Let's add that lucky gift recipient's details
                     </legend>
 
                     <div class="form-group">
-                        <label for="nameOnCard" class="sr-only">Enter the name to appear on the Foodie card</label>
-                        <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Name on Foodie Card" class="form-control" />
+                        <label for="nameOnCard" class="sr-only">Full name of gift recipient</label>
+                        <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Full name of gift recipient" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="giftRecipientEmail" class="sr-only">Gift recipient's email address</label>
+                        <input type="email" name="giftRecipientEmail" id="giftRecipientEmail" placeholder="Gift recipient's email address" class="form-control" />
                     </div>
                     
                     <div class="form-check">
@@ -39,43 +56,9 @@
                         <div class="form-group">
                             <label for="gift-message" class="sr-only">Enter your message</label>
                             <textarea name="gift-message" id="gift-message" placeholder="Add your message" class="form-control form-control-lg"></textarea>
-                        </div>
-                        <!-- <div class="form-check">
-                            <input type="checkbox" id="emailMessage" class="form-check-input emailMessage" />
-                            <label class="form-check-label" for="emailMessage">Send message as an email</label>
-                        </div> -->
-
-                        <div class="form-group">
-                            <input type="text" class="form-control"
-                                name="messageEmail" id="messageEmail" 
-                                aria-label="Enter the recipient's email address"
-                                placeholder="Gift Recipient's Email Address"
-                            />
+                            <small class="form-text">Gift message will be printed and included within the Foodie Card mailer</small>
                         </div>
 
-                        <div class="messageSchedule">
-                            <label for="messageSendDate">When should we send the message?</label>
-                            <div class="form-group">
-                                <input type="date" class="form-control"
-                                    name="messageSendDate" id="messageSendDate"
-                                    aria-label="Select date to send"
-                                    placeholder="Select date to send"
-                                />
-                            </div>
-
-                            <span>or</span>
-
-                            <div class="form-check">
-                                <input type="checkbox" id="messageSendNow" class="form-check-input" />
-                                <label class="form-check-label" for="messageSendNow">
-                                    Send Immediately
-                        
-                                    <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="Gift recipient will be emailed gift message immediately upon your purchase">
-                                        <use xlink:href="fonts/feather-sprite.svg#info"/>
-                                    </svg>
-                                </label>
-                            </div>
-                        </div>
                     </div>
                 </fieldset>
 
@@ -85,7 +68,7 @@
                         <svg class="icon">
                             <use xlink:href="fonts/feather-sprite.svg#gift"/>
                         </svg>
-                        Where is the Foodie Card gift going?
+                        Where should we mail this Foodie Card gift?
                     </legend>
                     @@include("../layouts/partials/shipping-info.html")
                 </fieldset>
@@ -101,6 +84,13 @@
 
                 @@include("../layouts/partials/payment-info.html")
 
+                <div class="form-check">
+                    <input type="checkbox" id="autoRenewGift" class="form-check-input" />
+                    <label class="form-check-label" for="autoRenewGift">
+                        Automatically renew this gift annually
+                    </label>
+                </div>
+
                 <div class="purchase-details">
                     <dl>
                         <dt>Subtotal (1 item)</dt>
@@ -115,9 +105,18 @@
                         <dt class="total">Total</dt>
                         <dd class="total">$29.99</dd>
                     </dl>
-
-                    <button type="submit" class="btn btn-warning btn-lg btn-block">Review Order</button>
+                    
+                    <button type="submit" class="btn btn-warning btn-block">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#lock"/>
+                            </svg>
+                            Place Secure Order
+                    </button>
+        
+                    <small>By placing the order, you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</small>
                 </div>
+                <br /> 
+                <p class="text-center">Your order will feed someone less fortunate for an entire day!</p>
             </form>
         </div>
         

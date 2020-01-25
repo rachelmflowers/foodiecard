@@ -23,35 +23,10 @@
             }
         }
     }
-
-    #loginForm_container,
-    #registerForm_container {
-        padding-right: $section-pad-sm;
-        padding-left: $section-pad-sm;
-        text-align: center;
-    }
-
-    #registerForm_container,
-    #checkout {
-        position: relative;
-        z-index: -1;
-        margin: 0 auto;
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-    
-        &.show {
-            z-index: 0;
-            height: auto;
-            opacity: 1;
-            pointer-events: unset;
-            transition: opacity 0.3s linear;
-        }
-    }
 }
 
 #checkout {
+    margin: 0 auto;
     max-width: 600px;
 
     .purchase-details {
@@ -66,13 +41,19 @@
             background: $gray-400;
                 
             @include media-breakpoint-up(md) {
-                top: calc(50% - 0.4rem);
+                top: calc(40% - 0.4rem);
             }
         }
 
         dd,
         dt {
             &.total { padding-top: 2rem; }
+        }
+
+        small { 
+            margin-top: 0.25rem;
+            display: block;
+            text-align: center;
         }
     }
 }
@@ -104,7 +85,7 @@
 
         .form-group { margin-bottom: 1rem; }
 
-        &[name*=cardNames],
+        &[name*=customerDetails],
         &[name*=multipleCardNames] {
 
             .add-card {
@@ -204,31 +185,66 @@
 
         &[name=paymentInfo] {
 
+            #creditCard_fields {
+                margin-bottom: $form-group-margin-bottom;
+                
+                #expDateMo,
+                #expDateYr,
+                #cvc {
+                    padding: 0.75rem;
+                    flex: none;
+                    border-left: 0;
+                    appearance: none;
+                }
+
+                #expDateMo,
+                #expDateYr {
+                    padding-left: 4px;
+                    padding-right: 0;
+                    border-right: 0;
+                }
+
+                #expDateMo {
+                    width: 65px;
+                    text-align: right;
+                }
+
+                #expDateYr {
+                    width: 45px;
+                }
+
+                #cvc { 
+                    padding-left: 4px;
+                    width: 75px;
+                }
+
+
+                .btn-primary {
+                    padding-left: 2rem; padding-right: 2rem;
+                }
+            }
+
             #cardNumber {
-                background: url("../images/card-icons.png") no-repeat center right 1rem $gray-100;
-                background-size: 150px;
+                padding-left: calc(40px + 0.5rem);
+                background: url("../images/visa.png") no-repeat center left 0.5rem $gray-100;
                 background-blend-mode: luminosity;
+                background-size: 30px 18px;
 
                 &.has-value {
                     background-blend-mode: normal;
                 }
             }
 
-            .input-group {
+            .paypal {
                 margin-bottom: 2rem;
 
                 @include media-breakpoint-up(md) {
-                    margin-bottom: 5rem;
+                    margin-bottom: 4rem;
                 }
+            }
 
-                .custom-select {
-                    width: 20%;
-                    flex: none;
-                }
-
-                .btn-primary {
-                    padding-left: 2rem; padding-right: 2rem;
-                }
+            #couponCode_field {
+                margin-bottom: 4rem;
             }
         }
     }
@@ -242,20 +258,6 @@
 }
 
 .purchase {
-
-    &-info {
-
-        > div {
-
-            &:not(:last-of-type) {
-                padding-bottom: 1rem;
-                margin-bottom: 1.5rem;
-                border-bottom: 1px solid $border-color;
-            }
-
-            p { margin-bottom: 0.5rem; }
-        }
-    }
 
     &-details {
         position: relative;
@@ -349,174 +351,36 @@
             }
         }
     }
-}
 
-.checkoutReview {
+    &-logos {
+        margin-top: $section-pad-lg;
+        width: 100%;
+        text-align: center;
 
-    > .container {
-        padding-top: $section-pad-sm;
-        padding-bottom: $section-pad-sm;
-        margin: 0 auto;
-        max-width: 90vw;
-        display: flex;
-        flex-flow: row wrap;
-        align-content: stretch;
-        justify-content: space-between;
-        
-        @include media-breakpoint-up(xl) {
-            padding-top: $section-pad;
-            padding-bottom: $section-pad;
-            max-width: 80vw;
+        > * {
+            margin: 1rem 0.5rem;
+            max-width: 85px;
+            height: auto;
         }
 
+        a { 
+            display: inline-block;
 
-        h1,
-        .nav { 
-            width: 100%;
-            text-align: center;
-        }
-
-        h1 { margin-bottom: 2rem; }
-
-        .nav {
-            margin-bottom: 1rem;
-            justify-content: center;
-        
-            @include media-breakpoint-up(md) {
-                margin-bottom: 5rem;
-            }
-    
-            &-link.active {
-                color: $body-color;
-            }
-        }
-    }
-
-    .purchase {
-
-        &-info,
-        &-details {
-            width: 100%;
-            
-            @include media-breakpoint-up(md) {
-                width: calc(50% - 4rem);
-            }
-        }
-
-        &-info {
-            position: relative;
-            margin-bottom: 2rem;
-            text-align: center;
-
-            > div { text-align: left; }
-
-            @include media-breakpoint-up(md) {
-                margin-bottom: 0;
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: -4rem;
-                    width: 1px;
-                    height: 100%;
-                    background: $border-color;
-                }
-            }
-        }
-
-        &-details {
-            margin-bottom: 0;
-            display: flex;
-            flex-flow: column nowrap;
-            text-align: center;
-            
-            @include media-breakpoint-up(md) {
-                padding-bottom: 3.5rem;
-            }
-
-            dl {
-                flex: 1 0 auto;
-                text-align: left;
-            }
-
-            dt,
-            dd {
-                &.total {
-                    padding-top: 1rem;
-                    margin-top: 0.5rem;
-                    font-weight: $font-weight-bold;
-                    border-top: 1px solid $gray-400;
-                }
-            }
-
-            .btn-warning {
-                margin-bottom: 1rem;
-            }
-
-            small { font-size: $font-size-xs; }
-        }
-
-        &-logos {
-            margin-top: $section-pad-lg;
-            width: 100%;
-            text-align: center;
-
-            > * {
-                margin: 1rem 0.5rem;
-                max-width: 85px;
+            img {
+                width: 100%;
                 height: auto;
             }
-
-            a { 
-                display: inline-block;
-
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            @include media-breakpoint-up(md) {
-
-                > * {
-                    margin: 1rem;
-                    max-width: 200px;
-                    transform: scale(0.9);
-                }
-
-            }
         }
 
-        &-help {
-            margin-left: -5vw;
-            margin-right: -5vw;
+        @include media-breakpoint-up(md) {
 
-            @include media-breakpoint-up(md) {
-                margin-left: auto;
-                margin-right: auto;
-
+            > * {
+                margin: 1rem;
+                max-width: 200px;
+                transform: scale(0.9);
             }
+
         }
-    }
-}
-
-.payment-info {
-    margin-bottom: 3rem;
-
-    strong { 
-        margin-bottom: 0.5rem;
-        display: block;
-    }
-
-    img,
-    span {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    img { 
-        margin-right: 3rem;
     }
 }
 
@@ -543,6 +407,34 @@
     h1 { 
         margin-bottom: 2rem;
         color: $primary;
+    }
+
+    .purchase-info {
+        position: relative;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        text-align: center;
+        background: $gray-100;
+
+        > div {
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            width: 50%;
+            text-align: left;
+            border-bottom: 1px solid $border-color;
+
+            p { 
+                margin-bottom: 0.5rem;
+            }
+
+            + p {
+                margin-bottom: 0;
+                text-align: center;
+            }
+        }
     }
 
     .or {

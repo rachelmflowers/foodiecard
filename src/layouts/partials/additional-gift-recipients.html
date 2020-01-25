@@ -6,12 +6,27 @@
             <svg class="icon">
                 <use xlink:href="fonts/feather-sprite.svg#gift"/>
             </svg>
-            Let's add the recipient's details
+            Let's add that lucky gift recipient's details
         </legend>
 
         <div class="form-group">
-            <label for="nameOnCard-2" class="sr-only">Enter the name to appear on the Foodie card</label>
-            <input type="text" name="nameOnCard-2" id="nameOnCard-2" placeholder="Name on Foodie Card" class="form-control" />
+            <label for="nameOnCard-2" class="sr-only">Full name of gift recipient</label>
+            <input type="text" name="nameOnCard-2" id="nameOnCard-2" placeholder="Full name of gift recipient" class="form-control" />
+        </div>
+                    
+        <div class="form-check">
+            <input type="checkbox" id="emailMessage-2" class="form-check-input emailMessage" />
+            <label class="form-check-label" for="emailMessage-2">Add a gift message?</label>
+        </div>
+
+        <div class="messageEmail">
+
+            <div class="form-group">
+                <label for="gift-message" class="sr-only">Enter your message</label>
+                <textarea name="gift-message-2" id="gift-message-2" placeholder="Add your message" class="form-control form-control-lg"></textarea>
+                <small class="form-text">Gift message will be printed and included within the Foodie Card mailer</small>
+            </div>
+
         </div>
     </fieldset>
     
@@ -20,59 +35,12 @@
             <svg class="icon">
                 <use xlink:href="fonts/feather-sprite.svg#gift"/>
             </svg>
-            Where is the additional gift going?
+            Where should we mail the additional gift?
         </legend>
         <div class="form-check">
             <input type="checkbox" id="sameAddress" class="form-check-input" />
             <label class="form-check-label" for="sameAddress">Ship to same address</label>
         </div>
         @@include("shipping-info.html")
-    </fieldset>
-
-    <fieldset name="giftMessage-2">
-        <legend>
-            <svg class="icon">
-                <use xlink:href="fonts/feather-sprite.svg#gift"/>
-            </svg>
-            Want to add a gift message?
-        </legend>
-
-        <div class="form-group">
-            <label for="gift-message-2" class="sr-only">Enter your message</label>
-            <textarea name="gift-message-2" id="gift-message-2" placeholder="Add your message" class="form-control form-control-lg"></textarea>
-        </div>
-
-        <div class="form-check">
-            <input type="checkbox" id="emailMessage-2" class="form-check-input emailMessage" />
-            <label class="form-check-label" for="emailMessage-2">Send message as an email</label>
-        </div>
-
-        <div class="messageEmail">
-            <div class="form-group">
-                <input type="text" class="form-control"
-                    name="messageEmail-2" id="messageEmail-2" 
-                    aria-label="Enter the recipient's email address"
-                    placeholder="Gift Recipient's Email Address"
-                />
-            </div>
-
-            <div class="messageSchedule">
-                <label for="messageSendDate-2">When should we send the message?</label>
-                <div class="form-group">
-                    <input type="date" class="form-control"
-                        name="messageSendDate-2" id="messageSendDate-2"
-                        aria-label="Select date to send"
-                        placeholder="Select date to send"
-                    />
-                </div>
-
-                <span>or</span>
-
-                <div class="form-check">
-                    <input type="checkbox" id="messageSendNow-2" class="form-check-input" />
-                    <label class="form-check-label" for="messageSendNow-2">Send Immediately</label>
-                </div>
-            </div>
-        </div>
     </fieldset>
 </div>

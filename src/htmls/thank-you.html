@@ -17,8 +17,9 @@
         <link rel="stylesheet" href="../../node_modules/flickity/dist/flickity.min.css" />
         <link rel="stylesheet" href="../../node_modules/flickity-fade/flickity-fade.css" />
 
-        <!-- Multiple Select Box Selctr -->
-        <link href="../../node_modules/mobius1-selectr/dist/selectr.min.css" rel="stylesheet" />
+        <!-- Flatpickr Datetimepicker -->
+        <link rel="stylesheet" href="../../node_modules/flatpickr/dist/flatpickr.css"></script>
+
         <!-- endbuild -->
         
         <!-- Custom CSS -->
@@ -138,10 +139,44 @@
             </footer>
         </div>
 
+        <div id="couponModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <p class="h3">Exciting Coupon Header!</p>
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                        amet
+                        risus. Donec sed odio dui.</p>
+                        
+                    <dl>
+                        <dt><span class="sr-only">Deal details</span></dt>
+                        <dd>
+                            <small class="text-center">USE CODE:</small>
+                        </dd>
+                    </dl>
+                    <dl class="deals">
+                        <dt>
+                            20% off
+                            <small>disclaimer text here</small>
+                        </dt>
+                        <dd>
+                            <span class="badge badge-dark">FOODIELOVER</span>
+                        </dd>
+                    </dl>
+    
+                    <a href="" class="btn btn-warning btn-wide">Buy Now!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <!--build:js js/site.min.js -->
 
         <!-- Bootstrap required scripts -->
-        <script src="../../node_modules/jquery/dist/jquery.slim.js"></script>
+        <script src="../../node_modules/jquery/dist/jquery.js"></script>
         <script src="../../node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
@@ -152,13 +187,15 @@
         <!-- Feather Icons -->
         <script src="../../node_modules/feather-icons/dist/feather.js"></script>
 
-        <!-- Multiple Select Box Selctr -->
-        <script src="../../node_modules/mobius1-selectr/src/selectr.js"></script>
+        <!-- Flatpickr Datetimepicker -->
+        <script src="../../node_modules/flatpickr/dist/flatpickr.js"></script>
 
         <!-- Image Gallery Masonry Grid -->
         <script src="../../node_modules/imagesloaded/imagesloaded.pkgd.js"></script>
         <script src="../js/masonry_grid.js"></script>
 
+
+        
         <!-- Login Form Validation Starter -->
         <script src="../js/form_validation.js"></script>
 

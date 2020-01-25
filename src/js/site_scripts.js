@@ -140,28 +140,68 @@ const gmap = async (elem) => {
 
         $('[data-toggle="tooltip"]').tooltip();
 
+        // Coupon Modal
+        $('.deal-bar').on('click', function() {
+            $('#couponModal').modal('show');
+        });
+
         // How it works Scroll observer
         new ScrollPoint('#step-1');
         new ScrollPoint('#step-2');
 
+        // Datetime pickers
+
+        $('.datetimepicker').flatpickr({
+            altInput: true,
+            altFormat: "F j, Y",
+            dateFormat: "Y-m-d"
+        });
+
+        $('.timepicker').flatpickr({
+            enableTime: true,
+            noCalendar: true
+        });
+
+        // Smooth Scrolling
+        // Select all links with hashes
+        $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+        // On-page links
+        if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+        ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function() {
+                    // Callback after animation
+                    // Must change focus!
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                    } else {
+                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                    };
+                });
+            }
+        }
+        });
+
 
         // CHECKOUT PAGE
-        
-        $('.showRegistration').on('click', function() {
-            $('#loginForm_container').hide();
-            $('#registerForm_container').addClass('show');
-        });
-        
-        $('.showLogin').on('click', function() {
-            $('#registerForm_container').hide();
-            $('#loginForm_container').addClass('show');
-        });
-
-        $('.showCheckout').on('click', function() {
-            $('#loginForm_container').hide();
-            $('#registerForm_container').hide();
-            $('#checkout').addClass('show');
-        });
 
         $('.add-card').on('click', function() {
             var newCard = $(this).next('.input-group').clone();
@@ -191,21 +231,6 @@ const gmap = async (elem) => {
             }
         })
 
-        // Selectr custom select boxes
-        var restaurantCity = document.getElementById("restaurantCity"),
-            restaurantZip = document.getElementById("restaurantZip");
-
-        if (typeof (restaurantCity) != 'undefined' && restaurantCity != null) {
-            new Selectr('#restaurantCity', {
-                defaultSelected: true
-            });
-        }
-
-        if (typeof (restaurantZip) != 'undefined' && restaurantZip != null) {
-            new Selectr('#restaurantZip', {
-                defaultSelected: true
-            });
-        }
 
         // Flickity Scrollers
         var featArticles = document.getElementById('featuredArticlesSlider'),

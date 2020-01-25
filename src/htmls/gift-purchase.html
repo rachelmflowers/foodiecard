@@ -17,8 +17,9 @@
         <link rel="stylesheet" href="../../node_modules/flickity/dist/flickity.min.css" />
         <link rel="stylesheet" href="../../node_modules/flickity-fade/flickity-fade.css" />
 
-        <!-- Multiple Select Box Selctr -->
-        <link href="../../node_modules/mobius1-selectr/dist/selectr.min.css" rel="stylesheet" />
+        <!-- Flatpickr Datetimepicker -->
+        <link rel="stylesheet" href="../../node_modules/flatpickr/dist/flatpickr.css"></script>
+
         <!-- endbuild -->
         
         <!-- Custom CSS -->
@@ -110,27 +111,72 @@
     </div>
 
         <div id="checkout">
-            <ul class="nav">
+            <!-- <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Shipping & Payment</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="review.html">Review</a>
                 </li>
-            </ul>
+            </ul> -->
 
             <form id="purchaseForm" class="needsValidation" novalidate>
+                
+                <fieldset name="customerDetails">
+                    <legend>Your details, please!</legend>
+
+                    <div id="cardName_field" class="form-group">
+                        <label for="nameOnCard1" class="sr-only">First and Last name</label>
+                        <input type="text" name="nameOnCard1" id="nameOnCard1" placeholder="First and last name" class="form-control form-control-lg" autocomplete="name" required/>
+                    </div>
+
+                    
+        <div class="form-group" id="customer_email-field">
+            <label for="customerEmail" class="sr-only">Email address</label>
+            <input type="email" name="customerEmail" id="customerEmail" class="form-control form-control-lg" placeholder="Your email" autocomplete="email" required />
+        </div>
+
+        <div class="form-group" id="customer_password-field">
+            <label for="customerPassword" class="sr-only">Enter password</label>
+            <input type="password" name="customerPassword" id="customerPassword" class="form-control form-control-lg" placeholder="Your password" autocomplete="current-password" required />
+        </div>
+
+        <div class="form-group" id="customer_phone-field">
+            <label for="customerPhone" class="sr-only">Mobile Phone</label>
+            <input type="number" name="customerPhone" id="customerPhone" class="form-control form-control-lg" placeholder="Cell phone" autocomplete="mobile" required />
+        </div>
+        
+        <div class="form-check">
+            <input type="checkbox" id="textMe" class="form-check-input" />
+            <label class="form-check-label" for="textMe">
+                Text me updates 
+                <span>
+                    (Yes, I agree to these terms)
+                
+                    <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="terms here? or should this be a link?">
+                        <use xlink:href="fonts/feather-sprite.svg#info"/>
+                    </svg>
+                </span>
+            </label>
+        </div>
+                </fieldset>
+
                 <fieldset name="cardNames">
                     <legend>
                         <svg class="icon">
                             <use xlink:href="fonts/feather-sprite.svg#gift"/>
                         </svg>
-                        Let's add the recipient's details
+                        Let's add that lucky gift recipient's details
                     </legend>
 
                     <div class="form-group">
-                        <label for="nameOnCard" class="sr-only">Enter the name to appear on the Foodie card</label>
-                        <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Name on Foodie Card" class="form-control" />
+                        <label for="nameOnCard" class="sr-only">Full name of gift recipient</label>
+                        <input type="text" name="nameOnCard" id="nameOnCard" placeholder="Full name of gift recipient" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="giftRecipientEmail" class="sr-only">Gift recipient's email address</label>
+                        <input type="email" name="giftRecipientEmail" id="giftRecipientEmail" placeholder="Gift recipient's email address" class="form-control" />
                     </div>
                     
                     <div class="form-check">
@@ -143,43 +189,9 @@
                         <div class="form-group">
                             <label for="gift-message" class="sr-only">Enter your message</label>
                             <textarea name="gift-message" id="gift-message" placeholder="Add your message" class="form-control form-control-lg"></textarea>
-                        </div>
-                        <!-- <div class="form-check">
-                            <input type="checkbox" id="emailMessage" class="form-check-input emailMessage" />
-                            <label class="form-check-label" for="emailMessage">Send message as an email</label>
-                        </div> -->
-
-                        <div class="form-group">
-                            <input type="text" class="form-control"
-                                name="messageEmail" id="messageEmail" 
-                                aria-label="Enter the recipient's email address"
-                                placeholder="Gift Recipient's Email Address"
-                            />
+                            <small class="form-text">Gift message will be printed and included within the Foodie Card mailer</small>
                         </div>
 
-                        <div class="messageSchedule">
-                            <label for="messageSendDate">When should we send the message?</label>
-                            <div class="form-group">
-                                <input type="date" class="form-control"
-                                    name="messageSendDate" id="messageSendDate"
-                                    aria-label="Select date to send"
-                                    placeholder="Select date to send"
-                                />
-                            </div>
-
-                            <span>or</span>
-
-                            <div class="form-check">
-                                <input type="checkbox" id="messageSendNow" class="form-check-input" />
-                                <label class="form-check-label" for="messageSendNow">
-                                    Send Immediately
-                        
-                                    <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="Gift recipient will be emailed gift message immediately upon your purchase">
-                                        <use xlink:href="fonts/feather-sprite.svg#info"/>
-                                    </svg>
-                                </label>
-                            </div>
-                        </div>
                     </div>
                 </fieldset>
 
@@ -189,7 +201,7 @@
                         <svg class="icon">
                             <use xlink:href="fonts/feather-sprite.svg#gift"/>
                         </svg>
-                        Where is the Foodie Card gift going?
+                        Where should we mail this Foodie Card gift?
                     </legend>
                                    
 
@@ -240,12 +252,27 @@
             <svg class="icon">
                 <use xlink:href="fonts/feather-sprite.svg#gift"/>
             </svg>
-            Let's add the recipient's details
+            Let's add that lucky gift recipient's details
         </legend>
 
         <div class="form-group">
-            <label for="nameOnCard-2" class="sr-only">Enter the name to appear on the Foodie card</label>
-            <input type="text" name="nameOnCard-2" id="nameOnCard-2" placeholder="Name on Foodie Card" class="form-control" />
+            <label for="nameOnCard-2" class="sr-only">Full name of gift recipient</label>
+            <input type="text" name="nameOnCard-2" id="nameOnCard-2" placeholder="Full name of gift recipient" class="form-control" />
+        </div>
+                    
+        <div class="form-check">
+            <input type="checkbox" id="emailMessage-2" class="form-check-input emailMessage" />
+            <label class="form-check-label" for="emailMessage-2">Add a gift message?</label>
+        </div>
+
+        <div class="messageEmail">
+
+            <div class="form-group">
+                <label for="gift-message" class="sr-only">Enter your message</label>
+                <textarea name="gift-message-2" id="gift-message-2" placeholder="Add your message" class="form-control form-control-lg"></textarea>
+                <small class="form-text">Gift message will be printed and included within the Foodie Card mailer</small>
+            </div>
+
         </div>
     </fieldset>
     
@@ -254,7 +281,7 @@
             <svg class="icon">
                 <use xlink:href="fonts/feather-sprite.svg#gift"/>
             </svg>
-            Where is the additional gift going?
+            Where should we mail the additional gift?
         </legend>
         <div class="form-check">
             <input type="checkbox" id="sameAddress" class="form-check-input" />
@@ -293,90 +320,41 @@
                         <input type="text" name="shippingZip" id="shippingZip" placeholder="Zip Code" class="form-control" aria-label="Enter Zip Code" autocomplete="postal-code" required />
                     </div>
     </fieldset>
-
-    <fieldset name="giftMessage-2">
-        <legend>
-            <svg class="icon">
-                <use xlink:href="fonts/feather-sprite.svg#gift"/>
-            </svg>
-            Want to add a gift message?
-        </legend>
-
-        <div class="form-group">
-            <label for="gift-message-2" class="sr-only">Enter your message</label>
-            <textarea name="gift-message-2" id="gift-message-2" placeholder="Add your message" class="form-control form-control-lg"></textarea>
-        </div>
-
-        <div class="form-check">
-            <input type="checkbox" id="emailMessage-2" class="form-check-input emailMessage" />
-            <label class="form-check-label" for="emailMessage-2">Send message as an email</label>
-        </div>
-
-        <div class="messageEmail">
-            <div class="form-group">
-                <input type="text" class="form-control"
-                    name="messageEmail-2" id="messageEmail-2" 
-                    aria-label="Enter the recipient's email address"
-                    placeholder="Gift Recipient's Email Address"
-                />
-            </div>
-
-            <div class="messageSchedule">
-                <label for="messageSendDate-2">When should we send the message?</label>
-                <div class="form-group">
-                    <input type="date" class="form-control"
-                        name="messageSendDate-2" id="messageSendDate-2"
-                        aria-label="Select date to send"
-                        placeholder="Select date to send"
-                    />
-                </div>
-
-                <span>or</span>
-
-                <div class="form-check">
-                    <input type="checkbox" id="messageSendNow-2" class="form-check-input" />
-                    <label class="form-check-label" for="messageSendNow-2">Send Immediately</label>
-                </div>
-            </div>
-        </div>
-    </fieldset>
 </div>
 
                                 <fieldset name="paymentInfo">
                     <legend>Payment Information</legend>
 
-                    <div class="form-group" id="cc-number_field">
-                        <label for="cardNumber" class="sr-only">Enter credit card number</label>
-                        <input type="number" name="cardNumber" id="cardNumber" class="form-control form-control-lg" placeholder="Card Number" autocomplete="cc-number" required />
+                    <div id="creditCard_fields" class="input-group input-group-lg">
+                        <input type="number" name="cardNumber" id="cardNumber" class="form-control" placeholder="Card Number" autocomplete="cc-number" required  aria-label="Enter your credit card number" />
+
+                        <input name="expDateMo" id="expDateMo" type="number" min="01" max="12" class="form-control" aria-label="Card Expiration Date month" placeholder="MM  /" autocomplete="cc-exp-month" required />
+
+                        <input name="expDateYr" min="20" max="40" id="expDateYr" type="number" class="form-control" aria-label="Card Expiration Date Year"  placeholder="YY" autocomplete="cc-exp-year" required />
+
+                        <input type="number" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
+
+                        <!-- <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required /> -->
                     </div>
 
-                    <div class="input-group input-group-lg">
-                        <select name="expDateMo" id="expDateMo" class="custom-select" aria-label="Card Expiration Date month" autocomplete="cc-exp-month" required>
-                            <option disabled selected>Exp MM</option>
-                            <option value="01" label="Jan">01</option>
-                            <option value="02" label="Feb">02</option>
-                            <option value="03" label="Mar">03</option>
-                        </select>
-
-                        <select name="expDateYr" id="expDateYr" class="custom-select" aria-label="Card Expiration Date Year" autocomplete="cc-exp-year" required>
-                            <option disabled selected>Exp YY</option>
-                            <option value="20" label="2020">20</option>
-                            <option value="21" label="2021">21</option>
-                            <option value="22" label="2022">22</option>
-                        </select>
-
-                        <input type="text" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
-
-                        <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required />
+                    <div class="paypal">
+                        PAY WITH PAYPAL HERE
                     </div>
 
-                    <div class="input-group input-group-lg">
+                    <div id="couponCode_field" class="input-group input-group-lg">
                         <input type="text" name="couponCode" id="couponCode" placeholder="Enter coupon code" class="form-control" aria-label="Enter coupon code" />
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="button">Apply</button>
                         </div>
                     </div>
                 </fieldset>
+
+                <div class="form-check">
+                    <input type="checkbox" id="autoRenewGift" class="form-check-input" />
+                    <label class="form-check-label" for="autoRenewGift">
+                        Automatically renew this gift annually
+                    </label>
+                </div>
 
                 <div class="purchase-details">
                     <dl>
@@ -392,9 +370,18 @@
                         <dt class="total">Total</dt>
                         <dd class="total">$29.99</dd>
                     </dl>
-
-                    <button type="submit" class="btn btn-warning btn-lg btn-block">Review Order</button>
+                    
+                    <button type="submit" class="btn btn-warning btn-block">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#lock"/>
+                            </svg>
+                            Place Secure Order
+                    </button>
+        
+                    <small>By placing the order, you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</small>
                 </div>
+                <br /> 
+                <p class="text-center">Your order will feed someone less fortunate for an entire day!</p>
             </form>
         </div>
         
@@ -455,9 +442,9 @@
     
             <!-- Feather Icons -->
             <script src="../../node_modules/feather-icons/dist/feather.js"></script>
-    
-            <!-- Multiple Select Box Selctr -->
-            <script src="../../node_modules/mobius1-selectr/src/selectr.js"></script>
+
+            <!-- Flatpickr Datetimepicker -->
+            <script src="../../node_modules/flatpickr/dist/flatpickr.js"></script>
     
             <!-- Login Form Validation Starter -->
             <script src="../js/form_validation.js"></script>

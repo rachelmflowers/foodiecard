@@ -33,6 +33,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "feather-icons": "^4.24.1",
+    "flatpickr": "^4.6.3",
     "flickity": "^2.2.1",
     "flickity-fade": "^1.0.0",
     "imagesloaded": "^4.1.4",
