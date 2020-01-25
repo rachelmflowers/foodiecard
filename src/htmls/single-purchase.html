@@ -44,14 +44,27 @@
         <h1 class="sr-only">Checkout</h1>
 
         <div id="checkout">
-            <!-- <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Shipping & Payment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="review.html">Review</a>
-                </li>
-            </ul> -->
+            <p class="text-center">Already have an account? <button id="showCheckoutLogin" class="btn btn-link">Login</button></p>
+                <div id="loginForm_container">
+        <h2 class="h4">Login as existing customer</h1>
+
+        <!-- REMOVE onsubmit, just there to prevent page refresh for review -->
+        <form onsubmit="return false;"id="loginForm" class="needsValidation" novalidate>
+            <div class="form-group">
+                <label for="email" class="sr-only">Email address</label>
+                <input type="email" class="form-control form-control-lg" id="email"  placeholder="Enter email address" autocomplete="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" class="form-control form-control-lg" id="password"  placeholder="Enter password" autocomplete="current-password" required />
+            </div>
+
+            <button class="btn btn-warning btn-lg btn-block" type="submit">Login</button>
+        </form>
+        <a href="/dist/forgot-password.html">Forgot Password?</a>
+    </div>
+
 
             <form id="purchaseForm" class="needsValidation" novalidate>
                 <fieldset name="customerDetails">
@@ -69,8 +82,8 @@
         </div>
 
         <div class="form-group" id="customer_password-field">
-            <label for="customerPassword" class="sr-only">Enter password</label>
-            <input type="password" name="customerPassword" id="customerPassword" class="form-control form-control-lg" placeholder="Your password" autocomplete="current-password" required />
+            <label for="customerPassword" class="sr-only">Create password</label>
+            <input type="password" name="customerPassword" id="customerPassword" class="form-control form-control-lg" placeholder="Create password" autocomplete="new-password" required />
         </div>
 
         <div class="form-group" id="customer_phone-field">

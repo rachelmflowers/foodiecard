@@ -203,6 +203,10 @@ const gmap = async (elem) => {
 
         // CHECKOUT PAGE
 
+        $('#showCheckoutLogin').on('click', function() {
+            $('#loginForm_container').addClass('show');
+        });
+
         $('.add-card').on('click', function() {
             var newCard = $(this).next('.input-group').clone();
             

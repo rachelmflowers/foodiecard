@@ -1,5 +1,5 @@
     <div id="loginForm_container">
-        <h2 class="h2">Login as existing customer</h1>
+        <h2 class="h4">Login as existing customer</h1>
 
         <!-- REMOVE onsubmit, just there to prevent page refresh for review -->
         <form onsubmit="return false;"id="loginForm" class="needsValidation" novalidate>
@@ -13,54 +13,7 @@
                 <input type="password" class="form-control form-control-lg" id="password"  placeholder="Enter password" autocomplete="current-password" required />
             </div>
 
-            <!-- REMOVE showCheckout class once this is actuall hooked up (used to transition to checkout form for review -->
-            <button class="btn btn-warning btn-lg btn-block showCheckout" type="submit">Continue</button>
+            <button class="btn btn-warning btn-lg btn-block" type="submit">Login</button>
         </form>
         <a href="/dist/forgot-password.html">Forgot Password?</a>
-
-        <hr />
-
-        <button class="btn btn-link showRegistration">Continue as a new customer</button>
-    </div>
-
-    <div id="registerForm_container">
-        <h2 class="h2">Create an account</h1>
-
-        <!-- REMOVE onsubmit, just there to prevent page refresh for review -->
-        <form onsubmit="return false;" id="registerForm" class="needsValidation" novalidate>
-            <div class="form-group">
-                <label for="name" class="sr-only">Enter first and last name</label>
-                <input type="name" class="form-control form-control-lg" id="name"  placeholder="First and last name" autocomplete="name" required />
-            </div>
-
-            <div class="form-group">
-                <label for="email" class="sr-only">Enter email address</label>
-                <input type="email" class="form-control form-control-lg" id="email"  placeholder="Email address" autocomplete="email" required />
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="sr-only">Enter Password</label>
-                <input type="password" class="form-control form-control-lg" id="password"  placeholder="Password" autocomplete="new-password" required />
-                <a class="float-right show-password">
-                    <small>show password</small>
-                </a>
-            </div>
-            <!-- 
-            <div class="form-group">
-                <label for="passwordConfirm" class="sr-only">Confirm Password</label>
-                <input type="password" class="form-control form-control-lg" id="passwordConfirm"  placeholder="Password Confirmation" autocomplete="new-password" required />
-            </div> -->
-
-
-            <!-- REMOVE showCheckout class once this is actuall hooked up (used to transition to checkout form for review -->
-            <button class="btn btn-warning btn-lg showCheckout" type="submit">Create Account</button>
-        </form>
-
-        <small class="text-muted">By clicking "Create Account" you agree to Foodie Card's <a href="">terms</a> and <a href="">Privacy policy.</a></small>
-
-        <hr />
-
-        <p><button class="btn btn-link showLogin">I already have an account</button></p>
-
-        
     </div>
