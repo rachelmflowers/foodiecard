@@ -138,7 +138,9 @@
                 <p>
                     <strong>Profile</strong>
                     <span>{{ customer name }}</span>
+                    <span>Birthday: {{ customer birthday }}</span>
                     <span>{{ username@email.com }}</span>
+                    <span>{{ mobile phone number }}</span>
                     <span>Password: ********</span>
                 </p>
                 
@@ -165,7 +167,7 @@
                 <p>
                     <strong>Payment Method</strong>
                     <span>
-                        <img src="../images/visa.png" alt="" />
+                        <img src="images/visa.png" alt="" />
                         **** {{ last 4 digits }}
                     </span>
                     <span>Expires {{ mm }}/{{ yyyy }}</span>
@@ -176,6 +178,20 @@
                     Edit
                 </button>
             </div>
+
+            <div class="account-preferences">
+                <p>
+                    <strong>Preferences</strong>
+                    <span>Cusine: {{ type }}</span>
+                    <span>Alcohol: {{ type }}</span>
+                </p>
+                
+                <button class="btn btn-secondary btn-xs" id="updatePayment">
+                    Edit
+                </button>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-xs">Refer a friend</button>
 
 
             <div class="account-settings--update">
@@ -194,6 +210,10 @@
                         <div class="form-group">
                             <input type="password" placeholder="New password" autocomplete="new-password" aria-label="Create new password" class="form-control form-control-lg" />
                         </div>
+
+                        <button type="button" class="btn btn-link">Add credit card</button>
+
+                        <button type="button" class="btn btn-link">Add paypal account</button>
                     </fieldset>
 
 
@@ -217,6 +237,8 @@
                             
                             <input type="number" placeholder="Zip" autocomplete="postal-code" aria-label="Zipcode" class="form-control" />
                         </div>
+
+                        <button type="button" class="btn btn-link">Add new address</button>
                     </fieldset>
 
 
@@ -249,16 +271,90 @@
             <h2 class="h4">Order History</h2>
 
             <ol class="list-unstyled">
-                <li>
+                <li class="active-subscription">
+                    <span class="badge badge-warning">
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
+                        </svg>
+                        Auto Renews
+                    </span>
+
                     <div class="order">
                         <strong>Order #</strong><br />
-                        {{ order ## }}
+                        {{ order ## }}<br />
+                        <em>Subscription</em>
                     </div>
 
                     <div class="shipped-to">
                         <strong>Shipped to</strong><br />
                         {{ shipping name }}<br />
                         <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                    </div>
+
+                    <div class="renewal-info">
+                        <strong>Renewal Info</strong><br />
+                        Expiration: {{ date }}<br />
+                        Renews On: {{ date }}
+                    </div>
+
+                    <div class="total">
+                        <strong>Total</strong><br />
+                        {{ $total }}
+                    </div>
+
+                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                </li>
+
+                <li>
+                    <span class="badge badge-warning">
+                        <svg class="icon">
+                            <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
+                        </svg>
+                        Auto Renews
+                    </span>
+                    <div class="order">
+                        <strong>Order #</strong><br />
+                        {{ order ## }}<br />
+                        <em>Gift</em>
+                    </div>
+
+                    <div class="shipped-to">
+                        <strong>Shipped to</strong><br />
+                        {{ shipping name }}<br />
+                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                    </div>
+
+                    <div class="recipient">
+                        <strong>Gift Recipient</strong><br />
+                        {{ recipient name }}
+                    </div>
+
+                    <div class="total">
+                        <strong>Total</strong><br />
+                        {{ $total }}
+                    </div>
+
+                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                </li>
+
+                <li class="auto-renews">
+                    <div class="order">
+                        <strong>Order #</strong><br />
+                        {{ order ## }}<br />
+                        <em>Family</em>
+                    </div>
+
+                    <div class="shipped-to">
+                        <strong>Shipped to</strong><br />
+                        {{ shipping name }}<br />
+                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                    </div>
+
+                    <div class="recipient">
+                        <strong>Household</strong><br />
+                        Head of: {{ name }}<br />
+                        {{ family member }}<br />
+                        {{ family member }}
                     </div>
 
                     <div class="total">

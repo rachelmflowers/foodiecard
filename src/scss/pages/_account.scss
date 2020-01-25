@@ -18,7 +18,7 @@
 
     &-settings {
         position: relative;
-        width: 38%;
+        width: 30%;
 
         > div {
             padding: 1rem 0;
@@ -32,6 +32,10 @@
             strong {
                 display: block;
             }
+        }
+
+        > .btn {
+            margin-top: 2rem;
         }
 
         > .account-settings--update {
@@ -55,17 +59,53 @@
         }
     }
 
+    &-payment {
+        img {
+            width: 30px;
+            height: auto;
+        }
+    }
+
     &-orders {
-        width: 56%;
+        width: 66%;
 
         li {
-            padding: 1rem;
+            position: relative;
+            padding: 1.5rem 1rem;
             margin-bottom: 1rem;
             display: flex;
             flex-flow: row wrap;
             align-items: flex-start;
             justify-content: space-between;
+            font-size: 0.9rem;
             background: $gray-100;
+
+            &.active-subscription {
+                border: 1px solid $primary;
+
+                &::before {
+                    content: "ACTIVE";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 2px 4px;
+                    color: $white;
+                    font-size: $font-size-xs;
+                    background: $primary;
+                }
+            }
+
+            .badge {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                .icon {
+                    margin-right: 5px;
+                    width: 14px;
+                    height: 14px;
+                }
+            }
 
             > div {
                 margin-right: 1rem;
@@ -77,4 +117,5 @@
             }
         }
     }
+    
 }
