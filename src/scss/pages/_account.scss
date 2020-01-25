@@ -1,0 +1,80 @@
+.accountPage {
+
+    > .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad-desk;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    h1 {
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+}
+
+.account {
+
+    &-settings {
+        position: relative;
+        width: 38%;
+
+        > div {
+            padding: 1rem 0;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $border-color;
+
+            span,
+            strong {
+                display: block;
+            }
+        }
+
+        > .account-settings--update {
+            position: absolute;
+            top: 0;
+            right: -164%;
+            padding: 2rem;
+            width: 150%;
+            height: 100%;
+            z-index: 1;
+            display: none;
+            background: $white;
+
+            fieldset {
+                display: none;
+            }
+
+            .input-group {
+                margin-bottom: $form-group-margin-bottom;
+            }
+        }
+    }
+
+    &-orders {
+        width: 56%;
+
+        li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            background: $gray-100;
+
+            > div {
+                margin-right: 1rem;
+                max-width: 30%;
+            }
+
+            .btn {
+                align-self: center;
+            }
+        }
+    }
+}

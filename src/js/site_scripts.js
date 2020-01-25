@@ -235,6 +235,29 @@ const gmap = async (elem) => {
             }
         })
 
+        // ACCOUNT PAGE
+
+        $('#updateProfile').on('click', function() {
+            $('.account-settings--update').hide();
+            $('.account-settings--update fieldset').hide();
+            $('.account-settings--update').toggle();
+            $('fieldset.account-profile--update').slideToggle();
+        });
+
+        $('#updateShipping').on('click', function() {
+            $('.account-settings--update').hide();
+            $('.account-settings--update fieldset').hide();
+            $('.account-settings--update').toggle();
+            $('fieldset.account-shipping--update').slideToggle();
+        });
+
+        $('#updatePayment').on('click', function() {
+            $('.account-settings--update').hide();
+            $('.account-settings--update fieldset').hide();
+            $('.account-settings--update').toggle();
+            $('fieldset.account-payment--update').slideToggle();
+        });
+
 
         // Flickity Scrollers
         var featArticles = document.getElementById('featuredArticlesSlider'),

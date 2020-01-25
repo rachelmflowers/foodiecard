@@ -58,7 +58,7 @@
             background: $gray-400;
                 
             @include media-breakpoint-up(md) {
-                top: calc(40% - 0.4rem);
+                top: 45%;
             }
         }
 
@@ -202,56 +202,6 @@
 
         &[name=paymentInfo] {
 
-            #creditCard_fields {
-                margin-bottom: $form-group-margin-bottom;
-                
-                #expDateMo,
-                #expDateYr,
-                #cvc {
-                    padding: 0.75rem;
-                    flex: none;
-                    border-left: 0;
-                    appearance: none;
-                }
-
-                #expDateMo,
-                #expDateYr {
-                    padding-left: 4px;
-                    padding-right: 0;
-                    border-right: 0;
-                }
-
-                #expDateMo {
-                    width: 65px;
-                    text-align: right;
-                }
-
-                #expDateYr {
-                    width: 45px;
-                }
-
-                #cvc { 
-                    padding-left: 4px;
-                    width: 75px;
-                }
-
-
-                .btn-primary {
-                    padding-left: 2rem; padding-right: 2rem;
-                }
-            }
-
-            #cardNumber {
-                padding-left: calc(40px + 0.5rem);
-                background: url("../images/visa.png") no-repeat center left 0.5rem $gray-100;
-                background-blend-mode: luminosity;
-                background-size: 30px 18px;
-
-                &.has-value {
-                    background-blend-mode: normal;
-                }
-            }
-
             .paypal {
                 margin-bottom: 2rem;
 
@@ -270,7 +220,61 @@
         margin-bottom: 2rem;
         line-height: 1.75;
 
-        + .additional-recipient { display: none; }
+        + .additional-recipient { 
+            margin-bottom: 2rem;
+            display: none;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}
+
+#creditCard_fields {
+    margin-bottom: $form-group-margin-bottom;
+    
+    #expDateMo,
+    #expDateYr,
+    #cvc {
+        padding: 0.75rem;
+        flex: none;
+        border-left: 0;
+        appearance: none;
+    }
+
+    #expDateMo,
+    #expDateYr {
+        padding-left: 4px;
+        padding-right: 0;
+        border-right: 0;
+    }
+
+    #expDateMo {
+        width: 65px;
+        text-align: right;
+    }
+
+    #expDateYr {
+        width: 45px;
+    }
+
+    #cvc { 
+        padding-left: 4px;
+        width: 75px;
+    }
+
+
+    .btn-primary {
+        padding-left: 2rem; padding-right: 2rem;
+    }
+}
+
+#cardNumber {
+    padding-left: calc(40px + 0.5rem);
+    background: url("../images/visa.png") no-repeat center left 0.5rem $gray-100;
+    background-blend-mode: luminosity;
+    background-size: 30px 18px;
+
+    &.has-value {
+        background-blend-mode: normal;
     }
 }
 

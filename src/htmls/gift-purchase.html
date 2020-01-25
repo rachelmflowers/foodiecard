@@ -42,8 +42,11 @@
 <main id="mainContent" class="content checkout">
     <div class="container">
         <h1 class="sr-only">Checkout</h1>
+
+        <div id="checkout">
+            <p class="text-center">Already have an account? <button id="showCheckoutLogin" class="btn btn-link">Login</button></p>
         
-            <div id="loginForm_container">
+                <div id="loginForm_container">
         <h2 class="h4">Login as existing customer</h1>
 
         <!-- REMOVE onsubmit, just there to prevent page refresh for review -->
@@ -63,16 +66,6 @@
         <a href="/dist/forgot-password.html">Forgot Password?</a>
     </div>
 
-
-        <div id="checkout">
-            <!-- <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Shipping & Payment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="review.html">Review</a>
-                </li>
-            </ul> -->
 
             <form id="purchaseForm" class="needsValidation" novalidate>
                 
@@ -183,9 +176,6 @@
                             <option value="MI">Michigan</option>
                             <option value="CA">California</option>
                         </select>
-                        <datalist id="states">
-                            <option></option>
-                        </datalist>
 
                         <input type="text" name="shippingZip" id="shippingZip" placeholder="Zip Code" class="form-control" aria-label="Enter Zip Code" autocomplete="postal-code" required />
                     </div>
@@ -267,9 +257,6 @@
                             <option value="MI">Michigan</option>
                             <option value="CA">California</option>
                         </select>
-                        <datalist id="states">
-                            <option></option>
-                        </datalist>
 
                         <input type="text" name="shippingZip" id="shippingZip" placeholder="Zip Code" class="form-control" aria-label="Enter Zip Code" autocomplete="postal-code" required />
                     </div>

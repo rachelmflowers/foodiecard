@@ -1,0 +1,155 @@
+@@include("../layouts/partials/header.html")
+<main id="mainContent" class="content accountPage">
+
+    <div class="container">
+
+        <h1>Welcome back, {{ customer name }}!</h1>
+
+        <div class="account-settings">
+            <h2 class="h4">Account Settings</h2>
+
+            <div class="account-profile">
+                <p>
+                    <strong>Profile</strong>
+                    <span>{{ customer name }}</span>
+                    <span>{{ username@email.com }}</span>
+                    <span>Password: ********</span>
+                </p>
+                
+                <button class="btn btn-secondary btn-xs" id="updateProfile">
+                    Edit
+                </button>
+            </div>
+
+            <div class="account-shipping">
+                <address>
+                    <strong>Shipping Address</strong>
+                    <span>{{ shipping name }}</span>
+                    <span>{{ address line 1 }}</span>
+                    <span>{{ address line 1 }}</span>
+                    <span>{{ city }}, {{ state }} {{ zip }}</span>
+                </address>
+                
+                <button class="btn btn-secondary btn-xs" id="updateShipping">
+                    Edit
+                </button>
+            </div>
+
+            <div class="account-payment">
+                <p>
+                    <strong>Payment Method</strong>
+                    <span>
+                        <img src="../images/visa.png" alt="" />
+                        **** {{ last 4 digits }}
+                    </span>
+                    <span>Expires {{ mm }}/{{ yyyy }}</span>
+                    <span>{{ name on card }}</span>
+                </p>
+                
+                <button class="btn btn-secondary btn-xs" id="updatePayment">
+                    Edit
+                </button>
+            </div>
+
+
+            <div class="account-settings--update">
+                <form>
+                    <fieldset class="account-profile--update">
+                        <legend>Update Profile Information</legend>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" autocomplete="name" aria-label="Change your name" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email address" autocomplete="email" aria-label="Change your email" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Current password" autocomplete="current-password" aria-label="Enter current password" required class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="New password" autocomplete="new-password" aria-label="Create new password" class="form-control form-control-lg" />
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="account-shipping--update">
+                        <legend>Update Shipping Information</legend>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ship to name" autocomplete="name" aria-label="Change your ship to name" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Address" autocomplete="street-address" aria-label="Address line 1" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Suite / Apt" autocomplete="address-line1" aria-label="Address line 2" class="form-control form-control-lg" />
+                        </div>
+                        <div class="input-group input-group-lg">
+                            <input type="text" placeholder="City" autocomplete="address-level2" aria-label="Create new password" class="form-control" />
+
+                            <select class="custom-select" autocomplete="address-level2">
+                                <option disabled selected>State</option>
+                            </select>
+                            
+                            <input type="number" placeholder="Zip" autocomplete="postal-code" aria-label="Zipcode" class="form-control" />
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="account-payment--update">
+                        <legend>Update Payment Information</legend>
+
+                        <div id="creditCard_fields" class="input-group input-group-lg">
+                            <input type="number" name="cardNumber" id="cardNumber" class="form-control" placeholder="Card Number" autocomplete="cc-number" required  aria-label="Enter your credit card number" />
+
+                            <input name="expDateMo" id="expDateMo" type="number" min="01" max="12" class="form-control" aria-label="Card Expiration Date month" placeholder="MM  /" autocomplete="cc-exp-month" required />
+
+                            <input name="expDateYr" min="20" max="40" id="expDateYr" type="number" class="form-control" aria-label="Card Expiration Date Year"  placeholder="YY" autocomplete="cc-exp-year" required />
+
+                            <input type="number" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
+
+                            <!-- <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required /> -->
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                    
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="account-orders">
+            <h2 class="h4">Order History</h2>
+
+            <ol class="list-unstyled">
+                <li>
+                    <div class="order">
+                        <strong>Order #</strong><br />
+                        {{ order ## }}
+                    </div>
+
+                    <div class="shipped-to">
+                        <strong>Shipped to</strong><br />
+                        {{ shipping name }}<br />
+                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                    </div>
+
+                    <div class="total">
+                        <strong>Total</strong><br />
+                        {{ $total }}
+                    </div>
+
+                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                </li>
+            </ol>
+
+        </div>
+
+
+    </div>
+
+    @@include("../layouts/mailing-list.html")
+</main>
+
+@@include("../layouts/partials/footer.html")

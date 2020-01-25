@@ -2,18 +2,11 @@
 <main id="mainContent" class="content checkout">
     <div class="container">
         <h1 class="sr-only">Checkout</h1>
-        
-        @@include("../layouts/partials/checkout-login.html")
 
         <div id="checkout">
-            <!-- <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Shipping & Payment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="review.html">Review</a>
-                </li>
-            </ul> -->
+            <p class="text-center">Already have an account? <button id="showCheckoutLogin" class="btn btn-link">Login</button></p>
+        
+            @@include("../layouts/partials/checkout-login.html")
 
             <form id="purchaseForm" class="needsValidation" novalidate>
                 
