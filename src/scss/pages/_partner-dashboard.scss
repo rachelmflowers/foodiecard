@@ -1,0 +1,114 @@
+.partnerDashboard {
+
+    > .container {
+        padding-top: $section-pad;
+        padding-bottom: $section-pad-desk;
+    }
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+}
+
+.dashboard {
+
+    &-container {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    &-settings {
+        position: relative;
+        padding: 1rem;
+        width: 34%;
+        background: $gray-100;
+
+        > div {
+            padding: 1rem 0;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $border-color;
+            }
+
+            span,
+            strong {
+                display: block;
+            }
+
+            dt,
+            dd { float: left; }
+            
+            dt { 
+                margin-right: 5px;
+                width: 45px;
+                clear: left;
+            }
+        }
+
+        > .btn {
+            margin-top: 2rem;
+        }
+
+        &--update {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 2rem;
+            width: 58%;
+            height: 100%;
+            z-index: 1;
+            display: none;
+            background: $white;
+
+            fieldset {
+                display: none;
+            }
+
+            .input-group {
+                margin-bottom: $form-group-margin-bottom;
+            }
+        }
+    }
+
+    &-photos {
+        width: 58%;
+
+        .image {
+            margin-bottom: 1.5rem;
+
+            &-grid {
+                margin-top: $section-pad-sm;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 2rem;
+            }
+
+            &-container {
+                border: 1px solid $border-color;
+
+                .btn-xs {
+                    padding: 0.25rem 0.5rem;
+                    font-size: $font-size-sm;
+                    font-weight: $font-weight-base;
+                    line-height: 1;
+
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+
+                .btn:not(.btn-link) {
+                    float: right;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

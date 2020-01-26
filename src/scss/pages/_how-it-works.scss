@@ -26,9 +26,9 @@
         background: $gray-200;
 
         @include media-breakpoint-up(md) {
-            top: 30%;
+            top: 20%;
             left: calc(50% - 2px);
-            height: 60%;
+            height: 65%;
         }
     }
 
@@ -116,15 +116,10 @@
         &-image {
             order: 2;
 
-            img[src=""] {
+            img {
                 display: block;
-                border: 1px solid $border-color;
-                width: 100%; // PLACEHOLDER
-                height: 10rem; // PLACEHOLDER
-                
-                @include media-breakpoint-up(md) {
-                    height: 20rem; // PLACEHOLDER
-                }
+                width: 100%;
+                height: auto;
             }
         }
 

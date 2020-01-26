@@ -125,234 +125,340 @@
                     </div>
                 </nav>
             </header>
-<main id="mainContent" class="content restaurantPage featured">
-    <div class="restaurant-featured-header">
+<main id="mainContent" class="content partnerDashboard">
 
-        <div class="featured-image-hero">
-            <div id="imageSlider" class="image-gallery-slider">
-                <button type="button" class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 1.jpg" alt="" class="image" />
-                </button>
-                <button class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 3.jpg" alt="" class="image" />
-                </button>
-                <button class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 2.jpg" alt="" class="image" />
-                </button>
-                <button class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 6.jpg" alt="" class="image" />
-                </button>
-                <button class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 4.jpg" alt="" class="image" />
-                </button>
-                <button class="image-container btn-unstyled">
-                    <img src="images/restaurants/gallery/Photo 5.jpg" alt="" class="image" />
-                </button>
-            </div>
-        </div>
-
-        <div class="container">
-            <nav class="restaurant-page-nav" aria-label="page links">
-                <a href="#overview" class="active">Overview</a>
-                <a href="#contact">Contact</a>
-                <a href="#gallery">Photos</a>
-            </nav>
-        </div>
-    </div>
     <div class="container">
 
-        <section class="restaurant-main">
+        <h1>Welcome back, {{ partner name }}!</h1>
 
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="our-restaurants.html">Our Restaurants</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Restaurant Name</li>
-                </ol>
-            </nav>
+        <div class="dashboard-container">
+            <div class="dashboard-settings">
+                <h2 class="h4">Account Settings</h2>
 
-            <header class="restaurant-header">
-                <h1>Restaurant Name Here</h1>
-                <address>404 N Country Rd, Saint James, NY 11787</address>
-            </header>
+                <div class="dashboard-profile">
+                    <div>
+                        <p>
+                            <strong>Restaurant Info</strong>
+                            <span>{{ restaurant name }}</span>
+                            <span>{{ restaurant address }}</span>
+                            <span>{{ website }}</span>
+                            <span>{{ phone number }}</span>
+                            <span>{{ facebook }}</span>
+                            <span>{{ instagram }}</span>
+                            <span>Password: ********</span>
+                        </p>
+                        
+                        <p>
+                            <strong>Owner Info</strong>
+                            <span>{{ owner name }}</span>
+                            <span>{{ phone number }}</span>
+                            <span>{{ Email }}</span>
+                        </p>
+                        
+                        <p>
+                            <strong>General Managers Info</strong>
+                            <span>{{ GM name }}</span>
+                            <span>{{ GM email }}</span>
+                        </p>
+                    </div>
+                    <button class="btn btn-secondary btn-xs" id="updateProfile">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="dashboard-hours">
+                    <div>
+                        <p><strong>Hours of Operation</strong></p>
+                        <dl>
+                            <dt>Mon:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Tue:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Wed:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Thu:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Fri:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Sat:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Sun:</dt> <dd>closed</dd>
+                        </dl>
+                    </div>
+                    
+                    <button class="btn btn-secondary btn-xs" id="updateHours">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="dashboard-subscription">
+                    <div>
+                        <p>
+                            <strong>Subscription Status</strong>
+                            <span>Active</span>
+                            <span>Expires {{ mm }}/{{ yyyy }}</span>
+                            <span>Renews {{ mm }}/{{ yyyy }}</span>
+                        </p>
+                        <p>
+                            <strong>Payment Method</strong>
+                            <span>
+                                <img src="images/visa.png" alt="" />
+                                **** {{ last 4 digits }}
+                            </span>
+                            <span>Expires {{ mm }}/{{ yyyy }}</span>
+                            <span>{{ name on card }}</span>
+                        </p>
+                    </div>
+
+                    <button class="btn btn-secondary btn-xs" id="updateSubscription">
+                        Edit
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-settings--update">
+                <form>
+                    <fieldset class="dashboard-profile--update">
+                        <legend class="h5">Update Profile Information</legend>
+                        <div class="form-group" id="restaurantName_field">
+                            <label for="restaurantName" class="sr-only">Enter restaurant name</label>
+                            <input type="text" name="restaurantName" id="restaurantName" class="form-control" placeholder="Restaurant Name" />
+                        </div>
             
-            <div class="restaurant-info">
-                <span class="restaurant-cost">   
-                    <svg class="icon active">
-                        <use xlink:href="fonts/feather-sprite.svg#dollar-sign"/>
-                    </svg>  
-                    <svg class="icon active">
-                        <use xlink:href="fonts/feather-sprite.svg#dollar-sign"/>
-                    </svg>  
-                    <svg class="icon">
-                        <use xlink:href="fonts/feather-sprite.svg#dollar-sign"/>
-                    </svg>
-                </span>
-
-                <span class="restaurant-type badge badge-dark">Italian Cuisine</span>
-
-                <div class="restaurant-tags">
-                    Tags: <span class="badge badge-secondary badge-pill">Tag name 1</span> <span class="badge badge-secondary badge-pill">Tag name 2</span> <span class="badge badge-secondary badge-pill">Tag name 3</span>
-                </div>
-            </div>
-
-            <div class="restaurant-reservation">
-                <h4>Make a reservation</h4>
-                <form id="reservation-form">
-                    <div class="input-group">
-                        <input type="number" min="2" max="10" name="partyNumber-main" id="partyNumber-main" class="form-control" aria-label="How many people?" placeholder="# people" />
-                        <input type="date" name="reservationDate-main" id="reservationDate-main" class="form-control" aria-label="What day?" />
-
-                        <input type="time" name="reservationTime-main" id="reservationTime-main" class="form-control" aria-label="What time?" />
-                    </div>
-
-                    <button type="submit" class="btn btn-warning btn-wide">Reserve my Table</button>
-                </form>
-            </div>
-            <div class="buy-now">
-                <h4>Interested in saving 10%?</h4>
-
-                <svg class="icon active">
-                    <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
-                </svg> 
-
-                <a href="purchase.html" class="btn btn-primary btn-wide">Buy a Foodie Card</a>
-            </div>
-
-            <div id="overview" class="restaurant-details">
-                <div class="restaurant-description">
-                    <h2>Details</h2>
-
-                    <p>New York City restaurateurs Pietro and Kelly Molendini took over the classic St. James farmhouse turned restaurant. The former co-owners of Vite Vinosteria in Astoria, Queens, who had moved from the city to Centerport, spent the summer renovating the dining room to a modern, clean look with neutral tones and contemporary artwork from Pietro Molendini's native Rome. They also expanded panded the bar from about four to 11 seats.</p>
-                </div>
-
-                <div id="contact" class="restaurant-contact">
-
-                    <div class="restaurant-phone"> 
-                        <div class="icon-container">
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#phone"/>
-                            </svg>
-
-                            <span>Phone Number</span>
+                        <div class="form-group" id="restaurantAddress_field">
+                            <label for="restaurantAddress" class="sr-only">Enter restaurant address</label>
+                            <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant Address" />
                         </div>
-
-                        <a href="tel:6318626129">631.862.6129</a>
-                    </div>
-
-                    <div class="restaurant-website"> 
-                        <div class="icon-container">
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#globe"/>
-                            </svg>
-
-                            <span>Website</span>
-                        </div>
-
-                        <a href="http:/www.pietro631.com">www.pietro631.com</a>
-                    </div>
-
-                    <div class="restaurant-email"> 
-                        <div class="icon-container">
-                            <svg class="icon">
-                                <use xlink:href="fonts/feather-sprite.svg#mail"/>
-                            </svg>
-
-                            <span>Email Address</span>
-                        </div>
-
-                        <a href="mailto:eat@pietro631.com">eat@pietro631.com</a>
-                    </div>
-                </div>
-
-                <div class="restaurant-location">
-                    <div id="map" data-controls='gmap' data-mapLatLng="40.875078, -73.170679" data-mapMarker></div>
-                    <address>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#map-pin"/>
-                        </svg>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=404+N+Country+Rd%2C+Saint+James%2C+NY+11787">404 N Country Rd, <span>Saint James, NY 11787</span></a>
-                    </address>
-                </div>
             
+                        <div class="form-group" id="restWebsite_field">
+                            <label for="restWebsite" class="sr-only">Restaurant's Website Address</label>
+                            <input type="url" name="restWebsite" id="restWebsite" class="form-control" placeholder="Restaurant Website">
+                        </div>
+            
+                        <div class="form-group" id="restPhone_field">
+                            <label for="restPhone" class="sr-only">Restaurant's Phone Number</label>
+                            <input type="tel" name="restPhone" id="restPhone" class="form-control" placeholder="Restaurant Phone #">
+                        </div>
+
+                        <div class="form-group" id="restFacebook_field">
+                            <label for="restFacebook" class="sr-only">Restaurant's Facebook Address</label>
+                            <input type="url" name="restFacebook" id="restFacebook" class="form-control" placeholder="Restaurant Facebook">
+                        </div>
+            
+                        <div class="form-group" id="restInsta_field">
+                            <label for="restInsta" class="sr-only">Restaurant's Instagram Address</label>
+                            <input type="url" name="restInsta" id="restInsta" class="form-control" placeholder="Restaurant Instagram">
+                        </div>
+
+                        <p class="h5">Owner's Information</p>
+                        <div class="form-group" id="contactPerson_field">
+                            <label for="contactPerson" class="sr-only">Owner's Name</label>
+                            <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Owner's Name">
+                        </div>
+            
+                        <div class="form-group" id="phone_field">
+                            <label for="phone" class="sr-only">Owner's phone number</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Owner's Phone">
+                        </div>
+            
+                        <div class="form-group" id="email_field">
+                            <label for="email" class="sr-only">Owner's email address</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Owner's Email">
+                        </div>
+                        <p class="h5">General Manager's Information</p>
+                        <div class="form-group" id="GM_field">
+                            <label for="GM" class="sr-only">General Manager's Name</label>
+                            <input type="text" name="GM" id="GM" class="form-control" placeholder="GM Name">
+                        </div>
+            
+                        <div class="form-group" id="email_field">
+                            <label for="gmEmail" class="sr-only">General Manager's email address</label>
+                            <input type="gmEmail" name="gmEmail" id="email" class="form-control" placeholder="GM's Email">
+                        </div>
+
+                        <p class="h5">Enter password to make changes. You may also create a new password</p>
+                        <div class="form-group">
+                            <input type="password" placeholder="Current password" autocomplete="current-password" aria-label="Enter current password" required class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="New password" autocomplete="new-password" aria-label="Create new password" class="form-control form-control-lg" />
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="dashboard-hours">
+                        <legend class="h5">Update Restaurant Hours</legend>
+
+                        <p><strong>Monday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="mon-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="mon-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="mon-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Tuesday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="tue-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="tue-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="tue-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Wednesday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="wed-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="wed-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="wed-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Thursday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="thu-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="thu-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="thu-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Friday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="fri-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="fri-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="fri-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Saturday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="sat-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="sat-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="sat-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Sunday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="sun-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="sun-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="sun-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="dashboard-subscription--update">
+                        <legend class="h5">Update Payment Information</legend class="h5">
+
+                        <div id="creditCard_fields" class="input-group input-group-lg">
+                            <input type="number" name="cardNumber" id="cardNumber" class="form-control" placeholder="Card Number" autocomplete="cc-number" required  aria-label="Enter your credit card number" />
+
+                            <input name="expDateMo" id="expDateMo" type="number" min="01" max="12" class="form-control" aria-label="Card Expiration Date month" placeholder="MM  /" autocomplete="cc-exp-month" required />
+
+                            <input name="expDateYr" min="20" max="40" id="expDateYr" type="number" class="form-control" aria-label="Card Expiration Date Year"  placeholder="YY" autocomplete="cc-exp-year" required />
+
+                            <input type="number" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
+
+                            <!-- <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required /> -->
+                        </div>
+
+                        <button type="button" class="btn btn-secondary">Cancel Subscription</button>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                    
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </form>
+
             </div>
 
-            <div id="gallery" class="restaurant-gallery">
+            <div class="dashboard-photos">
+                <h2 class="h4">Photos</h2>
 
-                <h2>Gallery</h2>
+                <form name="photo-upload" class="form-inline">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Upload new image</label>
+                    </div>
+                </form>
 
-                <div class="image-gallery">
+                <div class="image-grid">
                     <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 1.jpg" alt="" class="image" />
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
                     </div>
+
                     <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 3.jpg" alt="" class="image" />
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
                     </div>
+
                     <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 2.jpg" alt="" class="image" />
-                    </div>
-                    <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 6.jpg" alt="" class="image" />
-                    </div>
-                    <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 4.jpg" alt="" class="image" />
-                    </div>
-                    <div class="image-container">
-                        <img src="images/restaurants/gallery/Photo 5.jpg" alt="" class="image" />
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <div class="restaurant-video">
-                <img src="images/FoodieTV_placeholder.jpg" alt="" style="max-width: 100%; height: auto;" />
-                <p class="h5">Watch Foodie Card TV</p>
-            </div>
-        </section>
-
-        <div class="restaurant-side">
-            <div class="reservation fixed">
-                <h4>Make a reservation</h4>
-                <form id="reservation-form">
-                    <div class="form-group">
-                        <label for="partyNumber" class="sr-only">How many people?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#user"/>
-                        </svg>
-
-                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
-                        placeholder="people" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reservationDate" class="sr-only">What day?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#calendar"/>
-                        </svg>
-
-                        <input type="text" name="reservationDate" id="reservationDate" class="form-control datepicker" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reservationTime" class="sr-only">What time?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#clock"/>
-                        </svg>
-
-                        <input type="text" name="reservationTime" id="reservationTime" class="form-control timepicker" />
-                    </div>
-
-                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
-                </form>
-            </div>
-            <div class="buy-now">
-                <h4>Interested in saving 10%?</h4>
-
-                <svg class="icon active">
-                    <use xlink:href="fonts/feather-sprite.svg#chevron-down"/>
-                </svg>  
-
-                <a href="purchase.php" class="btn btn-primary btn-block">Buy a Foodie Card</a>
             </div>
         </div>
+
     </div>
 
         <div id="mailingList">
@@ -509,34 +615,3 @@
 
     </body>
 </html>
-
-<!-- <div id="imageSliderModal" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-
-            <div id="modalImageSlider" class="image-gallery-slider">
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo1.jpg" alt="" class="image" />
-                </div>
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo3.jpg" alt="" class="image" />
-                </div>
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo2.jpg" alt="" class="image" />
-                </div>
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo6.jpg" alt="" class="image" />
-                </div>
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo4.jpg" alt="" class="image" />
-                </div>
-                <div class="image-container">
-                    <img src="images/restaurants/gallery/fullsize/Photo5.jpg" alt="" class="image" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

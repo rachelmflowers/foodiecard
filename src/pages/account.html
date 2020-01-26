@@ -5,78 +5,100 @@
 
         <h1>Welcome back, {{ customer name }}!</h1>
 
-        <div class="account-settings">
-            <h2 class="h4">Account Settings</h2>
+        <div class="account-container">
+            <div class="account-settings">
+                <h2 class="h4">Account Settings</h2>
 
-            <div class="account-profile">
-                <p>
-                    <strong>Profile</strong>
-                    <span>{{ customer name }}</span>
-                    <span>Birthday: {{ customer birthday }}</span>
-                    <span>{{ username@email.com }}</span>
-                    <span>{{ mobile phone number }}</span>
-                    <span>Password: ********</span>
-                </p>
-                
-                <button class="btn btn-secondary btn-xs" id="updateProfile">
-                    Edit
-                </button>
+                <div class="account-profile">
+                    <p>
+                        <strong>Profile</strong>
+                        <span>{{ customer name }}</span>
+                        <span>Birthday: {{ customer birthday }}</span>
+                        <span>{{ username@email.com }}</span>
+                        <span>{{ mobile phone number }}</span>
+                        <span>Password: ********</span>
+                    </p>
+                    
+                    <button class="btn btn-secondary btn-xs">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="account-shipping">
+                    <address>
+                        <strong>Shipping Address</strong>
+                        <span>{{ shipping name }}</span>
+                        <span>{{ address line 1 }}</span>
+                        <span>{{ address line 1 }}</span>
+                        <span>{{ city }}, {{ state }} {{ zip }}</span>
+                    </address>
+                    
+                    <button class="btn btn-secondary btn-xs" id="updateShipping">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="account-payment">
+                    <p>
+                        <strong>Payment Method</strong>
+                        <span>
+                            <img src="images/visa.png" alt="" />
+                            **** {{ last 4 digits }}
+                        </span>
+                        <span>Expires {{ mm }}/{{ yyyy }}</span>
+                        <span>{{ name on card }}</span>
+                    </p>
+                    
+                    <button class="btn btn-secondary btn-xs" id="updatePayment">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="account-preferences">
+                    <p>
+                        <strong>Preferences</strong>
+                        <span>Cusine: {{ type }}</span>
+                        <span>Alcohol: {{ type }}</span>
+                    </p>
+                    
+                    <button class="btn btn-secondary btn-xs" id="updatePreferences">
+                        Edit
+                    </button>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-xs">Refer a friend</button>
+
             </div>
-
-            <div class="account-shipping">
-                <address>
-                    <strong>Shipping Address</strong>
-                    <span>{{ shipping name }}</span>
-                    <span>{{ address line 1 }}</span>
-                    <span>{{ address line 1 }}</span>
-                    <span>{{ city }}, {{ state }} {{ zip }}</span>
-                </address>
-                
-                <button class="btn btn-secondary btn-xs" id="updateShipping">
-                    Edit
-                </button>
-            </div>
-
-            <div class="account-payment">
-                <p>
-                    <strong>Payment Method</strong>
-                    <span>
-                        <img src="images/visa.png" alt="" />
-                        **** {{ last 4 digits }}
-                    </span>
-                    <span>Expires {{ mm }}/{{ yyyy }}</span>
-                    <span>{{ name on card }}</span>
-                </p>
-                
-                <button class="btn btn-secondary btn-xs" id="updatePayment">
-                    Edit
-                </button>
-            </div>
-
-            <div class="account-preferences">
-                <p>
-                    <strong>Preferences</strong>
-                    <span>Cusine: {{ type }}</span>
-                    <span>Alcohol: {{ type }}</span>
-                </p>
-                
-                <button class="btn btn-secondary btn-xs" id="updatePayment">
-                    Edit
-                </button>
-            </div>
-
-            <button type="button" class="btn btn-primary btn-xs">Refer a friend</button>
-
 
             <div class="account-settings--update">
                 <form>
                     <fieldset class="account-profile--update">
-                        <legend>Update Profile Information</legend>
+                        <legend class="h5">Update Profile Information</legend>
+
                         <div class="form-group">
                             <input type="text" placeholder="Name" autocomplete="name" aria-label="Change your name" class="form-control form-control-lg" />
                         </div>
                         <div class="form-group">
+                            <input type="text" placeholder="Your Birthday" autocomplete="bday" aria-label="Change your birthday" class="form-control form-control-lg datepicker" />
+                        </div>
+                        <div class="form-group">
                             <input type="email" placeholder="Email address" autocomplete="email" aria-label="Change your email" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone number" autocomplete="tel" aria-label="Change your phone number" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="textMe" class="form-check-input" />
+                            <label class="form-check-label" for="textMe">
+                                Text me updates 
+                                <span>
+                                    (Yes, I agree to these terms)
+                                
+                                    <svg class="icon" data-toggle="tooltip" data-placement="bottom" title="terms here? or should this be a link?">
+                                        <use xlink:href="fonts/feather-sprite.svg#info"/>
+                                    </svg>
+                                </span>
+                            </label>
                         </div>
                         <div class="form-group">
                             <input type="password" placeholder="Current password" autocomplete="current-password" aria-label="Enter current password" required class="form-control form-control-lg" />
@@ -84,15 +106,11 @@
                         <div class="form-group">
                             <input type="password" placeholder="New password" autocomplete="new-password" aria-label="Create new password" class="form-control form-control-lg" />
                         </div>
-
-                        <button type="button" class="btn btn-link">Add credit card</button>
-
-                        <button type="button" class="btn btn-link">Add paypal account</button>
                     </fieldset>
 
-
                     <fieldset class="account-shipping--update">
-                        <legend>Update Shipping Information</legend>
+                        <legend class="h5">Update Shipping Information</legend>
+
                         <div class="form-group">
                             <input type="text" placeholder="Ship to name" autocomplete="name" aria-label="Change your ship to name" class="form-control form-control-lg" />
                         </div>
@@ -115,9 +133,8 @@
                         <button type="button" class="btn btn-link">Add new address</button>
                     </fieldset>
 
-
                     <fieldset class="account-payment--update">
-                        <legend>Update Payment Information</legend>
+                        <legend class="h5">Update Payment Information</legend>
 
                         <div id="creditCard_fields" class="input-group input-group-lg">
                             <input type="number" name="cardNumber" id="cardNumber" class="form-control" placeholder="Card Number" autocomplete="cc-number" required  aria-label="Enter your credit card number" />
@@ -130,6 +147,87 @@
 
                             <!-- <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required /> -->
                         </div>
+
+                        <button type="button" class="btn btn-link">Add credit card</button>
+
+                        <button type="button" class="btn btn-link">Add paypal account</button>
+                    </fieldset>
+
+                    <fieldset class="account-preferences--update">
+                        <legend class="h5">Update Preferences</legend>
+
+                        <div class="form-check form-check-group">
+                            <p><strong>Cuisine Types</strong></p>
+                            <label class="form-check-label">
+                                <input type="checkbox" id="cuisine-chinese" name="cusinePref" class="form-check-input" />
+                                Chinese
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="cuisine-italian" name="cusinePref" class="form-check-input" />
+                                Italian
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="cuisine-sushi" name="cusinePref" class="form-check-input" />
+                                Sushi
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="cuisine-mexican" name="cusinePref" class="form-check-input" />
+                                Mexican
+                            </label>
+                        </div>
+
+                        <div class="form-check form-check-group">
+                            <p><strong>Alcohol Types</strong></p>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-vodka" name="alcoholPref" class="form-check-input" />
+                                Vodka
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-scotch" name="alcoholPref" class="form-check-input" />
+                                Whiskey/Scotch
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-tequila" name="alcoholPref" class="form-check-input" />
+                                Tequila
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-rum" name="alcoholPref" class="form-check-input" />
+                                Rum
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-gin" name="alcoholPref" class="form-check-input" />
+                                Gin
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-beer" name="alcoholPref" class="form-check-input" />
+                                Beer
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-cider" name="alcoholPref" class="form-check-input" />
+                                Cider/Mead
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-redwine" name="alcoholPref" class="form-check-input" />
+                                Red Wine
+                            </label>
+
+                            <label class="form-check-label">
+                                <input type="checkbox" id="alcohol-whitewine" name="alcoholPref" class="form-check-input" />
+                                White Wine
+                            </label>
+                        </div>
+
                     </fieldset>
 
                     <button type="submit" class="btn btn-warning">Save Changes</button>
@@ -139,109 +237,107 @@
 
             </div>
 
+            <div class="account-orders">
+                <h2 class="h4">Order History</h2>
+
+                <ol class="list-unstyled">
+                    <li class="active-subscription">
+                        <span class="badge badge-warning">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
+                            </svg>
+                            Auto Renews
+                        </span>
+
+                        <div class="order">
+                            <strong>Order #</strong><br />
+                            {{ order ## }}<br />
+                            <em>Subscription</em>
+                        </div>
+
+                        <div class="shipped-to">
+                            <strong>Shipped to</strong><br />
+                            {{ shipping name }}<br />
+                            <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                        </div>
+
+                        <div class="renewal-info">
+                            <strong>Renewal Info</strong><br />
+                            Expiration: {{ date }}<br />
+                            Renews On: {{ date }}
+                        </div>
+
+                        <div class="total">
+                            <strong>Total</strong><br />
+                            {{ $total }}
+                        </div>
+
+                        <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                    </li>
+
+                    <li>
+                        <span class="badge badge-warning">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
+                            </svg>
+                            Auto Renews
+                        </span>
+                        <div class="order">
+                            <strong>Order #</strong><br />
+                            {{ order ## }}<br />
+                            <em>Gift</em>
+                        </div>
+
+                        <div class="shipped-to">
+                            <strong>Shipped to</strong><br />
+                            {{ shipping name }}<br />
+                            <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                        </div>
+
+                        <div class="recipient">
+                            <strong>Gift Recipient</strong><br />
+                            {{ recipient name }}
+                        </div>
+
+                        <div class="total">
+                            <strong>Total</strong><br />
+                            {{ $total }}
+                        </div>
+
+                        <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                    </li>
+
+                    <li class="auto-renews">
+                        <div class="order">
+                            <strong>Order #</strong><br />
+                            {{ order ## }}<br />
+                            <em>Family</em>
+                        </div>
+
+                        <div class="shipped-to">
+                            <strong>Shipped to</strong><br />
+                            {{ shipping name }}<br />
+                            <a href=""><small>on {{ weekday, mmm dd }}</small></a>
+                        </div>
+
+                        <div class="recipient">
+                            <strong>Household</strong><br />
+                            Head of: {{ name }}<br />
+                            {{ family member }}<br />
+                            {{ family member }}
+                        </div>
+
+                        <div class="total">
+                            <strong>Total</strong><br />
+                            {{ $total }}
+                        </div>
+
+                        <a href="/dist/review.html" class="btn btn-link">View Details</a>
+                    </li>
+                </ol>
+
+            </div>
         </div>
-
-        <div class="account-orders">
-            <h2 class="h4">Order History</h2>
-
-            <ol class="list-unstyled">
-                <li class="active-subscription">
-                    <span class="badge badge-warning">
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
-                        </svg>
-                        Auto Renews
-                    </span>
-
-                    <div class="order">
-                        <strong>Order #</strong><br />
-                        {{ order ## }}<br />
-                        <em>Subscription</em>
-                    </div>
-
-                    <div class="shipped-to">
-                        <strong>Shipped to</strong><br />
-                        {{ shipping name }}<br />
-                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
-                    </div>
-
-                    <div class="renewal-info">
-                        <strong>Renewal Info</strong><br />
-                        Expiration: {{ date }}<br />
-                        Renews On: {{ date }}
-                    </div>
-
-                    <div class="total">
-                        <strong>Total</strong><br />
-                        {{ $total }}
-                    </div>
-
-                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
-                </li>
-
-                <li>
-                    <span class="badge badge-warning">
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#refresh-cw"/>
-                        </svg>
-                        Auto Renews
-                    </span>
-                    <div class="order">
-                        <strong>Order #</strong><br />
-                        {{ order ## }}<br />
-                        <em>Gift</em>
-                    </div>
-
-                    <div class="shipped-to">
-                        <strong>Shipped to</strong><br />
-                        {{ shipping name }}<br />
-                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
-                    </div>
-
-                    <div class="recipient">
-                        <strong>Gift Recipient</strong><br />
-                        {{ recipient name }}
-                    </div>
-
-                    <div class="total">
-                        <strong>Total</strong><br />
-                        {{ $total }}
-                    </div>
-
-                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
-                </li>
-
-                <li class="auto-renews">
-                    <div class="order">
-                        <strong>Order #</strong><br />
-                        {{ order ## }}<br />
-                        <em>Family</em>
-                    </div>
-
-                    <div class="shipped-to">
-                        <strong>Shipped to</strong><br />
-                        {{ shipping name }}<br />
-                        <a href=""><small>on {{ weekday, mmm dd }}</small></a>
-                    </div>
-
-                    <div class="recipient">
-                        <strong>Household</strong><br />
-                        Head of: {{ name }}<br />
-                        {{ family member }}<br />
-                        {{ family member }}
-                    </div>
-
-                    <div class="total">
-                        <strong>Total</strong><br />
-                        {{ $total }}
-                    </div>
-
-                    <a href="/dist/review.html" class="btn btn-link">View Details</a>
-                </li>
-            </ol>
-
-        </div>
-
 
     </div>
 

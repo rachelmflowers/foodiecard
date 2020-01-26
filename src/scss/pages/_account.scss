@@ -3,21 +3,23 @@
     > .container {
         padding-top: $section-pad;
         padding-bottom: $section-pad-desk;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
     }
 
     h1 {
         margin-bottom: 3rem;
-        width: 100%;
     }
 }
 
 .account {
 
-    &-settings {
+    &-container {
         position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    &-settings {
         width: 30%;
 
         > div {
@@ -38,12 +40,12 @@
             margin-top: 2rem;
         }
 
-        > .account-settings--update {
+        &--update {
             position: absolute;
             top: 0;
-            right: -164%;
-            padding: 2rem;
-            width: 150%;
+            right: 0;
+            padding: 4rem 2rem;
+            width: 66%;
             height: 100%;
             z-index: 1;
             display: none;
@@ -56,6 +58,17 @@
             .input-group {
                 margin-bottom: $form-group-margin-bottom;
             }
+
+            .form-check-group {
+                .form-check-label {
+                    position: relative;
+                    padding-left: 1.5rem;
+                    display: block;
+                }
+
+            }
+
+            form > .btn { margin-top: 3rem; }
         }
     }
 

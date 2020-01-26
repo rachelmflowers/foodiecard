@@ -1,0 +1,341 @@
+@@include("../layouts/partials/header.html")
+<main id="mainContent" class="content partnerDashboard">
+
+    <div class="container">
+
+        <h1>Welcome back, {{ partner name }}!</h1>
+
+        <div class="dashboard-container">
+            <div class="dashboard-settings">
+                <h2 class="h4">Account Settings</h2>
+
+                <div class="dashboard-profile">
+                    <div>
+                        <p>
+                            <strong>Restaurant Info</strong>
+                            <span>{{ restaurant name }}</span>
+                            <span>{{ restaurant address }}</span>
+                            <span>{{ website }}</span>
+                            <span>{{ phone number }}</span>
+                            <span>{{ facebook }}</span>
+                            <span>{{ instagram }}</span>
+                            <span>Password: ********</span>
+                        </p>
+                        
+                        <p>
+                            <strong>Owner Info</strong>
+                            <span>{{ owner name }}</span>
+                            <span>{{ phone number }}</span>
+                            <span>{{ Email }}</span>
+                        </p>
+                        
+                        <p>
+                            <strong>General Managers Info</strong>
+                            <span>{{ GM name }}</span>
+                            <span>{{ GM email }}</span>
+                        </p>
+                    </div>
+                    <button class="btn btn-secondary btn-xs" id="updateProfile">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="dashboard-hours">
+                    <div>
+                        <p><strong>Hours of Operation</strong></p>
+                        <dl>
+                            <dt>Mon:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Tue:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Wed:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Thu:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Fri:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Sat:</dt> <dd>7:00 am 9:00pm</dd>
+                            <dt>Sun:</dt> <dd>closed</dd>
+                        </dl>
+                    </div>
+                    
+                    <button class="btn btn-secondary btn-xs" id="updateHours">
+                        Edit
+                    </button>
+                </div>
+
+                <div class="dashboard-subscription">
+                    <div>
+                        <p>
+                            <strong>Subscription Status</strong>
+                            <span>Active</span>
+                            <span>Expires {{ mm }}/{{ yyyy }}</span>
+                            <span>Renews {{ mm }}/{{ yyyy }}</span>
+                        </p>
+                        <p>
+                            <strong>Payment Method</strong>
+                            <span>
+                                <img src="images/visa.png" alt="" />
+                                **** {{ last 4 digits }}
+                            </span>
+                            <span>Expires {{ mm }}/{{ yyyy }}</span>
+                            <span>{{ name on card }}</span>
+                        </p>
+                    </div>
+
+                    <button class="btn btn-secondary btn-xs" id="updateSubscription">
+                        Edit
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-settings--update">
+                <form>
+                    <fieldset class="dashboard-profile--update">
+                        <legend class="h5">Update Profile Information</legend>
+                        <div class="form-group" id="restaurantName_field">
+                            <label for="restaurantName" class="sr-only">Enter restaurant name</label>
+                            <input type="text" name="restaurantName" id="restaurantName" class="form-control" placeholder="Restaurant Name" />
+                        </div>
+            
+                        <div class="form-group" id="restaurantAddress_field">
+                            <label for="restaurantAddress" class="sr-only">Enter restaurant address</label>
+                            <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant Address" />
+                        </div>
+            
+                        <div class="form-group" id="restWebsite_field">
+                            <label for="restWebsite" class="sr-only">Restaurant's Website Address</label>
+                            <input type="url" name="restWebsite" id="restWebsite" class="form-control" placeholder="Restaurant Website">
+                        </div>
+            
+                        <div class="form-group" id="restPhone_field">
+                            <label for="restPhone" class="sr-only">Restaurant's Phone Number</label>
+                            <input type="tel" name="restPhone" id="restPhone" class="form-control" placeholder="Restaurant Phone #">
+                        </div>
+
+                        <div class="form-group" id="restFacebook_field">
+                            <label for="restFacebook" class="sr-only">Restaurant's Facebook Address</label>
+                            <input type="url" name="restFacebook" id="restFacebook" class="form-control" placeholder="Restaurant Facebook">
+                        </div>
+            
+                        <div class="form-group" id="restInsta_field">
+                            <label for="restInsta" class="sr-only">Restaurant's Instagram Address</label>
+                            <input type="url" name="restInsta" id="restInsta" class="form-control" placeholder="Restaurant Instagram">
+                        </div>
+
+                        <p class="h5">Owner's Information</p>
+                        <div class="form-group" id="contactPerson_field">
+                            <label for="contactPerson" class="sr-only">Owner's Name</label>
+                            <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Owner's Name">
+                        </div>
+            
+                        <div class="form-group" id="phone_field">
+                            <label for="phone" class="sr-only">Owner's phone number</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Owner's Phone">
+                        </div>
+            
+                        <div class="form-group" id="email_field">
+                            <label for="email" class="sr-only">Owner's email address</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Owner's Email">
+                        </div>
+                        <p class="h5">General Manager's Information</p>
+                        <div class="form-group" id="GM_field">
+                            <label for="GM" class="sr-only">General Manager's Name</label>
+                            <input type="text" name="GM" id="GM" class="form-control" placeholder="GM Name">
+                        </div>
+            
+                        <div class="form-group" id="email_field">
+                            <label for="gmEmail" class="sr-only">General Manager's email address</label>
+                            <input type="gmEmail" name="gmEmail" id="email" class="form-control" placeholder="GM's Email">
+                        </div>
+
+                        <p class="h5">Enter password to make changes. You may also create a new password</p>
+                        <div class="form-group">
+                            <input type="password" placeholder="Current password" autocomplete="current-password" aria-label="Enter current password" required class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="New password" autocomplete="new-password" aria-label="Create new password" class="form-control form-control-lg" />
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="dashboard-hours">
+                        <legend class="h5">Update Restaurant Hours</legend>
+
+                        <p><strong>Monday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="mon-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="mon-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="mon-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Tuesday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="tue-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="tue-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="tue-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Wednesday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="wed-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="wed-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="wed-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Thursday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="thu-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="thu-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="thu-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Friday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="fri-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="fri-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="fri-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Saturday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="sat-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="sat-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="sat-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                        
+                        <p><strong>Sunday</strong></p>
+                        <div class="input-group input-group-lg">
+                            <input id="sun-open" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <input id="sun-close" type="text" placeholder="open" aria-label="what time do you open" class="form-control timepicker" />
+                            <label>
+                                <input type="checkbox" name="sun-closed" aria-label="Check here if you're closed" />
+                                Closed
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="dashboard-subscription--update">
+                        <legend class="h5">Update Payment Information</legend class="h5">
+
+                        <div id="creditCard_fields" class="input-group input-group-lg">
+                            <input type="number" name="cardNumber" id="cardNumber" class="form-control" placeholder="Card Number" autocomplete="cc-number" required  aria-label="Enter your credit card number" />
+
+                            <input name="expDateMo" id="expDateMo" type="number" min="01" max="12" class="form-control" aria-label="Card Expiration Date month" placeholder="MM  /" autocomplete="cc-exp-month" required />
+
+                            <input name="expDateYr" min="20" max="40" id="expDateYr" type="number" class="form-control" aria-label="Card Expiration Date Year"  placeholder="YY" autocomplete="cc-exp-year" required />
+
+                            <input type="number" name="cvc" id="cvc" placeholder="CVC" class="form-control" aria-label="Card CVC number" autocomplete="cc-csc" required />
+
+                            <!-- <input type="text" name="paymentZip" id="paymentZip" placeholder="Zip Code" class="form-control" aria-label="Billing Zip Code" autocomplete="postal-code" required /> -->
+                        </div>
+
+                        <button type="button" class="btn btn-secondary">Cancel Subscription</button>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                    
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </form>
+
+            </div>
+
+            <div class="dashboard-photos">
+                <h2 class="h4">Photos</h2>
+
+                <form name="photo-upload" class="form-inline">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Upload new image</label>
+                    </div>
+                </form>
+
+                <div class="image-grid">
+                    <div class="image-container">
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="image-container">
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="image-container">
+                        <div class="image">
+                            <img src="" alt="" />
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-xs">
+                            Set as primary
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#trash"/>
+                            </svg>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-xs">
+                            <svg class="icon">
+                                <use xlink:href="fonts/feather-sprite.svg#edit-2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    @@include("../layouts/mailing-list.html")
+</main>
+
+@@include("../layouts/partials/footer.html")
