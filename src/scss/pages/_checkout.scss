@@ -58,7 +58,13 @@
             background: $gray-400;
                 
             @include media-breakpoint-up(md) {
-                top: 45%;
+                top: 50%;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            &.single::after {
+                top: 38%;
             }
         }
 
