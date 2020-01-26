@@ -267,7 +267,6 @@ const gmap = async (elem) => {
                 cellAlign: 'left',
                 fade: true,
                 autoPlay: true,
-                wrapAround: true
             });
         }
 

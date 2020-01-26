@@ -227,11 +227,15 @@
         line-height: 1.75;
 
         + .additional-recipient { 
-            margin-bottom: 2rem;
             display: none;
-            border-bottom: 1px solid $border-color;
         }
     }
+}
+
+.additional-recipient { 
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $border-color;
 }
 
 #creditCard_fields {
@@ -460,6 +464,12 @@
             + p {
                 margin-bottom: 0;
                 text-align: center;
+            }
+
+            small {
+                margin-top: 0.5rem;
+                display: block;
+                line-height: 1rem;
             }
         }
     }

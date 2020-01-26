@@ -189,12 +189,21 @@
 
         h1.h5 {
             small {
-                padding-left: 1.25rem;
                 margin-bottom: 4px;
-                color: $primary;
                 font-size: 0.65em;
-                background: url("../images/fork-icon.png") no-repeat left center;
-                background-size: 16px 16px;
+                font-weight: $font-weight-bold;
+
+                svg {
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                &:not(.text-warning) {
+                    padding-left: 1.25rem;
+                    color: $primary;
+                    background: url("../images/fork-icon.png") no-repeat left center;
+                    background-size: 16px 16px;
+                }
             }
         }
     }

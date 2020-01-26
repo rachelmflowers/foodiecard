@@ -6,7 +6,7 @@
     text-align: center;
 
     @include media-breakpoint-up(lg) {
-        padding: 2rem $section-pad;
+        padding: 2rem 0;
     }
 
     .h2 { color: $primary; }
@@ -44,9 +44,9 @@
 
 #registerForm_container {
 
-    small { 
-        margin-bottom: 2rem; 
-        display: block;
+    .form-check {
+        margin-top: 2rem;
+        text-align: left;
     }
 }
 
