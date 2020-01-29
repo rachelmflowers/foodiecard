@@ -55,7 +55,10 @@
             margin-bottom: 2rem;
             text-align: center;
 
-            > div { text-align: left; }
+            > div { 
+                margin-bottom: 1rem;
+                text-align: left;
+            }
 
             @include media-breakpoint-up(md) {
                 margin-bottom: 0;

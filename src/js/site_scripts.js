@@ -139,6 +139,7 @@ const gmap = async (elem) => {
         // END focusable fix
 
         $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
 
         // Coupon Modal
         $('.deal-bar').on('click', function() {

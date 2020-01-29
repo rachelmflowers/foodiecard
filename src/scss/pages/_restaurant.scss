@@ -362,6 +362,16 @@
                 }
             }
         }
+
+        .buy-now {
+            .featured & {
+                display: none;
+
+                @include media-breakpoint-up(md) {
+                    display: block;
+                }
+            }
+        }
     }
 
     &-page-nav {

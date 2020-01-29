@@ -240,26 +240,63 @@
 
 #creditCard_fields {
     margin-bottom: $form-group-margin-bottom;
+
+    @include media-breakpoint-down(sm) {
+        position: relative;
+
+        &::before {
+            content: 'Exp:';
+            position: absolute;
+            left: 0.5rem;
+            bottom: 8px;
+            z-index: 1;
+            display: block;
+        }
+    }
     
     #expDateMo,
     #expDateYr,
     #cvc {
         padding: 0.75rem;
-        flex: none;
-        border-left: 0;
         appearance: none;
+
+        @include media-breakpoint-up(sm) {
+            flex: none;
+        }
     }
 
     #expDateMo,
     #expDateYr {
-        padding-left: 4px;
-        padding-right: 0;
         border-right: 0;
+
+        @include media-breakpoint-up(sm) {
+            padding-left: 4px;
+            padding-right: 0;
+        }
+    }
+
+    #expDateYr,
+    #cvc {
+        border-left: 0;
+    }
+
+    #cardNumber {
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
     }
 
     #expDateMo {
-        width: 65px;
+        width: 45px;
         text-align: right;
+        padding-right: 0;
+
+        @include media-breakpoint-up(sm) {
+            width: 65px;
+            border-left: 0;
+        }
     }
 
     #expDateYr {
@@ -273,7 +310,8 @@
 
 
     .btn-primary {
-        padding-left: 2rem; padding-right: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
@@ -292,34 +330,42 @@
 
     &-details {
         position: relative;
-        padding: 2rem;
+        padding: 1rem;
         background: $gray-200;
+
+        @include media-breakpoint-up(sm) {
+            padding: 2rem;
+        }
+
 
         @include media-breakpoint-up(xl) {
             padding: 3.5rem 4.5rem 2rem;
         }
 
         dl { 
-            display: flex;
-            flex-flow: row wrap;
-            align-content: flex-start;
         }
     
         dd,
         dt { 
-            min-width: 50%;
+            min-width: 30%;
             color: $gray-700;
     
             &.total {
                 color: $primary;
                 font-size: 1.25rem;
             }
+
+            @include media-breakpoint-up(sm) {
+                min-width: 50%;
+            }
         }
     
         dt {
+            float: left;
+            clear: left;
             font-weight: $font-weight-bold;
             text-transform: uppercase;
-            flex: 1 0 auto;
+            
     
             &.total {
                 font-weight: $font-weight-base;
@@ -351,7 +397,15 @@
             text-decoration: none !important;
 
             &:not(:last-of-type) {
-                margin-right: 3rem;
+                margin-right: 1rem;
+
+                @include media-breakpoint-up(sm) {
+                    margin-right: 2rem;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    margin-right: 3rem;
+                }
             }
 
             &.disabled {
@@ -419,8 +473,7 @@
 
     > .container {
         padding-top: $section-pad;
-        padding-bottom: $section-pad;
-        
+        padding-bottom: $section-pad; 
     }
 
     .party-icon {
@@ -453,9 +506,13 @@
         > div {
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
-            width: 50%;
+            width: 100%;
             text-align: left;
             border-bottom: 1px solid $border-color;
+
+            @include media-breakpoint-up(sm) {
+                width: 50%;
+            }
 
             p { 
                 margin-bottom: 0.5rem;
