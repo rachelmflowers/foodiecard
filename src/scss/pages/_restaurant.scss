@@ -335,29 +335,35 @@
                     text-align: center;
                 }
 
-                .form-group {
-                    position: relative;
+                form {
                     display: flex;
-                    flex-flow: row nowrap;
-                    align-items: center;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
                 }
 
-                .icon {
-                    width: 1.5rem;
-                    height: 1.5rem;
+                .form-group {
+                    width: 100%;
+
+                    &:nth-of-type(2),
+                    &:last-of-type {
+                        width: 48%;
+                    }
+                }
+                    
+                label {
+                    margin-bottom: 0;
+                    display: block;
                 }
 
-                .form-control {
-                    padding-right: 4rem;
-                    margin: 0 0 0 0.5rem;
-                    width: auto;
-                    max-width: calc(100% - 2rem);
-                    flex: 1 0 auto;
+                .form-control,
+                .custom-select {
+                    max-width: 100%;
+                    background-color: $white;
+                    border-width: 0;
+                    border-bottom-width: 2px;
 
                     &::placeholder {
-                        color: $body-color;
-                        font-style: normal;
-                        font-size: 1rem;
+                        color: $gray-500;
                     }
                 }
             }

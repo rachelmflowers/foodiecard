@@ -7,7 +7,7 @@
         max-width: 100%;
 
         h1 {
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
 
         .nav {
@@ -31,18 +31,28 @@
 
     > p.text-center {
         margin-bottom: 2rem;
+
+        .btn { font-weight: $font-weight-bold; }
     }
 
     #loginForm_container {
+        padding: 1rem 1rem 2rem;
+        margin: 0 auto 2rem;
+        width: 100%;
+        max-width: none;
         display: none;
         opacity: 0;
-        margin: 0 auto 2rem;
-        border-bottom: 1px solid $border-color;
+        border: 1px solid $border-color;
 
         &.show {
             display: block;
             opacity: 1;
             transition: opacity 0.3s ease;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 400px;
         }
     }
 
@@ -58,13 +68,13 @@
             background: $gray-400;
                 
             @include media-breakpoint-up(md) {
-                top: 50%;
+                top: 37%;
             }
         }
 
         @include media-breakpoint-up(md) {
             &.single::after {
-                top: 38%;
+                top: 32%;
             }
         }
 
@@ -74,9 +84,10 @@
         }
 
         small { 
-            margin-top: 0.25rem;
+            margin-top: 1rem;
             display: block;
             text-align: center;
+            color: lighten($gray-700, 10);
         }
     }
 }
@@ -337,12 +348,8 @@
             padding: 2rem;
         }
 
-
         @include media-breakpoint-up(xl) {
             padding: 3.5rem 4.5rem 2rem;
-        }
-
-        dl { 
         }
     
         dd,
@@ -365,7 +372,6 @@
             clear: left;
             font-weight: $font-weight-bold;
             text-transform: uppercase;
-            
     
             &.total {
                 font-weight: $font-weight-base;
@@ -442,7 +448,9 @@
         width: 100%;
         text-align: center;
 
-        > * {
+        > svg,
+        > img,
+        > a {
             margin: 1rem 0.5rem;
             max-width: 85px;
             height: auto;
@@ -459,7 +467,9 @@
 
         @include media-breakpoint-up(md) {
 
-            > * {
+            > svg,
+            > img,
+            > a {
                 margin: 1rem;
                 max-width: 200px;
                 transform: scale(0.9);

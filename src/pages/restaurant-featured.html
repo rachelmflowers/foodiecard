@@ -187,34 +187,35 @@
                 <h4>Make a reservation</h4>
                 <form id="reservation-form">
                     <div class="form-group">
-                        <label for="partyNumber" class="sr-only">How many people?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#user"/>
-                        </svg>
+                        <label for="partyNumber">Party size?</label>
 
-                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
-                        placeholder="people" />
+                        <select name="partyNumber" id="partyNumber" class="custom-select">
+                            <option value="1">For 1</option>
+                            <option value="2" selected>For 2</option>
+                            <option value="3">For 3</option>
+                            <option value="4">For 4</option>
+                            <option value="5">For 5</option>
+                            <option value="6">For 6</option>
+                            <option value="7">For 7</option>
+                            <option value="8">For 8</option>
+                            <option value="9">For 9</option>
+                            <option value="10">For 10</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="reservationDate" class="sr-only">What day?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#calendar"/>
-                        </svg>
+                        <label for="reservationDate">Date</label>
 
-                        <input type="text" name="reservationDate" id="reservationDate" class="form-control datepicker" />
+                        <input type="text" name="reservationDate" id="reservationDate" class="custom-select datepicker" placeholder="Today" />
                     </div>
 
                     <div class="form-group">
-                        <label for="reservationTime" class="sr-only">What time?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#clock"/>
-                        </svg>
+                        <label for="reservationTime">Time</label>
 
-                        <input type="text" name="reservationTime" id="reservationTime" class="form-control timepicker" />
+                        <input type="text" name="reservationTime" id="reservationTime" class="custom-select timepicker" placeholder="6:00pm" />
                     </div>
 
-                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
+                    <button type="submit" class="btn btn-warning btn-block">Find A Table</button>
                 </form>
             </div>
             <div class="buy-now">

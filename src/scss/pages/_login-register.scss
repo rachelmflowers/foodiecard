@@ -11,9 +11,9 @@
 
     .h2 { color: $primary; }
 
-    .btn-warning { margin-bottom: 2rem; }
+    .btn-warning { margin-bottom: 1rem; }
 
-    hr { margin: 2rem auto; }
+    hr { margin: 1rem auto; }
 
     .show-password {
         color: $primary;
@@ -24,42 +24,36 @@
 }
 
 #loginForm {
-    margin-bottom: 2rem;
     display: flex;
     flex-flow: column nowrap;
 
     button { 
-        margin-top: 2rem;
         padding-left: 2rem;
         padding-right: 2rem;
         align-self: flex-end;
 
         @include media-breakpoint-down(sm) {
-            margin-top: 1rem;
             width: 100%;
         }
     }
 }
 
+#textMe_container {
+    display: none;
+    margin-top: 1rem;
+    text-align: left;
 
-#registerForm_container {
-
-    .form-check {
-        margin-top: 2rem;
-        text-align: left;
-    }
+    label[for="textMe"] { font-size: $font-size-sm;}
 }
 
 #registerForm {
-    margin-bottom: 2rem;
 
     label svg { stroke: $primary; }
 
     button {
-        margin-top: 2rem;
+        margin-top: 1rem;
 
         @include media-breakpoint-down(sm) {
-            margin-top: 1rem;
             width: 100%;
         }
     }

@@ -30,9 +30,9 @@
     <body>
         <div class="page">
             <header id="site_header" class="sticky-top">
-                <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
-                <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
-                <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+                <a href="#mainContent" class="skip-to" tabindex="2">Skip Navigation</a>
+                <a href="#login" class="skip-to" tabindex="2">Skip to Login</a>
+                <a href="#site_footer" class="skip-to" tabindex="2">Skip to Footer</a>
 
                 <div class="deal-bar alert alert-primary alert-dismissible">
     This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
@@ -104,7 +104,7 @@
 
                             <form id="site_search--container" class="form-inline">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search">
+                                    <input type="search" tabindex="1" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search" autofocus>
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="button" aria-label="search">
                                             <svg class="icon">
@@ -181,7 +181,7 @@
                     Ending in 5555<br />
                     Expires in 01/20
                 </span>
-                <p><small>Orders automatically renew annually.<br /> You may cancel at any time.</small></p>
+                <p><small>For your convenience, enjoy an auto renewal benefit. <br />You may cancel at any time</small></p>
             </div>
 
             <p>Not correct?  Email hello@foodiecard.com or call <a href="tel:+18333663432">1-833-366-3432</a> and we’ll make it right!</p>
@@ -252,18 +252,18 @@
                         <a href="become-partner.html">Become a Restaurant Partner</a>
                         <a href="contact-us.html">Contact Us</a>
                         <a href="faqs.html">FAQ</a>
-                        <a href="press.html">Press</a>
+                        <!-- <a href="press.html">Press</a> -->
                         <a href="terms.html">Terms and Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </nav>
                     <div class="social">
-                        <a href="">
+                        <a href="https://www.facebook.com/getfoodiecard">
                             <svg class="icon" title="check us out on facebook">
                                 <use xlink:href="fonts/feather-sprite.svg#facebook"/>
                             </svg>
                         </a>
                         
-                        <a href="" title="check out our instagram">
+                        <a href="https://www.instagram.com/getfoodiecard" title="check out our instagram">
                             <svg class="icon">
                                 <use xlink:href="fonts/feather-sprite.svg#instagram"/>
                             </svg>
@@ -284,9 +284,6 @@
         <div id="couponModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
                 <div class="modal-body">
                     <p class="h3">Exciting Coupon Header!</p>
                     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit

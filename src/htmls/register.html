@@ -30,9 +30,9 @@
     <body>
         <div class="page">
             <header id="site_header" class="sticky-top">
-                <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
-                <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
-                <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+                <a href="#mainContent" class="skip-to" tabindex="2">Skip Navigation</a>
+                <a href="#login" class="skip-to" tabindex="2">Skip to Login</a>
+                <a href="#site_footer" class="skip-to" tabindex="2">Skip to Footer</a>
 
                 <div class="deal-bar alert alert-primary alert-dismissible">
     This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
@@ -104,7 +104,7 @@
 
                             <form id="site_search--container" class="form-inline">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search">
+                                    <input type="search" tabindex="1" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search" autofocus>
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="button" aria-label="search">
                                             <svg class="icon">
@@ -132,18 +132,13 @@
 
             <form id="registerForm" class="needsValidation" novalidate>
                 <div class="form-group">
-                    <label for="email" class="sr-only">Enter email address</label>
-                    <input type="email" class="form-control form-control-lg" id="email"  placeholder="Email address" autocomplete="email" required />
+                    <label for="email" class="sr-only">Enter email</label>
+                    <input type="email" class="form-control form-control-lg" id="email"  placeholder="Enter email" autocomplete="email" required />
                 </div>
 
                 <div class="form-group">
-                    <label for="cellPhone" class="sr-only">Enter cell phone number</label>
-                    <input type="tel" class="form-control form-control-lg" id="cellPhone"  placeholder="Cell Phone" autocomplete="mobile" />
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="sr-only">Enter Password</label>
-                    <input type="password" class="form-control form-control-lg" id="password"  placeholder="Password" autocomplete="new-password" required />
+                    <label for="password" class="sr-only">Enter password</label>
+                    <input type="password" class="form-control form-control-lg" id="password"  placeholder="Enter password" autocomplete="new-password" required />
                     <a class="float-right show-password">
                         <small>show password</small>
                     </a>
@@ -154,13 +149,18 @@
                     <input type="password" class="form-control form-control-lg" id="passwordConfirm"  placeholder="Password Confirmation" autocomplete="new-password" required />
                 </div> -->
 
+                <div class="form-group">
+                    <label for="cellPhone" class="sr-only">Mobile phone number (optional)</label>
+                    <input type="tel" class="form-control form-control-lg" id="cellPhone"  placeholder="Mobile phone number (optional)" autocomplete="mobile" />
+                </div>
 
-                <div class="form-check">
+
+                <div class="form-check" id="textMe_container">
                     <input type="checkbox" id="textMe" class="form-check-input" />
                     <label class="form-check-label" for="textMe">
-                        Text me updates 
+                        Occasionally text me awesome stuff 
                         <span>
-                            (Yes, I agree to these terms)
+                            (yes, I agree to these terms)
 
                             <svg class="icon" data-toggle="popover" data-placement="bottom" data-content="I agree to receive texts that might be considered marketing and that may be sent using an autodialer. I understand checking this box is not required to purchase.">
                                 <use xlink:href="fonts/feather-sprite.svg#info"/>
@@ -243,18 +243,18 @@
                         <a href="become-partner.html">Become a Restaurant Partner</a>
                         <a href="contact-us.html">Contact Us</a>
                         <a href="faqs.html">FAQ</a>
-                        <a href="press.html">Press</a>
+                        <!-- <a href="press.html">Press</a> -->
                         <a href="terms.html">Terms and Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </nav>
                     <div class="social">
-                        <a href="">
+                        <a href="https://www.facebook.com/getfoodiecard">
                             <svg class="icon" title="check us out on facebook">
                                 <use xlink:href="fonts/feather-sprite.svg#facebook"/>
                             </svg>
                         </a>
                         
-                        <a href="" title="check out our instagram">
+                        <a href="https://www.instagram.com/getfoodiecard" title="check out our instagram">
                             <svg class="icon">
                                 <use xlink:href="fonts/feather-sprite.svg#instagram"/>
                             </svg>
@@ -275,9 +275,6 @@
         <div id="couponModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
                 <div class="modal-body">
                     <p class="h3">Exciting Coupon Header!</p>
                     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit

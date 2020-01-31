@@ -1,25 +1,28 @@
 
         <div class="form-group" id="customer_email-field">
-            <label for="customerEmail" class="sr-only">Email address</label>
-            <input type="email" name="customerEmail" id="customerEmail" class="form-control form-control-lg" placeholder="Your email" autocomplete="email" required />
+            <label for="customerEmail" class="sr-only">Enter email</label>
+            <input type="email" name="customerEmail" id="customerEmail" class="form-control form-control-lg" placeholder="Enter email" autocomplete="email" required />
         </div>
 
         <div class="form-group" id="customer_password-field">
             <label for="customerPassword" class="sr-only">Create password</label>
             <input type="password" name="customerPassword" id="customerPassword" class="form-control form-control-lg" placeholder="Create password" autocomplete="new-password" required />
+            <a class="float-right show-password">
+                <small>show password</small>
+            </a>
         </div>
 
         <div class="form-group" id="customer_phone-field">
-            <label for="customerPhone" class="sr-only">Mobile Phone</label>
-            <input type="number" name="customerPhone" id="customerPhone" class="form-control form-control-lg" placeholder="Cell phone" autocomplete="mobile" required />
+            <label for="cellPhone" class="sr-only">Mobile phone (optional)</label>
+            <input type="number" name="cellPhone" id="cellPhone" class="form-control form-control-lg" placeholder="Mobile phone number (optional)" autocomplete="mobile" required />
         </div>
         
-        <div class="form-check">
+        <div class="form-check" id="textMe_container">
             <input type="checkbox" id="textMe" class="form-check-input" />
             <label class="form-check-label" for="textMe">
-                Text me updates 
+                Occasionally text me awesome stuff 
                 <span>
-                    (Yes, I agree to these terms)
+                    (yes, I agree to these terms)
                 
                     <svg class="icon" data-toggle="popover" data-placement="bottom" data-content="I agree to receive texts that might be considered marketing and that may be sent using an autodialer. I understand checking this box is not required to purchase.">
                         <use xlink:href="fonts/feather-sprite.svg#info"/>

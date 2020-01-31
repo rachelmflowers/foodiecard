@@ -184,7 +184,7 @@ const gmap = async (elem) => {
                 // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: target.offset().top
+                    scrollTop: target.offset().top - 160
                 }, 1000, function() {
                     // Callback after animation
                     // Must change focus!
@@ -201,6 +201,13 @@ const gmap = async (elem) => {
         }
         });
 
+        // CELL PHONE FIELDS
+
+        $('#cellPhone').on('input', function() {
+            if (this.value) {
+                $(this).parent().siblings('#textMe_container').fadeIn();
+            } 
+        })
 
         // CHECKOUT PAGE
 
@@ -267,7 +274,7 @@ const gmap = async (elem) => {
             new Flickity(testimonials, {
                 cellAlign: 'left',
                 fade: true,
-                autoPlay: true,
+                autoPlay: 7000
             });
         }
 
@@ -275,7 +282,8 @@ const gmap = async (elem) => {
             new Flickity(featRestaurants, {
                 cellAlign: 'left',
                 contain: true,
-                groupCells: '80%'
+                groupCells: '80%',
+                wrapAround: true
             });
         }
 

@@ -30,9 +30,9 @@
     <body>
         <div class="page">
             <header id="site_header" class="sticky-top">
-                <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
-                <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
-                <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+                <a href="#mainContent" class="skip-to" tabindex="2">Skip Navigation</a>
+                <a href="#login" class="skip-to" tabindex="2">Skip to Login</a>
+                <a href="#site_footer" class="skip-to" tabindex="2">Skip to Footer</a>
 
                 <div class="deal-bar alert alert-primary alert-dismissible">
     This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
@@ -104,7 +104,7 @@
 
                             <form id="site_search--container" class="form-inline">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search">
+                                    <input type="search" tabindex="1" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search" autofocus>
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="button" aria-label="search">
                                             <svg class="icon">
@@ -313,34 +313,35 @@
                 <h4>Make a reservation</h4>
                 <form id="reservation-form">
                     <div class="form-group">
-                        <label for="partyNumber" class="sr-only">How many people?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#user"/>
-                        </svg>
+                        <label for="partyNumber">Party size?</label>
 
-                        <input type="number" min="2" max="10" name="partyNumber" id="partyNumber" class="form-control" 
-                        placeholder="people" />
+                        <select name="partyNumber" id="partyNumber" class="custom-select">
+                            <option value="1">For 1</option>
+                            <option value="2" selected>For 2</option>
+                            <option value="3">For 3</option>
+                            <option value="4">For 4</option>
+                            <option value="5">For 5</option>
+                            <option value="6">For 6</option>
+                            <option value="7">For 7</option>
+                            <option value="8">For 8</option>
+                            <option value="9">For 9</option>
+                            <option value="10">For 10</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="reservationDate" class="sr-only">What day?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#calendar"/>
-                        </svg>
+                        <label for="reservationDate">Date</label>
 
-                        <input type="text" name="reservationDate" id="reservationDate" class="form-control datepicker" />
+                        <input type="text" name="reservationDate" id="reservationDate" class="custom-select datepicker" placeholder="Today" />
                     </div>
 
                     <div class="form-group">
-                        <label for="reservationTime" class="sr-only">What time?</label>
-                        <svg class="icon">
-                            <use xlink:href="fonts/feather-sprite.svg#clock"/>
-                        </svg>
+                        <label for="reservationTime">Time</label>
 
-                        <input type="text" name="reservationTime" id="reservationTime" class="form-control timepicker" />
+                        <input type="text" name="reservationTime" id="reservationTime" class="custom-select timepicker" placeholder="6:00pm" />
                     </div>
 
-                    <button type="submit" class="btn btn-warning btn-block">Reserve my Table</button>
+                    <button type="submit" class="btn btn-warning btn-block">Find A Table</button>
                 </form>
             </div>
             <div class="buy-now">
@@ -413,18 +414,18 @@
                         <a href="become-partner.html">Become a Restaurant Partner</a>
                         <a href="contact-us.html">Contact Us</a>
                         <a href="faqs.html">FAQ</a>
-                        <a href="press.html">Press</a>
+                        <!-- <a href="press.html">Press</a> -->
                         <a href="terms.html">Terms and Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </nav>
                     <div class="social">
-                        <a href="">
+                        <a href="https://www.facebook.com/getfoodiecard">
                             <svg class="icon" title="check us out on facebook">
                                 <use xlink:href="fonts/feather-sprite.svg#facebook"/>
                             </svg>
                         </a>
                         
-                        <a href="" title="check out our instagram">
+                        <a href="https://www.instagram.com/getfoodiecard" title="check out our instagram">
                             <svg class="icon">
                                 <use xlink:href="fonts/feather-sprite.svg#instagram"/>
                             </svg>
@@ -445,9 +446,6 @@
         <div id="couponModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
                 <div class="modal-body">
                     <p class="h3">Exciting Coupon Header!</p>
                     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit

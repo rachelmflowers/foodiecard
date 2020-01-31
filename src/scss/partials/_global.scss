@@ -62,9 +62,9 @@ html {
         background: inherit;
     }
 
-    &::before { left: -25%; }
+    &::before { left: 99%; }
 
-    &::after { right: -25%; }
+    &::after { right: 99%; }
 }
 
 .bg-full-primary {
@@ -96,9 +96,9 @@ html {
         background: inherit;
     }
 
-    &::before { left: -25%; }
+    &::before { left: 99%; }
 
-    &::after { right: -25%; }
+    &::after { right: 99%; }
 
 }
 

@@ -1,10 +1,13 @@
 @@include("../layouts/partials/head-nonav.html")
 <main id="mainContent" class="content checkout">
     <div class="container">
-        <h1 class="sr-only">Checkout</h1>
 
         <div id="checkout">
-            <p class="text-center">Already have an account? <button id="showCheckoutLogin" class="btn btn-link">Login</button></p>
+            <h1 class="h4 text-center">Checkout</h1>
+            <p class="text-center">
+                <strong>Already have an account?</strong>
+                <button id="showCheckoutLogin" class="btn btn-link">Login</button>
+            </p>
             @@include("../layouts/partials/checkout-login.html")
 
             <form id="purchaseForm" class="needsValidation" novalidate>
@@ -13,7 +16,7 @@
 
                     <div id="cardName_field" class="form-group">
                         <label for="nameOnCard1" class="sr-only">Full Name on Foodie Card</label>
-                        <input type="text" name="nameOnCard1" id="nameOnCard1" placeholder="Full Name on Foodie Card" class="form-control form-control-lg" autocomplete="name" required/>
+                        <input type="text" name="nameOnCard1" id="nameOnCard1" placeholder="Full name on Foodie Card" class="form-control form-control-lg" autocomplete="name" required/>
                     </div>
 
                     @@include("../layouts/partials/customer-details.html")
@@ -23,7 +26,7 @@
                             <use xlink:href="fonts/feather-sprite.svg#plus-circle"/>
                         </svg>
 
-                        Add an immediate family member
+                        Would you like to add an immediately family member?
                     </button>
 
                     <!-- FOR EACH additonal card increment numbers for names, label-for's and id's -->
@@ -69,19 +72,19 @@
         
                     <small>By placing the order, you agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.
                         <br /><br />
-                        Orders automatically renew annually.
-                        <br />
-                        You may cancel at any time.
+                        Congratulations. Because of your order, you will feed somebody<br /> less fortunate for an entire day.
                     </small>
                 </div>
                 <br /> 
-                <p class="text-center">Your order will feed someone less fortunate for an entire day!</p>
+                <p class="text-center">
+                    <small>For your convenience, enjoy an auto renewal benefit.
+                    <br />You may cancel at any time
+                    </small>
+                </p>
             </form>
         </div>
-
-        @@include("../layouts/partials/purchase-help.html")
-            
         <div class="purchase-logos">
+            <p class="h4 text-center">Shop with confidence</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="50" viewBox="0 0 120 50" role="img">
                 <title>
                     This site is verified by McAfee as secure
@@ -119,6 +122,8 @@
             <!-- End: TrustLock Badge -->
 
         </div>
+
+        @@include("../layouts/partials/purchase-help.html")
    </div>
 </main>
 @@include("../layouts/partials/foot-nonav.html")

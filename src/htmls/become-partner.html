@@ -30,9 +30,9 @@
     <body>
         <div class="page">
             <header id="site_header" class="sticky-top">
-                <a href="#mainContent" class="skip-to" tabindex="1">Skip Navigation</a>
-                <a href="#login" class="skip-to" tabindex="1">Skip to Login</a>
-                <a href="#site_footer" class="skip-to" tabindex="1">Skip to Footer</a>
+                <a href="#mainContent" class="skip-to" tabindex="2">Skip Navigation</a>
+                <a href="#login" class="skip-to" tabindex="2">Skip to Login</a>
+                <a href="#site_footer" class="skip-to" tabindex="2">Skip to Footer</a>
 
                 <div class="deal-bar alert alert-primary alert-dismissible">
     This is an awesome <strong>DEAL</strong> for the day! Use code 2020 for 20% off. <a href="">details & exclusions</a>
@@ -104,7 +104,7 @@
 
                             <form id="site_search--container" class="form-inline">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search">
+                                    <input type="search" tabindex="1" class="form-control" placeholder="Where are we eating?" aria-label="restaurant search" autofocus>
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" type="button" aria-label="search">
                                             <svg class="icon">
@@ -150,27 +150,27 @@
 
                 <div class="form-group" id="restaurantName_field">
                     <label for="restaurantName" class="sr-only">Enter restaurant name</label>
-                    <input type="text" name="restaurantName" id="restaurantName" class="form-control" placeholder="Restaurant Name" />
+                    <input type="text" name="restaurantName" id="restaurantName" class="form-control" placeholder="Restaurant name" />
                 </div>
 
                 <div class="form-group" id="restaurantAddress_field">
                     <label for="restaurantAddress" class="sr-only">Enter restaurant address</label>
-                    <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant Address" />
+                    <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant address" />
                 </div>
 
                 <div class="form-group" id="contactPerson_field">
                     <label for="contactPerson" class="sr-only">Contact Person's Name</label>
-                    <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Contact Person">
+                    <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Contact person">
                 </div>
 
                 <div class="form-group" id="phone_field">
                     <label for="phone" class="sr-only">Contact's phone number</label>
-                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Contact's Phone">
+                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Contact's phone">
                 </div>
 
                 <div class="form-group" id="email_field">
                     <label for="email" class="sr-only">Contact's email address</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Contact Email">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Contact email">
                 </div>
 
                 <button type="submit" class="btn btn-warning btn-block">
@@ -241,7 +241,7 @@
                                 <strong>Bell's Kitchen and Smokehouse, Franklin Square, NY</strong>
                             </cite>
 
-                            <a href="">Go to restaurant website</a>
+                            <a href="">Go to restaurant page</a>
                         </footer>
                     </blockquote>
                 </div>
@@ -261,7 +261,7 @@
                                 <strong>110 Japan</strong>
                             </cite>
 
-                            <a href="">Go to restaurant website</a>
+                            <a href="">Go to restaurant page</a>
                         </footer>
                     </blockquote>
                 </div>
@@ -331,18 +331,18 @@
                         <a href="become-partner.html">Become a Restaurant Partner</a>
                         <a href="contact-us.html">Contact Us</a>
                         <a href="faqs.html">FAQ</a>
-                        <a href="press.html">Press</a>
+                        <!-- <a href="press.html">Press</a> -->
                         <a href="terms.html">Terms and Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </nav>
                     <div class="social">
-                        <a href="">
+                        <a href="https://www.facebook.com/getfoodiecard">
                             <svg class="icon" title="check us out on facebook">
                                 <use xlink:href="fonts/feather-sprite.svg#facebook"/>
                             </svg>
                         </a>
                         
-                        <a href="" title="check out our instagram">
+                        <a href="https://www.instagram.com/getfoodiecard" title="check out our instagram">
                             <svg class="icon">
                                 <use xlink:href="fonts/feather-sprite.svg#instagram"/>
                             </svg>
@@ -363,9 +363,6 @@
         <div id="couponModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
                 <div class="modal-body">
                     <p class="h3">Exciting Coupon Header!</p>
                     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit

@@ -133,10 +133,6 @@
             border: 1px solid $border-color;
             border-top: 0;
 
-            h2 { 
-                font-weight: $headings-font-weight-light; 
-            }
-
             .btn {
                 display: none;
             }
@@ -265,6 +261,15 @@
             @include media-breakpoint-up(lg) {
                 padding: 0 0 0 2rem;
             }
+        }
+    }
+
+    > a {
+        margin-top: 2rem;
+        display: inline-block;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 4rem;
         }
     }
 }
