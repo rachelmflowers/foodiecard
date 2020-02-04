@@ -125,6 +125,24 @@ const gmap = async (elem) => {
     // END fix for focusable elements
 
     $(document).ready(function () {
+        /*
+        * IE Conditional Class
+        */
+        var ie = false;
+
+        if (!!navigator.userAgent.match(/Trident\/7\./) || !!navigator.userAgent.match(/Edge\/./)) {
+            //Set IE as true
+            ie = true;
+        }
+        console.log(ie);
+
+        if (ie == true) {
+            $('html').addClass('ie');
+        }
+
+        // Object Fit Images Polyfill
+        objectFitImages();
+
         // Begin focusable fix for accessibility
         // if there is a '#' in the URL (someone linking directly to a page with an anchor)
         if (document.location.hash) {
@@ -147,8 +165,8 @@ const gmap = async (elem) => {
         });
 
         // How it works Scroll observer
-        new ScrollPoint('#step-1');
-        new ScrollPoint('#step-2');
+        // new ScrollPoint('#step-1');
+        // new ScrollPoint('#step-2');
 
         // Datetime pickers
 

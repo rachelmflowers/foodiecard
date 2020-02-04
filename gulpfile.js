@@ -8,12 +8,14 @@ const
   gulp = require('gulp'),
   gulpIf = require('gulp-if'),
   imagemin = require('gulp-imagemin'),
+  objectFitImages = require('postcss-object-fit-images'),
   plumber = require('gulp-plumber'),
   postcss = require('gulp-postcss'),
   sass = require('gulp-sass'),
   terser = require('gulp-terser-js'),
   rename = require("gulp-rename"),
   useref = require('gulp-useref'),
+  webpack = require('webpack-stream'),
   dir = {
     node        : 'node_modules/',
     src         : 'src/',
@@ -23,6 +25,7 @@ const
     layouts     : 'src/layouts/',
     pages       : 'src/pages/',
     js          : 'src/js/',
+    babelJS     : 'src/js/babel/',
     build       : 'dist/'
   };
 
@@ -56,13 +59,19 @@ gulp.task('fileinclude', async function() {
     .pipe(gulp.dest(dir.htmls));
 });
 
+function js() {
+  return gulp
+    .src(dir.js + '**/*.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest(dir.babelJS))
+}
+
 /* concatenate resource files */
 function concatAssets() {
   return gulp
     .src(dir.htmls + '**/*.html')
     .pipe(plumber())
     .pipe(useref())
-    // .pipe(gulpIf('*.js', terser()))
     .pipe(gulp.dest(dir.build))
 }
 
@@ -76,6 +85,7 @@ function icons() {
 function css() {
   var plugins = [
     autoprefixer(),
+    objectFitImages(),
     cssnano({
       'zIndex': false
     })
@@ -90,6 +100,7 @@ function css() {
     .pipe(gulp.dest(dir.build + 'css'))
     .pipe(browsersync.stream());
 }
+
 
 /* optimize images */
 function images() {
@@ -137,7 +148,7 @@ function watchFiles() {
 }
 
 /* Complex Tasks */
-const build = gulp.series(clean, 'fileinclude', images, icons, css, concatAssets);
+const build = gulp.series(clean, 'fileinclude', images, icons, js, css, concatAssets);
 const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
