@@ -6,6 +6,7 @@ const
   del = require('del'),
   fileinclude = require('gulp-file-include'),
   gulp = require('gulp'),
+  babel = require('gulp-babel');
   gulpIf = require('gulp-if'),
   imagemin = require('gulp-imagemin'),
   objectFitImages = require('postcss-object-fit-images'),
@@ -63,7 +64,10 @@ function js() {
   return gulp
     .src(dir.js + '**/*.js')
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest(dir.babelJS))
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(gulp.dest(dir.js))
 }
 
 /* concatenate resource files */

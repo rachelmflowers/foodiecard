@@ -2,6 +2,7 @@ const path = require('path');
 const outputDir = path.resolve(__dirname, 'dist/js');
 module.exports = {
     entry: ["./src/js/site_scripts.js"],
+    mode: 'production',
     output: {
         path: outputDir,
         filename: 'site-bundle.js'
