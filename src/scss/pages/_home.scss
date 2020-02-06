@@ -184,7 +184,7 @@
             @include media-breakpoint-up(sm) {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto;
+                grid-template-rows: 1;
                 grid-gap: 1rem;
             }
 

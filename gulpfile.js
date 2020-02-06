@@ -2,6 +2,7 @@ const
   autoprefixer = require('autoprefixer'),
   browsersync = require("browser-sync").create(),
   cache = require('gulp-cache'),
+  concat = require('gulp-concat'),
   cssnano = require('cssnano'),
   del = require('del'),
   fileinclude = require('gulp-file-include'),
@@ -13,7 +14,6 @@ const
   plumber = require('gulp-plumber'),
   postcss = require('gulp-postcss'),
   sass = require('gulp-sass'),
-  terser = require('gulp-terser-js'),
   rename = require("gulp-rename"),
   useref = require('gulp-useref'),
   webpack = require('webpack-stream'),
@@ -71,11 +71,14 @@ function js() {
 }
 
 /* concatenate resource files */
-function concatAssets() {
+function buildHTML() {
   return gulp
     .src(dir.htmls + '**/*.html')
     .pipe(plumber())
     .pipe(useref())
+    .pipe(gulpIf('*.css', postcss(cssnano({
+      'zIndex': false
+    }))))
     .pipe(gulp.dest(dir.build))
 }
 
@@ -86,9 +89,31 @@ function icons() {
 }
 
 /* compile and optimize css */
-function css() {
+function vendorCSS() {
   var plugins = [
-    autoprefixer(),
+    cssnano({
+      'zIndex': false
+    })
+  ];
+  return gulp
+  .src([
+    dir.node + 'flickity/dist/flickity.min.css',
+    dir.node + 'flickity-fade/flickity-fade.css',
+    dir.node + 'flatpickr/dist/flatpickr.css'
+  ])
+  .pipe(concat('vendor.css'))
+  .pipe(gulp.dest(dir.build + 'css'))
+  .pipe(rename({ suffix: ".min" }))
+  .pipe(postcss(plugins))
+  .pipe(gulp.dest(dir.build + 'css'))
+  .pipe(browsersync.stream());
+}
+
+function mainCSS() {
+  var plugins = [
+    autoprefixer({
+        grid: 'autoplace'
+    }),
     objectFitImages(),
     cssnano({
       'zIndex': false
@@ -139,26 +164,28 @@ function cleanHTMLS() {
 
 /* Watch Task */
 function watchFiles() {
-  gulp.watch(dir.sass + "**/*", css);
-  gulp.watch(dir.js + "**/*", concatAssets);
+  gulp.watch(dir.sass + "**/*", mainCSS);
+  gulp.watch(dir.js + "**/*", buildHTML);
   gulp.watch(
     [
       dir.layouts + "**/*",
       dir.pages + "**/*"
     ],
-    gulp.series(cleanHTMLS, 'fileinclude', concatAssets)
+    gulp.series(cleanHTMLS, 'fileinclude', buildHTML)
   );
   gulp.watch(dir.images + "**/*", images);
 }
 
 /* Complex Tasks */
-const build = gulp.series(clean, 'fileinclude', images, icons, js, css, concatAssets);
+const styles = gulp.parallel(mainCSS, vendorCSS);
+const build = gulp.series(clean, 'fileinclude', images, icons, js, styles, buildHTML);
 const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
 exports.images = images;
-exports.css = css;
-exports.concatAssets = concatAssets;
+exports.mainCSS = mainCSS;
+exports.vendorCSS = vendorCSS;
+exports.buildHTML = buildHTML;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
