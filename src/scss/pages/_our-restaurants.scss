@@ -187,6 +187,10 @@
             border-bottom: 1px solid $border-color;
         }
 
+        &:not(.featured):not(.new) {
+            .h5 { padding-top: 1.25rem; }
+        }
+
         h1.h5 {
             small {
                 margin-bottom: 4px;

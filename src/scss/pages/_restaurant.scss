@@ -548,13 +548,15 @@
             width: 100%;
             display: flex;
             flex-flow: row wrap;
-            justify-content: flex-start;
+            justify-content: center;
             align-content: center;
             border-bottom: 1px solid $border-color;
 
             @include media-breakpoint-up(sm) {
                 padding: 1rem;
+                margin: 0 1.5rem;
                 width: calc(33.33% - 2rem);
+                flex: 1 0 auto;
                 justify-content: center;
                 border: 1px solid $border-color;
             }
