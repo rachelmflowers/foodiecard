@@ -44,6 +44,16 @@
         box-shadow: none;
     }
 
+    &-xl {
+        padding: 1rem 2.25rem;
+        font-size: 2rem;
+
+        img[src*="arrows"] {
+            height: 1.5rem;
+            width: auto;
+        }
+    }
+
     .input-group & {
         border-width: 1px;
     }

@@ -1,0 +1,102 @@
+#site_header {
+    border-bottom: 1px solid $border-color;
+
+    &.checkout {
+        text-align: center;
+        
+        a {
+            padding: 0.5rem 1rem;
+            margin: 0 auto;
+            width: 240px;
+            display: block;
+        }
+    }
+
+    .deal-bar {
+        margin: 0;
+        text-align: center;
+        border-radius: 0;
+    }
+}
+
+#couponModal {
+
+    .close {
+        position: absolute;
+        top: 0.25rem;
+        right: 0.5rem;
+    }
+
+    .modal-content {
+        position: relative;
+        color: $white;
+        background: $gray-700;
+        overflow: hidden;
+    }
+
+    .modal-body {
+        text-align: center;
+
+        .logo-container {
+
+            .wrapper {
+                position: relative;
+                width: 150px;
+                margin: 0 auto;
+                display: inline-block;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: calc(-75px - 1.5rem);
+                    left: -2rem;
+                    z-index: 0;
+                    width: calc(150px + 4rem);
+                    height: calc(150px + 3rem);
+                    display: block;
+                    background: $white;
+                    border-radius: 50%;
+                }
+
+            }
+
+            .logo {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        p.h1 {
+            padding: 1.5rem;
+            margin: 5.5rem auto 2.75rem;
+            display: inline-block;
+            color: $primary;
+            font-size: 3.75rem;
+            text-transform: uppercase;
+            background: $white;
+
+            small {
+                color: $gray-700;
+            }
+        }
+
+        p.lead {
+            margin-bottom: 1.75rem;
+            font-size: 1.5rem;
+            vertical-align: middle;
+
+            .h2 { 
+                color: $white;
+                font-size: 3rem;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+        }
+
+        .btn-xl {
+            margin-bottom: 2rem;
+        }
+    }
+}
