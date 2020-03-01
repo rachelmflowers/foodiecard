@@ -109,13 +109,28 @@
 
     h2 { width: 100%; }
 
-    .terms { 
+    .fieldset {
+        width: calc(35% - 1rem);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+
+        &:first-of-type {
+            width: calc(65% - 1rem);
+        }
+
+        .h5 { margin-top: 3.25rem; }
+    }
+
+    .terms {
         margin-top: $section-pad;
+        width: 100%;
        
         p { line-height: 1.5;}
 
         .form-control { 
-            width: 200px;
+            width: 240px;
             display: inline-block;
         }
     }

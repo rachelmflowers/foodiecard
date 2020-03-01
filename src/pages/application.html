@@ -3,75 +3,108 @@
     <div class="container centered-text-block">
         <h1>Become a Partner Restaurant</h1>
         
-        <form id="becomePartnerApplication">
-            <h2 class="h4">Application Form</h2>
+        <form id="becomePartnerApplication" class="needsValidation" novalidate>
+            <div class="fieldset">
+                <h2 class="h4">Application Form</h2>
+                <p>Fields marked with an <abbr class="text-danger">*</abbr> are required.</p>
 
-            <div class="form-group" id="restaurantName_field">
-                <label for="restaurantName" class="sr-only">Enter restaurant name</label>
-                <input type="text" name="restaurantName" id="restaurantName" class="form-control" placeholder="Restaurant Name" />
+                <div class="form-group" id="restaurantName_field">
+                    <label for="restaurantName">
+                        Enter Restaurant Name 
+                        <abbr class="text-danger">*</abbr>
+                    </label>
+                    <input type="text" name="restaurantName" id="restaurantName" class="form-control" required />
+                </div>
+
+                <div class="form-group" id="restaurantAddress_field">
+                    <label for="restaurantAddress">
+                        Enter Restaurant Address 
+                        <abbr class="text-danger">*</abbr>
+                    </label>
+                    <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" required />
+                </div>
+
+                <div class="form-group" id="restWebsite_field">
+                    <label for="restWebsite">Restaurant's Website Address</label>
+                    <input type="url" name="restWebsite" id="restWebsite" class="form-control" />
+                </div>
+
+                <div class="form-group" id="restPhone_field">
+                    <label for="restPhone">
+                        Restaurant's Phone Number 
+                        <abbr class="text-danger">*</abbr>
+                    </label>
+                    <input type="tel" name="restPhone" id="restPhone" class="form-control" required />
+                </div>
+
+                <div class="form-group" id="contactPerson_field">
+                    <label for="contactPerson">
+                        Owner's Name 
+                        <abbr class="text-danger">*</abbr>
+                    </label>
+                    <input type="text" name="contactPerson" id="contactPerson" class="form-control" required />
+                </div>
+
+                <div class="form-group" id="phone_field">
+                    <label for="phone">
+                        Owner's Phone Number 
+                        <abbr class="text-danger">*</abbr>
+                    </label>
+                    <input type="tel" name="phone" id="phone" class="form-control" required />
+                </div>
+
+                <div class="form-group" id="email_field">
+                    <label for="email">Owner's Email Address</label>
+                    <input type="email" name="email" id="email" class="form-control" />
+                </div>
+
+                <div class="form-group" id="GM_field">
+                    <label for="GM">General Manager's Name</label>
+                    <input type="text" name="GM" id="GM" class="form-control" />
+                </div>
+
+                <div class="form-group" id="email_field">
+                    <label for="gmEmail">General Manager's Email Address</label>
+                    <input type="gmEmail" name="gmEmail" id="email" class="form-control" />
+                </div>
+
+                <div class="form-group" id="restFacebook_field">
+                    <label for="restFacebook">Restaurant's Facebook Address</label>
+                    <input type="url" name="restFacebook" id="restFacebook" class="form-control" />
+                </div>
+
+                <div class="form-group" id="restInsta_field">
+                    <label for="restInsta">Restaurant's Instagram Address</label>
+                    <input type="url" name="restInsta" id="restInsta" class="form-control" />
+                </div>
             </div>
 
-            <div class="form-group" id="restaurantAddress_field">
-                <label for="restaurantAddress" class="sr-only">Enter restaurant address</label>
-                <input type="text" name="restaurantAddress" id="restaurantAddress" class="form-control" placeholder="Restaurant Address" />
-            </div>
+            <div class="fieldset">
+                <h3 class="h5">Internal Use Only</h3>
 
-            <div class="form-group" id="restWebsite_field">
-                <label for="restWebsite" class="sr-only">Restaurant's Website Address</label>
-                <input type="url" name="restWebsite" id="restWebsite" class="form-control" placeholder="Restaurant Website">
-            </div>
+                <div class="form-group" id="referringPartner_field">
+                    <label for="referringPartner">Referring Partner</label>
+                    <input type="text" name="referringPartner" id="referringPartner" class="form-control" />
+                </div>
 
-            <div class="form-group" id="restPhone_field">
-                <label for="restPhone" class="sr-only">Restaurant's Phone Number</label>
-                <input type="tel" name="restPhone" id="restPhone" class="form-control" placeholder="Restaurant Phone #">
-            </div>
+                <div class="form-group" id="accountRep_field">
+                    <label for="accountRep">Account Rep</label>
+                    <input type="text" name="accountRep" id="accountRep" class="form-control" />
+                </div>
 
-            <div class="form-group" id="contactPerson_field">
-                <label for="contactPerson" class="sr-only">Owner's Name</label>
-                <input type="text" name="contactPerson" id="contactPerson" class="form-control" placeholder="Owner's Name">
-            </div>
-
-            <div class="form-group" id="phone_field">
-                <label for="phone" class="sr-only">Owner's phone number</label>
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Owner's Phone">
-            </div>
-
-            <div class="form-group" id="email_field">
-                <label for="email" class="sr-only">Owner's email address</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Owner's Email">
-            </div>
-
-            <div class="form-group" id="GM_field">
-                <label for="GM" class="sr-only">General Manager's Name</label>
-                <input type="text" name="GM" id="GM" class="form-control" placeholder="GM Name">
-            </div>
-
-            <div class="form-group" id="email_field">
-                <label for="gmEmail" class="sr-only">General Manager's email address</label>
-                <input type="gmEmail" name="gmEmail" id="email" class="form-control" placeholder="GM's Email">
-            </div>
-
-            <div class="form-group" id="restFacebook_field">
-                <label for="restFacebook" class="sr-only">Restaurant's Facebook Address</label>
-                <input type="url" name="restFacebook" id="restFacebook" class="form-control" placeholder="Restaurant Facebook">
-            </div>
-
-            <div class="form-group" id="restInsta_field">
-                <label for="restInsta" class="sr-only">Restaurant's Instagram Address</label>
-                <input type="url" name="restInsta" id="restInsta" class="form-control" placeholder="Restaurant Instagram">
             </div>
 
             <div class="terms">
                 <h3 class="h5">Terms and Conditions</h3>
-                <p>I <input type="text" name="termsName" placeholder="enter restaurant name" class="form-control" required />, hereby agrees to provide the following accurate information and agree by the terms provided herein in order to become part of marketing of the Restaurant by Foodie Card, Inc. ("Foodie"): If the Foodie Card is presented at your Restaurant, you agree to provide the discount offered to Foodie members, to wit, providing a 10% discount to the Foodie customers. Restaurants reserve the right to refuse a Foodie Card on the following holidays: Christmas Eve, Easter, Father's Day, Mother's Day, New Year's Eve, Thanksgiving Eve, Valentine's Day. Restaurant reserves the right to refuse Foodie Card customers as part of another coupon or promotion.</p>
+                <p>I <label for="termsName" class="sr-only">Enter restaurant name <abbr>*</abbr></label><input type="text" name="termsName" placeholder="enter restaurant name *" class="form-control" required />, hereby agrees to provide the following accurate information and agree by the terms provided herein in order to become part of marketing of the Restaurant by Foodie Card, Inc. ("Foodie"): If the Foodie Card is presented at your Restaurant, you agree to provide the discount offered to Foodie members, to wit, providing a 10% discount to the Foodie customers. Restaurants reserve the right to refuse a Foodie Card on the following holidays: Christmas Eve, Easter, Father's Day, Mother's Day, New Year's Eve, Thanksgiving Eve, Valentine's Day. Restaurant reserves the right to refuse Foodie Card customers as part of another coupon or promotion.</p>
                 <p>Foodie makes no representations as to whether additional business will be generated by virtue of applying with Foodie. The Restaurant agrees that Foodie is not liable for any of the food, drinks, products or other services provided by the Restaurant and the Restaurants agrees to indemnify and hold harmless Foodie should any claims arise out of a customer's experience with the Restaurant. The Restaurant will provide a minimum of thirty (30) day’s notice upon cancellation of such terms.
                 </p>
             </div>
             <hr />
             <div class="form-check" id="agree_field">
-                <input type="checkbox" name="agree" id="agree"  class="form-check-input" />
+                <input type="checkbox" name="agree" id="agree"  class="form-check-input" required />
                 <label class="form-check-label" for="agree">
-                    I agree to the terms and conditions
+                    I agree to the terms and conditions <abbr class="text-danger">*</abbr>
                 </label>
             </div>
 
