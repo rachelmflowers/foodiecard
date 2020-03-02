@@ -92,14 +92,27 @@
     justify-content: space-between;
 
     .form-group { width: 100%; }
+        
+    @include media-breakpoint-up(sm) {
 
-    #contactPerson_field,
-    #phone_field,
-    #restWebsite_field,
-    #restPhone_field,
-    #restFacebook_field,
-    #restInsta_field {
-        width: calc(50% - 0.5rem);
+        #contactPerson_field,
+        #phone_field,
+        #restWebsite_field,
+        #restPhone_field,
+        #restFacebook_field,
+        #restInsta_field,
+        #referringPartner_field,
+        #accountRep_field {
+            width: calc(50% - 0.5rem);
+        }
+    }
+        
+    @include media-breakpoint-up(md) {
+
+        #referringPartner_field,
+        #accountRep_field {
+            width: 100%;
+        }
     }
     
 }
@@ -107,20 +120,25 @@
 #becomePartnerApplication {
     text-align: left;
 
-    h2 { width: 100%; }
+    h2,
+    h3 { width: 100%; }
 
     .fieldset {
-        width: calc(35% - 1rem);
+        width: 100%;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-content: flex-start;
 
-        &:first-of-type {
-            width: calc(65% - 1rem);
-        }
-
         .h5 { margin-top: 3.25rem; }
+        
+        @include media-breakpoint-up(md) {
+            width: calc(35% - 1rem);
+
+            &:first-of-type {
+                width: calc(65% - 1rem);
+            }
+        }
     }
 
     .terms {
