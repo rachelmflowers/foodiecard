@@ -92,6 +92,8 @@
     justify-content: space-between;
 
     .form-group { width: 100%; }
+
+  
         
     @include media-breakpoint-up(sm) {
 
@@ -123,20 +125,31 @@
     h2,
     h3 { width: 100%; }
 
+    #formHeader {
+        order: 1; 
+
+        h2 { margin-bottom: 2rem; }
+        
+        @include media-breakpoint-up(md) {
+            width: calc(65% - 1rem);
+        }
+    }
+
+    #restaurantFields { order: 2; }
+
+    #internalFields { order: 3; }
+
     .fieldset {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-content: flex-start;
-
-        .h5 { margin-top: 3.25rem; }
         
         @include media-breakpoint-up(md) {
-            width: calc(35% - 1rem);
 
-            &:first-of-type {
-                width: calc(65% - 1rem);
+            &#internalFields {
+                width: calc(35% - 1rem);
             }
         }
     }
@@ -144,6 +157,7 @@
     .terms {
         margin-top: $section-pad;
         width: 100%;
+        order: 4;
        
         p { line-height: 1.5;}
 
@@ -153,10 +167,24 @@
         }
     }
 
+    #formFooter {
+        order: 5;
+    }
+
     hr {
         width: 100%;
         margin: 1rem 0;
         background: $border-color;
+    }
+
+    @include media-breakpoint-up(md) {
+        
+        #formHeader,
+        #restaurantFields,
+        #internalFields,
+        .terms,
+        #formFooter { order: unset; }
+
     }
 }
 
