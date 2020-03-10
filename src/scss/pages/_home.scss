@@ -43,8 +43,8 @@
                 object-position: center;
 
                 @include media-breakpoint-up(md) {
-                    object-fit: cover;
                     object-position: bottom;
+                    max-height: none;
 
                     .ie & {
                         height: auto;
