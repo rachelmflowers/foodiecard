@@ -10,17 +10,22 @@
         <div class="carousel-inner">
             <article class="carousel-item active">
                 <div class="carousel-image">
-                    <img class="d-block" src="images/hero-photo.jpg" alt="First slide">
+                    <picture>
+                        <source media="(max-width: 799px)" srcset="images/crumbs-foodie-card.jpg">
+                        <img class="d-block" src="images/hero-photo.jpg" alt="Delicious fresh baked pizza">
+                    </picture>
                 </div>
                 <div class="container">
                     <div class="carousel-text">
-                        <h1 class="display-2">Dine out with purpose</h1>
-                        <p class="lead">For just $29.99 a year, you can save 10% at participating restaurants while helping those in need</p>
+                        <h1 class="display-2">10% off the entire  bill at countless restaurants.</h1>
+                        <p class="lead">Just flash the card to start saving and for every card sold, a day of meals are donated for just $29.99 per year.</p>
 
                         <a href="/dist/purchase.html" class="btn btn-warning btn-lg">
                             Buy Foodie Card
                             <img src="images/arrows.png" alt="" />
                         </a>
+
+                        <a href="/dist/our-restaurants.html">Check out Restaurants</a>
                     </div>
                 </div>
             </article>
@@ -45,6 +50,7 @@
             <span class="sr-only">Next</span>
         </a>
     </section>
+
 
     <section id="featuredRestaurants" class="container">
         <h2 class="h1">Featured Restaurants Near You</h2>
