@@ -15,7 +15,7 @@
             }
 
             @include media-breakpoint-up(lg) {
-                height:50vh;
+                height:60vh;
             }
 
             @include media-breakpoint-up(xl) {
@@ -76,20 +76,20 @@
             }
 
             @include media-breakpoint-up(md) {
-                max-width: 50vw;
+                max-width: 40vw;
+                text-align: left;
 
-                p {
-                    margin: 0 2rem 3rem;
+                .display-2 {
+                    font-size: 3rem;
+                    margin-bottom: 2rem;
                 }
+
+                p { margin-bottom: 2rem; }
             }
 
             @include media-breakpoint-up(xl) {
-                padding: 3rem 0 0;
-                max-width: 40vw;
-
-                p {
-                    margin: 0 1rem 3rem;
-                }
+                padding: 1rem 0;
+                max-width: 32vw;
             }
         }
 
