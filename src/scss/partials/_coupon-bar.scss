@@ -24,7 +24,16 @@
     .close {
         position: absolute;
         top: 0.25rem;
-        right: 0.5rem;
+        right: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        color: $white;
+        line-height: 1.5;
+        text-align: center;
+        text-shadow: none;
+        font-weight: normal;
+        border: 2px solid $white;
+        border-radius: 50%;
     }
 
     .modal-content {
@@ -87,15 +96,25 @@
         }
 
         p.lead {
-            margin-bottom: 1.75rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
             vertical-align: middle;
 
             .h2 { 
                 color: $white;
-                font-size: 3rem;
+                font-size: 2rem;
                 text-transform: uppercase;
                 vertical-align: middle;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 1.75rem;
+                font-size: 1.5rem;
+    
+                .h2 { 
+                    font-size: 3rem;
+                }
+
             }
         }
 
