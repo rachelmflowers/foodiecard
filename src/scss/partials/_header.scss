@@ -133,6 +133,7 @@
             flex: 1 0 auto;
             background: transparent;
             transition: background 0.3s ease;
+            max-width: 300px;
 
             @include media-breakpoint-up(md) {
                 padding: 0.25rem 1rem 0;
@@ -482,5 +483,13 @@
         .btn-primary {
             min-width: 160px;
         }
+    }
+
+    @media screen and (min-width: 1441px) {
+
+        .btn-primary {
+            min-width: 180px;
+        }
+
     }
 }
