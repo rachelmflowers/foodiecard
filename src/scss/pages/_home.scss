@@ -18,9 +18,12 @@
                 height:60vh;
             }
 
-            @include media-breakpoint-up(xl) {
-                height:70vh;
-                max-height: 500px;
+            @media screen and (min-width: 1025px) {
+                height: 75vh;
+            }
+
+            @media screen and (min-width: 1441px) {
+                height: 60vh;
             }
         }
 
@@ -33,7 +36,6 @@
                 top: 0;
                 left: 0;
                 z-index: -1;
-                max-height: unset;
             }
 
             img {
@@ -44,7 +46,6 @@
                 object-position: center;
 
                 @include media-breakpoint-up(md) {
-                    object-position: bottom;
                     max-height: none;
 
                     .ie & {
@@ -73,6 +74,7 @@
             }
 
             @include media-breakpoint-down(sm) {
+                .display-2 { font-size: calc(1.525rem + 1.25vw); }
                 p { margin: 1.5rem auto; }
             }
 
@@ -91,6 +93,16 @@
             @include media-breakpoint-up(xl) {
                 padding: 1rem 0;
                 max-width: 32vw;
+            }
+
+            @media screen and (min-width: 1441px) {
+
+                .display-2 { margin-bottom: 2.5rem; }
+
+                p { 
+                    margin-bottom: 3rem;
+                    font-size: 1.25rem;
+                }
             }
         }
 

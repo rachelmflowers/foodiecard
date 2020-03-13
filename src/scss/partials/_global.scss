@@ -16,6 +16,10 @@ html {
     @include media-breakpoint-up(xl) {
         font-size: 100%;
     }
+
+    @media screen and (min-width: 1600px) {
+        font-size: 110%;
+    }
 }
 
 body,
