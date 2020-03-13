@@ -23,6 +23,10 @@
             }
 
             @media screen and (min-width: 1441px) {
+                height: 70vh;
+            }
+
+            @media screen and (min-width: 1536px) {
                 height: 60vh;
             }
         }
@@ -96,12 +100,22 @@
             }
 
             @media screen and (min-width: 1441px) {
+                max-width: 40vw;
+                padding-right: 6rem;
+            }
 
-                .display-2 { margin-bottom: 2.5rem; }
+            @media screen and (min-width: 1536px) {
+                max-width: 30vw;
+                padding-right: 0;
+
+                .display-2 { 
+                    font-size: 3.5rem;
+                    margin-bottom: 2.5rem;
+                }
 
                 p { 
+                    font-size: 1.15rem;
                     margin-bottom: 3rem;
-                    font-size: 1.25rem;
                 }
             }
         }
