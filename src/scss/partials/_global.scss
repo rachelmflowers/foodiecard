@@ -17,8 +17,12 @@ html {
         font-size: 100%;
     }
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1441px) {
         font-size: 110%;
+    }
+
+    @media screen and (min-width: 1536px) {
+        font-size: 120%;
     }
 }
 
