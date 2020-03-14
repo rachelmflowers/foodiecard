@@ -6,11 +6,11 @@
         width: 800px;
         max-width: 100%;
 
-        @media screen and (min-width: 1441px) {
+        @media all and (min-width: 1441px) {
             width: 1000px;
         }
 
-        @media screen and (min-width: 1536px) {
+        @media all and (min-width: 1550px) {
             width: 1200px;
         }
 
@@ -37,11 +37,11 @@
     margin: 0 auto;
     max-width: 600px;
 
-    @media screen and (min-width: 1441px) {
+    @media all and (min-width: 1441px) {
         max-width: 700px;
     }
 
-    @media screen and (min-width: 1536px) {
+    @media all and (min-width: 1550px) {
         max-width: 800px;
     }
 

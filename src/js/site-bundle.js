@@ -243,7 +243,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }), t(document).ready(function () {
       var r = !1;
-      (navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/./)) && (r = !0), console.log(r), 1 == r && t("html").addClass("ie"), objectFitImages(), document.location.hash && e(t(document.location.hash)), t(window).bind("hashchange", function () {
+      (navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/./)) && (r = !0), console.log(r), 1 == r && t("html").addClass("ie"), objectFitImages(), document.createElement("picture"), document.location.hash && e(t(document.location.hash)), t(window).bind("hashchange", function () {
         var r = "#" + window.location.hash.replace(/^#/, "");
         e(t(r));
       }), t('[data-toggle="tooltip"]').tooltip(), t('[data-toggle="popover"]').popover(), t(".deal-bar").on("click", function () {

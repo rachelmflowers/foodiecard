@@ -17,11 +17,15 @@ html {
         font-size: 100%;
     }
 
-    @media screen and (min-width: 1441px) {
+    @media all and (min-width: 1441px) {
         font-size: 110%;
+
+        &.ie {
+            font-size: 100%;
+        }
     }
 
-    @media screen and (min-width: 1536px) {
+    @media all and (min-width: 1550px) {
         font-size: 120%;
     }
 }
@@ -55,7 +59,7 @@ html {
         padding-left: 0;
     } 
 
-    @media screen and (min-width: 1536px) {
+    @media all and (min-width: 1550px) {
         max-width: 1400px;
     }    
 }

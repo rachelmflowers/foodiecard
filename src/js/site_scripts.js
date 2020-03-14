@@ -143,6 +143,9 @@ const gmap = async (elem) => {
         // Object Fit Images Polyfill
         objectFitImages();
 
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+
         // Begin focusable fix for accessibility
         // if there is a '#' in the URL (someone linking directly to a page with an anchor)
         if (document.location.hash) {
