@@ -2,16 +2,10 @@ svg.icon {
     width: 22px;
     height: 22px;
     width: 1.375rem;
-    height: 1.365rem;
+    height: 1.375rem;
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
-
-    .ie & {
-        padding-bottom: calc(100% * 22/22);
-        height: 1px;
-        overflow: visible;
-    }
 }
