@@ -23,7 +23,7 @@
             }
 
             @media screen and (min-width: 1441px) {
-                height: 70vh;
+                height: 65vh;
             }
 
             @media screen and (min-width: 1536px) {
@@ -84,6 +84,7 @@
 
             @include media-breakpoint-up(md) {
                 max-width: 40vw;
+                margin-right: 3rem;
                 text-align: left;
 
                 .display-2 {
@@ -94,13 +95,17 @@
                 p { margin-bottom: 2rem; }
             }
 
+            @include media-breakpoint-up(lg) {
+                margin-right: 0;
+            }
+
             @include media-breakpoint-up(xl) {
                 padding: 1rem 0;
-                max-width: 32vw;
+                max-width: 3rem;
             }
 
             @media screen and (min-width: 1441px) {
-                max-width: 40vw;
+                max-width: 42vw;
                 padding-right: 6rem;
             }
 
