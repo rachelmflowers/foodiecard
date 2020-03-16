@@ -56,6 +56,40 @@ textarea {
     }
 }
 
+.input-group {
+    .form-control {
+        line-height: calc(38px - 0.75rem);
+    
+        @include media-breakpoint-down(lg) {
+            line-height: calc(36px - 0.75rem);
+        }
+    
+        @include media-breakpoint-down(md) {
+            line-height: calc(34px - 0.75rem);
+        }
+    
+        @include media-breakpoint-down(sm) {
+            line-height: calc(32px - 0.75rem);
+        }
+    }
+
+    &-lg {
+        line-height: 42px;
+    
+        @include media-breakpoint-down(lg) {
+            line-height: 40px;
+        }
+    
+        @include media-breakpoint-down(md) {
+            line-height: 38px;
+        }
+    
+        @include media-breakpoint-down(sm) {
+            line-height: 36px;
+        }
+    }
+}
+
 .input-group-lg .input-group-append > .btn-icon {
     padding-left: 1rem;
     padding-right: 1rem;

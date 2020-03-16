@@ -93,7 +93,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       c = n(1),
       u = n.n(c);
 
-  var s = function () {
+  function s(t) {
+    var e = document.querySelector(t),
+        r = {
+      root: null,
+      threshold: .25
+    };
+
+    if (void 0 !== e && null != e) {
+      if (console.log("there is a scroll elem"), e.hasAttribute("data-scrollMargin")) r = {
+        root: null,
+        rootMargin: e.getAttribute("data-scrollMargin")
+      };
+      if ("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) new IntersectionObserver(function (t, r) {
+        t.forEach(function (n) {
+          n.intersectionRatio > 0 ? t[0].boundingClientRect.y < 100 && (e.classList.add("scroll-past"), r.unobserve(n.target)) : e.classList.remove("scroll-past");
+        });
+      }, r).observe(e);
+    }
+  }
+
+  var l = function () {
     var t = u()(a.a.mark(function t(e) {
       return a.a.wrap(function (t) {
         for (;;) {
@@ -151,7 +171,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return t.apply(this, arguments);
     };
   }(),
-      l = function () {
+      f = function () {
     var t = u()(a.a.mark(function t(e) {
       return a.a.wrap(function (t) {
         for (;;) {
@@ -159,7 +179,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             case 0:
               return t.abrupt("return", new Promise(function () {
                 var t = u()(a.a.mark(function t(r) {
-                  var n, o, i, c, u, l, f, h;
+                  var n, o, i, c, u, s, f, h;
                   return a.a.wrap(function (t) {
                     for (;;) {
                       switch (t.prev = t.next) {
@@ -167,14 +187,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                           return n = e.getAttribute("data-mapLatLng").split(","), o = parseFloat(n[0]), i = parseFloat(n[1]), c = {
                             lat: o,
                             lng: i
-                          }, u = e.hasAttribute("data-mapZoom") ? parseFloat(e.getAttribute("data-mapZoom")) : 15, l = !!e.hasAttribute("data-mapMarker"), f = !!e.hasAttribute("data-disableMapUI"), t.next = 9, s("https://maps.googleapis.com/maps/api/js?key=AIzaSyDLBAYbQnUvDYI8eANtjvfSxbJx11SpGts&v=3");
+                          }, u = e.hasAttribute("data-mapZoom") ? parseFloat(e.getAttribute("data-mapZoom")) : 15, s = !!e.hasAttribute("data-mapMarker"), f = !!e.hasAttribute("data-disableMapUI"), t.next = 9, l("https://maps.googleapis.com/maps/api/js?key=AIzaSyDLBAYbQnUvDYI8eANtjvfSxbJx11SpGts&v=3");
 
                         case 9:
                           h = new google.maps.Map(e, {
                             center: c,
                             zoom: u,
                             disableDefaultUI: f
-                          }), l && new google.maps.Marker({
+                          }), s && new google.maps.Marker({
                             position: c,
                             map: h
                           }), r(h);
@@ -217,7 +237,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               break;
             }
 
-            return t.next = 5, l(e[r]);
+            return t.next = 5, f(e[r]);
 
           case 5:
             r++, t.next = 2;
@@ -248,7 +268,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         e(t(r));
       }), t('[data-toggle="tooltip"]').tooltip(), t('[data-toggle="popover"]').popover(), t(".deal-bar").on("click", function () {
         t("#couponModal").modal("show");
-      }), t(".datepicker").flatpickr({
+      }), new s("#step-1"), new s("#step-2"), new s("#step-3"), t(".datepicker").flatpickr({
         altInput: !0,
         altFormat: "F j, Y",
         dateFormat: "Y-m-d"

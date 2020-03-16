@@ -148,10 +148,6 @@
         max-width: calc(100% - 80px);
         text-align: left;
 
-        @include media-breakpoint-up(md) {
-            margin-bottom: $section-pad-sm;
-        }
-
         .grid {
 
             .card { 

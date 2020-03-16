@@ -127,28 +127,16 @@
 
         &-brand {
             padding: 1rem;
+            margin: 0;
             height: 100%;
             text-align: right;
             flex: 1 0 auto;
             background: transparent;
             transition: background 0.3s ease;
 
-            @include media-breakpoint-up(md) {
-                padding: 0.25rem 1rem 0;
-
-                &:hover { 
-                    background: darken($primary, 8);
-                    transition: background 0.3s ease;
-                }
-            }
-
-            @include media-breakpoint-up(xl) {
-                padding: 1rem 1rem 0.5rem;
-                max-width: 300px;
-            }
-
             svg { 
                 width: 180px;
+                transition: transform 0.3s ease;
 
                 .ie & {
                     padding-bottom: calc(100% * 145/894); 
@@ -170,6 +158,25 @@
                 @include media-breakpoint-up(xl) {
                     width: 215px;
                 }
+            }
+
+            @include media-breakpoint-up(md) {
+                padding: 0.25rem 1rem 0;
+
+                &:hover { 
+                    background: darken($primary, 8);
+                    transition: background 0.3s ease;
+
+                    svg {
+                        transform: scale(0.95);
+                        transition: transform 0.3s ease;
+                    }
+                }
+            }
+
+            @include media-breakpoint-up(xl) {
+                padding: 1rem 2rem 0.5rem;
+                max-width: 300px;
             }
             
 

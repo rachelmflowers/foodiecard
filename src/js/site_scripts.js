@@ -168,8 +168,9 @@ const gmap = async (elem) => {
         });
 
         // How it works Scroll observer
-        // new ScrollPoint('#step-1');
-        // new ScrollPoint('#step-2');
+        new ScrollPoint('#step-1');
+        new ScrollPoint('#step-2');
+        new ScrollPoint('#step-3');
 
         // Datetime pickers
 
