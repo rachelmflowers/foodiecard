@@ -417,6 +417,7 @@
     }
 
     .form-inline {
+        min-width: 255px;
 
         .input-group { width: 100%; }
 
@@ -497,13 +498,13 @@
         }
     }
 
-    @media all and (min-width: 1441px) {
+    // @media all and (min-width: 1441px) {
 
-        .btn-primary {
-            min-width: 180px;
-        }
+    //     .btn-primary {
+    //         min-width: 170px;
+    //     }
 
-    }
+    // }
 
     @media all and (min-width: 1550px) {
 

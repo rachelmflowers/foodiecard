@@ -540,6 +540,8 @@
         flex-flow: row wrap;
         justify-content: space-between;
 
+        &:focus { outline: none; }
+
         @include media-breakpoint-up(lg) {
             margin-bottom: $section-pad-desk;
         }
