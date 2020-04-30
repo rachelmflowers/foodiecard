@@ -43,7 +43,7 @@
     "flickity-fade": "^1.0.0",
     "gulp-concat": "^2.6.1",
     "imagesloaded": "^4.1.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mobius1-selectr": "^2.4.13",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
